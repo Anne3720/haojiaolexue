@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="/css/site.css" media="screen" rel="stylesheet" type="text/css" />
+  <title>RthinkPHP使用向导</title>
+</head>
+<body>
+  <h1>An error occurred</h1>
+  <h2><?php echo $message ?></h2>
+
+  <?php if (isset($exception)): ?>
+  
+  <h3>Exception information:</h3>
+  <p>
+      <b>Message:</b> <?php echo $exception->getMessage() ?>
+  </p>
+
+  <h3>Stack trace:</h3>
+  <pre><?php echo $exception->getTraceAsString() ?>
+  </pre>
+
+  <h3>Request Parameters:</h3>
+  <pre><?php echo htmlentities(var_export($request->getParams(), true), ENT_COMPAT) ?>
+  </pre>
+
+  <?php endif ?>
+
+</body>
+</html>

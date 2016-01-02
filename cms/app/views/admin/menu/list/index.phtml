@@ -1,0 +1,66 @@
+<form name="myform" action="/admin/menu/order" method="post">
+    <div class="table-list">
+        <table width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th width="30"><input type="checkbox" name="checkbox"
+                                      onclick="$('input[type=checkbox]').attr('checked',$(this).attr('checked'))"/></th>
+                <th width="30">排序</th>
+                <th align='left'>菜单名称</th>
+                <th width="200">管理操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($menu_list as $key => $val) { ?>
+                <tr <?php if ($val['parent_id'] > 0) {
+                    echo "style=display:none";
+                } ?> class="tree parent_<?php echo $val['parent_id']; ?>" data-id="<?php echo $val['id']; ?>">
+                    <td align='center'>
+                        <input type="checkbox" value="<?php echo $val['id']; ?>" name="id[]"/>
+                    </td>
+                    <td align='center'>
+                        <input name='orders[]' type='text' size='3' value='<?php echo $val['orders']; ?>'
+                               class='input-text-c'>
+                    </td>
+                    <td>
+                        <?php if (isset($val['gap'])): echo $val['gap']; endif; echo $val['title']; ?>
+                        <?php if (!empty($val['url'])) { ?>
+                            (<?php echo $val['url']; ?>)
+                        <?php } ?>
+                    </td>
+                    <td align='center'>
+                        <a href="/admin/menu/edit?parent_id=<?php echo $val['id']; ?>/?height=350" class="thickbox"
+                           title="添加子菜单">添加子菜单</a> |
+                        <a href="/admin/menu/edit?id=<?php echo $val['id']; ?>&height=350" class="thickbox"
+                           title="菜单编辑">修改</a> |
+                        <a href="/admin/menu/delete?id=<?php echo $val['id']; ?>" class="zajax">删除</a>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+        <div class="btn">
+            <div style="float:left">
+                <input type="submit" class="button" value="排序"
+                       onclick="$('input[type=checkbox]').attr('checked',true)"/>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<?php //require $this->load_tpl('admin_foot'); ?>
+
+<script type="text/javascript">
+    $(function () {
+
+        $(".tree").z_tree(
+            {
+                parent_key: "parent_",
+                id_key: "data-id"
+            });
+
+        $(".zajax").zajax();
+    })
+
+</script>

@@ -1,0 +1,108 @@
+/*Reg页面的css文件*/
+ul ,li {list-style: none;}
+html,body .box{
+	height: 100%;
+	margin:0 auto;
+	width: 100%;
+
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699FF', endColorstr='#6699FF'); /*  IE */
+	background-image:linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+	background-image:-o-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+	background-image:-moz-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+	background-image:-webkit-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+	background-image:-ms-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+}
+.register {
+	width: 470px;
+	margin: 30px auto 0;	
+	font-size: 16px;
+	background: #efc8ff;
+	position: relative;
+}
+.register-center {
+	padding: 10px 0px 10px 10px;
+	margin: 5px auto 0;
+	position: relative;
+}
+.register p {
+	display: block;
+	padding: 0px 25px;
+	text-align: left;
+	line-height: 27px;
+}
+.register p span{
+	display: inline-block;
+	width: 90px;
+	height: 25px;
+	line-height: 25px;
+	color: #000000;
+	background: #f0f0fa;
+	padding-left: 10px;	
+	border-bottom: 2px solid #f0f0fa;
+}
+.register p input {
+	margin: 0px;
+	width: 290px;
+	height: 25px;
+	line-height: 25px;
+	border: 0;
+
+}
+.choose-btn {
+	margin-left: 150px;
+	border: 0;
+	background: transparent;
+}
+.choose-btn input {
+	width: 20px !important;
+	margin: 0px 5px !important;
+	height: 15px !important;
+}
+.register #btnReg {
+	width: 300px;
+	display: block;
+	margin:15px auto;
+	font-size: 24px;
+	background: #ed7c14;
+	border: 0;
+}
+#btnReg:hover {
+	background: #0000ff;
+}
+.register-title {
+	height: 60px;
+	line-height: 60px;
+	background:#efc8c8;
+	text-align: center;
+	font-size: 24px;
+	color: #000000;
+}
+label.error{
+	text-align: center;
+	color: red;
+	display:block;
+	margin:5px auto; 
+	font-size: 12px;
+	line-height: 12px;
+}
+#hehe {
+	text-align: center;
+	color: red;
+	display: inline-block;
+	margin:0px 100px;
+}
+#btnLogin {
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    bottom: 26px;
+    right: 135px;
+    display: none;
+}
+p.text-center{
+	text-align: right;
+	display: block;
+	width: 380px;
+}
+/*在CSS中添加样式与之关联 */ 
+ 

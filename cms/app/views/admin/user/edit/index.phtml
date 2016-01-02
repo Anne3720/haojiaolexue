@@ -1,0 +1,111 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: zhangxiaohu01
+ * Date: 15-3-15
+ * Time: 下午2:09
+ */
+
+?>
+<style>
+
+    .row-fluid [class*="span"]:first-child {
+        margin-left: 45px;
+    }
+</style>
+
+<div class="block">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left"><?php echo $pagename; ?></div>
+    </div>
+    <div class="block-content collapse in">
+        <div class="span12">
+            <form class="form-horizontal" action="/admin/user/insert" method="post" id="admin_info">
+                <fieldset>
+
+                    <table class="table table-bordered table-striped">
+
+                        <tbody>
+                        <tr>
+                            <td style="width: 100px">
+                               登陆账号
+                            </td>
+                            <td>
+                                <input type="text" placeholder="账号" name="username" id="username" value="<?php if (isset($info['username'])): echo $info['username']; endif;?>"/></td>
+                        </tr>
+                        <?php /**
+                        <tr>
+                            <td>
+                                所属项目
+                            </td>
+                            <td>
+                                <?php foreach ($project_list as $val): ?>
+                                    <div class="span2">
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" value="<?php echo $val['id'];?>" name="project_id[]" id="project_<?php echo $val['id'];?>" <?php if (isset($info['project_id']) && in_array($val['id'],$info['project_id'])){?> checked<?php }?>/>
+                                            <?php if (isset($info['project_id']) && in_array($val['id'], $info['project_id'])){?>
+                                                <span class="label label-success"><?php echo $val['project_name'];?></span>
+                                            <?php }else{?>
+                                                <?php echo $val['project_name'];?>
+                                            <?php }?>
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
+                        */?>
+
+                        <tr>
+                            <td>
+                                账号组
+                            </td>
+                            <td>
+
+                                    <?php foreach ($group_list as $val){?>
+                                        <div class="span2">
+                                            <label class="checkbox inline">
+                                                <input type="checkbox" value="<?php echo $val['id'];?>" name="gid[]" id="gid_<?php echo $val['id'];?>" <?php if (isset($info['gid']) && in_array($val['id'],$info['gid'])){?> checked<?php }?>/>
+                                                <?php if (isset($info['gid']) && in_array($val['id'],$info['gid'])){?>
+                                                    <span class="label label-success"><?php echo $val['group_name'];?></span>
+                                                <?php }else{?>
+                                                    <?php echo $val['group_name'];?>
+                                                <?php }?>
+                                            </label>
+                                        </div>
+                                    <?php }?>
+
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <div class="form-actions">
+                        <input type="hidden" name="id" value="<?php if(isset($id)): echo $id; endif;?>">
+                        <button role="btn-back" type="button" class="btn btn-info">返回</button>
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var url = "<?php echo $url; ?>";
+
+    $(function(){
+        $("#admin_info").z_form_submit();
+    })
+
+
+    $("[role=btn-back]").click(function(){
+        window.location.href = url;
+    });
+
+
+</script>
