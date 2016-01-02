@@ -97,8 +97,35 @@
         </div>
 		
 	  </ul>
-   </div>
-   
+    </div>
+    <div class="classShow">
+  	    <div class="classShowNew">
+     		<div class="classShow-title">最新课程</div>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     	</div>
+     	<div class="classShowHot">
+     		<div class="classShow-title">热门课程</div>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     		<span><img src="" alt="" /><p>我的</p></span>
+     	</div>
+    </div>
 </div>
    <script type="text/javascript">
 	   $(document).ready(function(){

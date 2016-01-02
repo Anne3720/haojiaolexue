@@ -66,8 +66,8 @@ span.navtop-logo {
     width: 200px;
 }
 .navleft ul .navleft-tittle {
-	height: 40px;
-	line-height: 40px;
+	height: 60px;
+	line-height: 60px;
 	text-align: center;
 	border-bottom: 1px solid red;
 }
@@ -97,10 +97,11 @@ span.navtop-logo {
 .navleft-hide {
     display: none;
     width: 400px;
-    border: 2px solid red;
+    border: 2px solid black;
     position: absolute;
     top: -50px;
     left: 200px;
+    z-index: 9999;
 }
 .navleft-content {
 	position: relative;
@@ -114,7 +115,7 @@ span.navtop-logo {
 .navleft-hide dl dt { 
     text-align: center;
 	width: 400px;
-	border-bottom: 1px solid red;
+	border-top: 1px solid black;
 }
 .navleft-hide dl dt a {
 
@@ -122,15 +123,49 @@ span.navtop-logo {
 	font-size: 24px;
 }
 .navleft-hide dl dd {
-	padding: 2px 5px;
+	margin: 0;
 	text-align: center;
-	border-bottom: 1px solid red;
+	border-top: 1px solid black;
 }
 .navleft-hide dl dd a {
 	display: inline-block;
 	padding: 2px 15px;
-	border-right: 1px solid black; 
+	color: red;
 }
-.navleft-hide-border {
-	border-right: 0px !important;
+.navleft-hide dl dd a:hover {
+	color: green;
+	background: gray;
+}
+
+/*课程展示的css样式*/
+.classShow {
+	position: relative;
+	left: 250px;
+	width: 900px;
+	z-index: 0;
+}
+.classShow span {
+	display: inline-block;
+	width: 350px; 
+	height: 200px;
+	border: 2px solid red;
+	margin: 5px 45px;
+	padding: 0;
+}
+.classShow span img {
+	width: 350px;
+	height: 150px;
+}
+.classShowNew,.classShowHot {
+	border:2px solid red; 
+	margin-bottom: 30px;
+}
+.classShow-title {
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	font-size: 26px;
+	text-align: center;
+	border-bottom:2px solid red;
+	margin:5px 0;  
 }
