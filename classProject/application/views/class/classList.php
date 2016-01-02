@@ -28,7 +28,7 @@
                     </li>
                     <?php foreach($grade['high'] as $key=>$value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                        <a href="classList?grade=<?php echo($key)?>" grade="<?php echo($key)?>" ><?php echo($value);?></a>
                     </li>
                     <?php } ?>
                     
@@ -57,7 +57,7 @@
                 <ul class="">
                     <?php foreach($subject[$key] as $value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?subject=<?php echo($value['SubjectID'])?>&grade=<?php echo($key);?>&page="><?php echo($value['Title']);?></a>
+                        <a href="classList?subject=<?php echo($value['SubjectID'])?>&grade=<?php echo($key);?>&page= "  id="<?php echo($key)?>"><?php echo($value['Title']);?></a>
                     </li>
                     <?php } ?>
                 </ul>
