@@ -64,6 +64,7 @@
             </div>
         </div>
     </div>  
+
     <script type="text/javascript">
        $(document).ready(function(){
            
@@ -71,21 +72,32 @@
                     
                 $('#course-nav-item-'+index).click(
                   function(event){
-                    console.log(index);
-                    for (i=1;i<$('.course-nav-item').length;i++){
-                        if (i==index) {
-                            $('.course-nav-item0-'+i).show();
-                            $('#course-nav-item-'+i).css('background','red');
-                        }else{
-                            $('.course-nav-item0-'+i).hide();
-                            $('#course-nav-item-'+i).css('background','');
+
+                    $.ajax({
+                        type:"POST",
+                        url:"classList?grade="+index,
+                        dataType:"JSON",
+                        success:function(data){
+                        },
+                        error:function(jqXHR){
                         }
+                    }); 
+                  for (i=1;i<$('.course-nav-item').length;i++){
+                     if (i==index) {
+                        $('.course-nav-item0-'+i).show();
+                        $('#course-nav-item-'+i).css('background','red');
+                    }else{
+                        $('.course-nav-item0-'+i).hide();
+                        $('#course-nav-item-'+i).css('background','');
                     }
-                    event.stopPropagation();
-                    event.preventDefault();
+                 }
+
+
+                  event.stopPropagation();
+                  event.preventDefault();
                 });
            });
-       });
+       });            
    </script>  
     <div class="classShow">
   	    <div class="classShowNew">
