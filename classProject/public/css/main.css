@@ -25,6 +25,7 @@ ul,li {list-style: none;}
     height: 50px;
     font-size: 30px;
     background: #963232;
+    overflow: hidden;
 }
 span.navtop-logo {
 	display: inline-block;
@@ -70,6 +71,10 @@ span.navtop-logo {
 	line-height: 60px;
 	text-align: center;
 	border-bottom: 1px solid red;
+}
+.navleft ul .navleft-tittle a {
+	text-decoration: none;
+	font-size: 26px;
 }
 .navleft ul{
 	width: 200px;
@@ -137,35 +142,3 @@ span.navtop-logo {
 	background: gray;
 }
 
-/*课程展示的css样式*/
-.classShow {
-	position: relative;
-	left: 250px;
-	width: 900px;
-	z-index: 0;
-}
-.classShow span {
-	display: inline-block;
-	width: 350px; 
-	height: 200px;
-	border: 2px solid red;
-	margin: 5px 45px;
-	padding: 0;
-}
-.classShow span img {
-	width: 350px;
-	height: 150px;
-}
-.classShowNew,.classShowHot {
-	border:2px solid red; 
-	margin-bottom: 30px;
-}
-.classShow-title {
-	height: 40px;
-	line-height: 40px;
-	color: red;
-	font-size: 26px;
-	text-align: center;
-	border-bottom:2px solid red;
-	margin:5px 0;  
-}

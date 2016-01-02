@@ -34,7 +34,7 @@
 	</div>
 	<div class="navleft">
 	   <ul>
-		<div class="navleft-tittle">全部课程分类</div>
+		<div class="navleft-tittle"><a href="User/classList">全部课程分类</a></div>
 		<div class="navleft-content">
 		    <li>高中</li>
 		    <li class="grade">
@@ -98,34 +98,6 @@
 		
 	  </ul>
     </div>
-    <div class="classShow">
-  	    <div class="classShowNew">
-     		<div class="classShow-title">最新课程</div>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     	</div>
-     	<div class="classShowHot">
-     		<div class="classShow-title">热门课程</div>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     		<span><img src="" alt="" /><p>我的</p></span>
-     	</div>
-    </div>
 </div>
    <script type="text/javascript">
 	   $(document).ready(function(){
@@ -149,9 +121,6 @@
                   $("#navleft-hide-"+index).hide();
                 });
 	   	   });
-	   	  
-	   	   
-
 	   });
    </script>
 </body>
