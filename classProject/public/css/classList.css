@@ -4,6 +4,7 @@
 	width: 90%;
 	z-index: 0;
 	margin: 30px auto 10px;
+	overflow: hidden;
 }
 .classShow span {
 	display: inline-block;
@@ -29,4 +30,35 @@
 	text-align: center;
 	border-bottom:2px solid red;
 	margin:5px 0;  
+}
+/*顶部导航栏*/
+a {
+	text-decoration: none;
+}
+.course-nav {
+	width: 90%;
+	margin: 20px auto;
+}
+.course-nav-item {
+	float: left;
+	margin: 10px;
+}
+.course-nav-hd span {
+	font-size: 26px;
+	border-bottom: 2px solid black;
+	display: block;
+	line-height: 30px;
+	height: 40px;
+}
+.hd {
+	display:inline-block;
+	width: 50px;
+	margin: 10px;
+	float: left;
+}
+.course-nav-row {
+	width: 100%;
+    float: left;
+    border-bottom: 2px solid black;
+    padding: 10px 10px 5px 0px;
 }

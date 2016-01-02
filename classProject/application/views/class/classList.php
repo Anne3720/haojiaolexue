@@ -12,6 +12,7 @@
 <div class="box">
 	
     <div class="navtop"></div>
+    <div class="course-nav">
         <div class="course-nav-hd">
             <span>全部课程</span>
         </div>
@@ -20,17 +21,33 @@
             <div class="bd">
                 <ul class="">
                     <li class="course-nav-item on">
-                        <a href="">全部</a>
+                        <a href="classList">全部</a>
                     </li>
                     <li class="course-nav-item on">
-                        <a href="">高中</a>
+                        高中
                     </li>
+                    <?php foreach($grade['high'] as $key=>$value){ ?>
+                    <li class="course-nav-item on">                       
+                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                    </li>
+                    <?php } ?>
+                    
                     <li class="course-nav-item on">
-                        <a href="">初中</a>
+                        初中
                     </li>
+                    <?php foreach($grade['middle'] as $key=>$value){ ?>
+                    <li class="course-nav-item on">                       
+                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                    </li>
+                    <?php } ?>
                     <li class="course-nav-item on">
-                        <a href="">小学</a>
+                        小学
                     </li>
+                    <?php foreach($grade['primary'] as $key=>$value){ ?>
+                    <li class="course-nav-item on">                       
+                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -38,21 +55,15 @@
             <span class="hd 1">科目:</span>
             <div class="bd">
                 <ul class="">
-                    <li class="course-nav-item on">
-                        <a href="">语文</a>
+                    <?php foreach($subject[$key] as $value){ ?>
+                    <li class="course-nav-item on">                       
+                        <a href="classList?subject=<?php echo($value['SubjectID'])?>&grade=<?php echo($key);?>&page="><?php echo($value['Title']);?></a>
                     </li>
-                    <li class="course-nav-item on">
-                        <a href="">数学</a>
-                    </li>
-                    <li class="course-nav-item on">
-                        <a href="">物理</a>
-                    </li>
-                    <li class="course-nav-item on">
-                        <a href="">化学</a>
-                    </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
+    </div>    
     <div class="classShow">
   	    <div class="classShowNew">
      		<div class="classShow-title">最新课程</div>
