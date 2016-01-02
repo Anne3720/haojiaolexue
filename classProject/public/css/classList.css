@@ -39,16 +39,22 @@ a {
 	width: 90%;
 	margin: 20px auto;
 }
-.course-nav-item {
+.course-nav-item{
 	float: left;
-	margin: 10px;
+	margin: 5px 5px 0px;
 }
 .course-nav-hd span {
 	font-size: 26px;
 	border-bottom: 2px solid black;
 	display: block;
 	line-height: 30px;
+	padding: 5px 10px;
 	height: 40px;
+}
+.course-nav-item a {
+	display: inline-block;
+	color: black;
+	padding: 5px 10px;
 }
 .hd {
 	display:inline-block;

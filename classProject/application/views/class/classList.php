@@ -35,29 +35,20 @@
                     <li class="course-nav-item on">
                         <a href="classList">全部</a>
                     </li>
-                    <li class="course-nav-item on">
-                        高中
-                    </li>
                     <?php foreach($grade['high'] as $key=>$value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($key)?>" grade="<?php echo($key)?>" ><?php echo($value);?></a>
+                        <a href="classList?grade=<?php echo($key)?>" id="course-nav-item-<?php echo($key)?>" grade="<?php echo($key)?>" ><?php echo($value);?></a>
                     </li>
                     <?php } ?>
                     
-                    <li class="course-nav-item on">
-                        初中
-                    </li>
                     <?php foreach($grade['middle'] as $key=>$value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                        <a href="classList?grade=<?php echo($key)?>" id="course-nav-item-<?php echo($key)?>"><?php echo($value);?></a>
                     </li>
                     <?php } ?>
-                    <li class="course-nav-item on">
-                        小学
-                    </li>
                     <?php foreach($grade['primary'] as $key=>$value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($key);?>"><?php echo($value);?></a>
+                        <a href="classList?grade=<?php echo($key);?>" id="course-nav-item-<?php echo($key)?>"><?php echo($value);?></a>
                     </li>
                     <?php } ?>
                 </ul>
@@ -67,17 +58,46 @@
             <span class="hd 1">科目:</span>
             <div class="bd">
                 <ul class="">
-                    <?php foreach($subject[$key] as $key => $value){ ?> 
-                      
-                      <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($value) ?>" ><?php echo($value['Title']);?></a>
-                      </li>  
+                    <li class="course-nav-item on">
+                        <a href="classList">全部</a>
+                    </li>
                     
-                    <?php } ?>
+                    <?php foreach ($subject as $u => $v) {?>
+                    <?php foreach ($v as $uu => $vv) {?>
+                    <li class="course-nav-item on course-nav-item0-<?php echo($vv['Grade'])?>">
+                        <a href="classList?grade=<?php echo($vv['Grade']);?>&classid=<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
+                    </li>
+                    <?php }?>
+                    <?php }?>    
                 </ul>
             </div>
         </div>
-    </div>    
+    </div>  
+    <script type="text/javascript">
+       $(document).ready(function(){
+           
+            $(".course-nav-item").each(function(index){ 
+                    
+                $('#course-nav-item-'+index).click(
+                  function(event){
+                  console.log(index);
+                 for (i=1;i<$('.course-nav-item').length;i++){
+                     if (i==index) {
+                        $('.course-nav-item0-'+i).show();
+                        $('#course-nav-item-'+i).css('background','red');
+                    }else{
+                        $('.course-nav-item0-'+i).hide();
+                        $('#course-nav-item-'+i).css('background','');
+                    }
+                 }
+
+
+                  event.stopPropagation();
+                  event.preventDefault();
+                });
+           });
+       });
+   </script>  
     <div class="classShow">
   	    <div class="classShowNew">
      		<div class="classShow-title">最新课程</div>
@@ -103,5 +123,6 @@
      	</div>
     </div>
 </div>
+
 </body>
 </html>
