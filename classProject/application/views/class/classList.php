@@ -37,8 +37,8 @@
                     </li>
                     <?php foreach($grade as $u=>$v){ ?>
                     <?php foreach($v as $uu=>$vv){ ?>
-                    <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($uu)?>" id="course-nav-item-<?php echo($uu)?>"  ><?php echo($vv);?></a>
+                    <li class="course-nav-item on" id="course-nav-item-<?php echo($uu)?>">
+                    <a href="#" ><?php echo($vv);?></a>
                     </li>
                     <?php } ?>
                     <?php } ?>
@@ -56,7 +56,7 @@
                     <?php foreach ($subject as $u => $v) {?>
                     <?php foreach ($v as $uu => $vv) {?>
                     <li class="course-nav-item on course-nav-item0-<?php echo($vv['Grade'])?>">
-                        <a href="classList?grade=<?php echo($vv['Grade']);?>&classid=<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
+                        <a href="#" grade="<?php echo($vv['Grade']);?>" class="courseClass" id="course-<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
                     </li>
                     <?php }?>
                     <?php }?>    
@@ -91,12 +91,38 @@
                         $('#course-nav-item-'+i).css('background','');
                     }
                  }
-
-
                   event.stopPropagation();
                   event.preventDefault();
                 });
-           });
+            });
+            $(".courseClass").each(function(index){
+                $(".course-nav-item").each(function(j){
+                $('.course-nav-item0-'+j+' #course-'+index).click(
+                  function(event){
+                   
+                    $.ajax({
+                        type:"POST",
+                        url:"classList?grade="+j+"&classid="+index,
+                        dataType:"JSON",
+                        success:function(data){
+                        },
+                        error:function(jqXHR){
+                        }
+                    }); 
+                  for (i=1;i<$('.courseClass').length;i++){
+                     if (i==index) {
+                        
+                        $('#course-'+i).css('background','red');
+                    }else{
+                        
+                        $('#course-'+i).css('background','');
+                    }
+                 }
+                  event.stopPropagation();
+                  event.preventDefault();
+                });
+              });
+            });
        });            
    </script>  
     <div class="classShow">
