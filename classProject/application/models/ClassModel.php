@@ -84,5 +84,19 @@ class ClassModel extends CI_Model{
         $data = $query->result_array();
 		return isset($data[0])?true:false;
     }
+    /*
+    * 获取课程列表
+    * @param $MemberID     int  课程ID
+    * @return array
+    */
+    public function getClassList($offset,$num,$where){
+        $this->db->select('ClassID,ClassNo,Grade,Image,SubjectID,Price');
+        foreach ($where as $key => $value) {
+            $this->db->where($key,$value);
+        }
+        $query = $this->db->get('Tbl_Class');
+        $data = $query->result_array();
+        return $data;
+    }
 }
 ?>

@@ -9,6 +9,25 @@ class Classes extends CI_Controller {
         $this->load->model('CommonModel');
         $this->load->config('myconfig');
     }
+    public function classList(){
+        $where = array();
+        $return_data = $this->ClassModel->getSubjectList();
+        $grade = $this->config->item('grade');
+        $subject = array();
+        foreach ($return_data as $value) {
+            $subject[$value['Grade']][] = $value;
+        }
+        $num = 20;
+        $page = $this->input->get('page');
+        $page = $page?$page:0;
+        $offset = $page*$num;
+        $classList = $this->ClassModel->getClassList($offset,$num,$where);
+        $data['subject'] = $subject;
+        $data['grade'] = $grade;
+        $data['classList'] = $classList;
+        // print_r($data);exit;
+        $this->load->view('WelcomePage',$data);
+    }
     public function getSubjectListByGrade($grade)
     {
     	$data = $this->ClassModel->getSubjectListByGrade($grade);    	
