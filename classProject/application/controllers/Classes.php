@@ -26,7 +26,7 @@ class Classes extends CI_Controller {
         $data['grade'] = $grade;
         $data['classList'] = $classList;
         // print_r($data);exit;
-        $this->load->view('WelcomePage',$data);
+        $this->load->view('class/classList',$data);
     }
     public function getSubjectListByGrade($grade)
     {
