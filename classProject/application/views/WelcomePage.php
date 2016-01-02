@@ -34,7 +34,7 @@
 	</div>
 	<div class="navleft">
 	   <ul>
-		<div class="navleft-tittle"><a href="User/classList">全部课程分类</a></div>
+		<div class="navleft-tittle"><a href="Classes/classList">全部课程分类</a></div>
 		<div class="navleft-content">
 		    <li>高中</li>
 		    <li class="grade">
