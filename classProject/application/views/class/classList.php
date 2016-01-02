@@ -11,7 +11,19 @@
 <body>
 <div class="box">
 	
-    <div class="navtop"></div>
+    <div class="navtop">
+        <span class="navtop-logo">好教乐学</span>
+        <?php if(!$_SESSION['userInfo']){ ?>
+        <ul>
+            <li><a href="../User/login" >登录</a></li>
+            <li><a href="../User/reg" >注册</a></li>
+        </ul>
+        <?php }else{ ?>
+        <ul>
+            <li><a href="../User/doLogout" >退出</a></li>
+        </ul>
+        <?php } ?>
+    </div>
     <div class="course-nav">
         <div class="course-nav-hd">
             <span>全部课程</span>
@@ -45,7 +57,7 @@
                     </li>
                     <?php foreach($grade['primary'] as $key=>$value){ ?>
                     <li class="course-nav-item on">                       
-                        <a href="classList?grade=<?php echo($key)?>"><?php echo($value);?></a>
+                        <a href="classList?grade=<?php echo($key);?>"><?php echo($value);?></a>
                     </li>
                     <?php } ?>
                 </ul>
@@ -55,10 +67,12 @@
             <span class="hd 1">科目:</span>
             <div class="bd">
                 <ul class="">
-                    <?php foreach($subject[$key] as $value){ ?>
-                    <li class="course-nav-item on">                       
-                        <a href="classList?subject=<?php echo($value['SubjectID'])?>&grade=<?php echo($key);?>&page= "  id="<?php echo($key)?>"><?php echo($value['Title']);?></a>
-                    </li>
+                    <?php foreach($subject[$key] as $key => $value){ ?> 
+                      
+                      <li class="course-nav-item on">                       
+                        <a href="classList?grade=<?php echo($value) ?>" ><?php echo($value['Title']);?></a>
+                      </li>  
+                    
                     <?php } ?>
                 </ul>
             </div>

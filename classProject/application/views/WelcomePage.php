@@ -48,7 +48,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
@@ -68,7 +68,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
@@ -88,7 +88,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
