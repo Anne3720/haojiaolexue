@@ -42,16 +42,18 @@
     </div>  
     <div class="classShow">
   	    <div class="classShowNav">
-        <?php foreach ($classList as $u => $v) {
-              foreach ($v as $uu => $vv) {?>
-            <a href="/Classes/classList/<?php echo($u);?>?grade=<?php echo($vv['Grade']);?>&class=<?php echo($vv['ClassID']);?>&subject=<?php echo($vv['SubjectID']);?>">
+        <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
+                foreach ($classList as $u => $v) {                 
+                foreach ($v as $uu => $vv) {
+                    if($_GET['grade']==$vv['Grade']){ ?>                
+            <a href="">
                 <span>
                     <img src="" alt="" />
-                    <p><?php echo($vv['ClassID']); ?></p>
+                    <p><?php echo($vv['grade']); ?></p>
                 </span>
             </a>     
-        <?php }} ?>   		
-     	</div>
+        <?php }}}} ?>         
+        </div>
     </div>
 
     <div class="classListPage">
