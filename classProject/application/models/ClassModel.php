@@ -89,14 +89,27 @@ class ClassModel extends CI_Model{
     * @param $MemberID     int  课程ID
     * @return array
     */
-    public function getClassList($offset,$num,$where){
+    public function getClassList($offset,$limit,$where){
         $this->db->select('ClassID,ClassNo,Grade,Image,SubjectID,Price');
         foreach ($where as $key => $value) {
             $this->db->where($key,$value);
         }
+        $this->db->limit($limit,$offset);
         $query = $this->db->get('Tbl_Class');
         $data = $query->result_array();
         return $data;
+    }
+    /*
+    * 获取课程总数
+    * @param $MemberID     int  课程ID
+    * @return array
+    */
+    public function getClassTotal($where){
+        foreach ($where as $key => $value) {
+            $this->db->where($key,$value);
+        }
+        $num = $this->db->count_all_results('Tbl_Class');
+        return $num;
     }
 }
 ?>
