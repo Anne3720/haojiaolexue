@@ -42,18 +42,26 @@
     </div>  
     <div class="classShow">
   	    <div class="classShowNav">
-        <?php foreach ($subject as $u => $v) {
+        <?php foreach ($classList as $u => $v) {
               foreach ($v as $uu => $vv) {?>
-            <a href="/Classes/classList?grade=<?php echo($vv['Grade']);?>&subject=<?php echo($vv['SubjectID']);?>">
+            <a href="/Classes/classList/<?php echo($u);?>?grade=<?php echo($vv['Grade']);?>&class=<?php echo($vv['ClassID']);?>&subject=<?php echo($vv['SubjectID']);?>">
                 <span>
                     <img src="" alt="" />
-                    <p><?php echo($vv['Title']); ?></p>
+                    <p><?php echo($vv['ClassID']); ?></p>
                 </span>
             </a>     
         <?php }} ?>   		
      	</div>
     </div>
-   <?php echo $page_links;?>
+
+    <div class="classListPage">
+        <ul>
+            <li>
+            <?php echo($page_links);?>
+            </li>
+        </ul>
+    </div>
+   
   
 <!--script文件-->
 <!--script type="text/javascript" src="/public/js/classListNav.js"></script-->

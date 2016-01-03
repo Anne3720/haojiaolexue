@@ -7,19 +7,19 @@
 	overflow: hidden;
 }
 .classShowNav span {
-	display: inline-block;
+	display: block;
 	width: 200px; 
 	height: 200px;
 	border: 2px solid red;
 	margin:10px 35px; 
 	padding: 10px;
+	float: left;
 }
 .classShowNav span img {
 	width: 200px;
 	height: 150px;
 }
-.classShowNav {
-	border:2px solid red; 
+.classShowNav { 
 	margin: 50px 0;
 }
 .classShow-title {
@@ -73,4 +73,26 @@ a {
 
 .on{
 	background-color: red;
+}
+/*页码样式*/
+.classListPage {
+	width:500px;
+	margin: 20px auto;
+	font-size: 18px;
+}
+.classListPage li a,strong {
+	padding: 10px 5px;
+	display: inline-block;
+	color: black;
+	width: 40px;
+    height: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.classListPage li strong {
+    color: red;
+}
+.classListPage li a:hover {
+	color: red;
+	text-decoration:underline;
 }
