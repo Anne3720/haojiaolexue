@@ -47,7 +47,7 @@
             <a href="/Classes/classList/<?php echo($u);?>?grade=<?php echo($vv['Grade']);?>&class=<?php echo($vv['ClassID']);?>&subject=<?php echo($vv['SubjectID']);?>">
                 <span>
                     <img src="" alt="" />
-                    <p><?php echo($vv['ClassID']); ?></p>
+                    <p><?php echo($vv['SubjectID']); ?></p>
                 </span>
             </a>     
         <?php }} ?>   		
