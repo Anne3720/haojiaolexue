@@ -8,13 +8,13 @@
             <span class="hd 1">年级:</span>
             <div class="bd">
                 <ul class="">
-                    <li class="course-nav-item on">
-                        <a href="classList">全部</a>
+                    <li class="course-nav-item">
+                        <a href="/Classes/classList">全部</a>
                     </li>
                     <?php foreach($grade as $u=>$v){ ?>
                     <?php foreach($v as $uu=>$vv){ ?>
-                    <li class="course-nav-item on" id="course-nav-item-<?php echo($uu)?>">
-                    <a href="/classList?grade=<?php echo($uu)?>" ><?php echo($vv);?></a>
+                    <li class="course-nav-item <?php if(isset($_GET['grade'])&&$_GET['grade']==$uu) echo("on");?>" id="course-nav-item-<?php echo($uu)?>">
+                    <a href="/Classes/classList?grade=<?php echo($uu)?>" ><?php echo($vv);?></a>
                     </li>
                     <?php } ?>
                     <?php } ?>
@@ -25,17 +25,17 @@
             <span class="hd 1">科目:</span>
             <div class="bd">
                 <ul class="">
-                    <li class="course-nav-item on">
+                    <li class="course-nav-item">
                         <a href="classList" >全部</a>
                     </li>
-                    
-                    <?php foreach ($subject as $u => $v) {?>
-                    <?php foreach ($v as $uu => $vv) {?>
-                    <li class="course-nav-item on course-nav-item0-<?php echo($vv['Grade'])?>" style="display: none;">
-                        <a href="/classList?grade=<?php echo($vv['Grade']);?>&classid=<?php echo($vv['SubjectID']);?>"  class="courseClass" id="course-<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
-                    </li>
-                    <?php }?>
-                    <?php }?>    
+                    <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
+                        foreach ($subject as $u => $v) {
+                            if($_GET['grade']==$u){
+                                foreach ($v as $uu => $vv) { ?>
+                            <li class="course-nav-item course-nav-item0-<?php echo($vv['Grade'])?> <?php if(isset($_GET['subject'])&&$_GET['subject']==$vv['SubjectID']) echo("on");?>">
+                            <a href="/Classes/classList?grade=<?php echo($vv['Grade']);?>&subject=<?php echo($vv['SubjectID']);?>"  class="courseClass" id="course-<?php echo($vv['SubjectID']);?>"> <?php echo($vv['Title']);?></a> 
+                            </li>
+                    <?php  }}}}?>    
                 </ul>
             </div>
         </div>
@@ -65,5 +65,5 @@
      	</div>
     </div>
 <!--script文件-->
-<script type="text/javascript" src="/public/js/classListNav.js"></script>
+<!--script type="text/javascript" src="/public/js/classListNav.js"></script-->
 <?php include('/../footer.php');?>

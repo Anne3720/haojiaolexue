@@ -41,6 +41,7 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
+        // print_r($data);exit;
         $this->load->view('class/classList',$data);
     }
     public function getSubjectListByGrade($grade)
