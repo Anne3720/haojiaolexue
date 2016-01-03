@@ -48,7 +48,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
@@ -68,7 +68,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
@@ -88,7 +88,7 @@
   					<dt><a href="#"><?php echo($value);?></a></dt>
 					<dd>
 						<?php foreach ($subject[$key] as $v) {?>
-						<a href="Classes/getClassListByGradeAndSubject/<?php echo($key);?>/<?php echo($v['SubjectID']);?>"><?php echo($v['Title']);?></a>
+						<a href="Classes/classList?grade=<?php echo($key);?>"><?php echo($v['Title']);?></a>
 						<?php } ?>
 					</dd>
   		       	<?php }?>
@@ -99,29 +99,6 @@
 	  </ul>
     </div>
 </div>
-   <script type="text/javascript">
-	   $(document).ready(function(){
-	   	   
-	   	   $(".navleft-content").each(function(index){	   
-	   	   	   	$(".navleft-content").attr({
-	   	   	   		id:function(index,oldValue){
-                        return 'navleft-content-'+index;
-	   	   	   		}
-	   	   	   	});
-	   	   	   	$(".navleft-hide").attr({
-	   	   	   		id:function(index,oldValue){
-                        return 'navleft-hide-'+index;
-	   	   	   		}
-	   	   	   	});
-	   	   	   $('#navleft-content-'+index).hover(
-	   	   	      function(){
-	   	   		  $("#navleft-hide-"+index).show();
-	   	        },  	   	  
-                  function(){
-                  $("#navleft-hide-"+index).hide();
-                });
-	   	   });
-	   });
-   </script>
+<script type="text/javascript" src="/public/js/navLeft.js"></script>
 </body>
 </html>

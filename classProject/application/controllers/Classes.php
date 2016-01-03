@@ -34,7 +34,7 @@ class Classes extends CI_Controller {
     }
     public function getClassListByGradeAndSubject($grade,$subject)
     {
-    	$data = $this->ClassModel->getClassListByGradeAndSubject($grade,$subject);    	
+    	$data = $this->ClassModel->getClassListByGradeAndSubject($grade,$subject);   	
         $this->load->view('Class/ClassList.php',$data);
     }
     public function getVideoByClassID($classid){
