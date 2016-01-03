@@ -9,19 +9,28 @@ class Classes extends CI_Controller {
         $this->load->model('CommonModel');
         $this->load->config('myconfig');
         $this->load->library('pagination');
+        $this->load->helper('url');
     }
     public function classList(){
-        $where = array();
         $return_data = $this->ClassModel->getSubjectList();
         $grade = $this->config->item('grade');
         $subject = array();
         foreach ($return_data as $value) {
             $subject[$value['Grade']][] = $value;
         }
-        $num = 2;
-        $page = $this->input->get('page');
-        $page = $page?$page:0;
-        $offset = $page*$num;
+        $num = 20;
+        $page = $this->uri->segment(3);
+        $page = $page?$page:1;
+        $offset = $num*($page-1);
+        $where = array();
+        $inputGrade = $this->input->get('grade');
+        $inputSubject = $this->input->get('subject');
+        if(!empty($inputGrade)){
+            $where['Grade'] = $inputGrade;
+        }
+        if(!empty($inputSubject)){
+            $where['SubjectID'] = $inputSubject;
+        }
         $classList = $this->ClassModel->getClassList($offset,$num,$where);
         $data['subject'] = $subject;
         $data['grade'] = $grade;
@@ -41,7 +50,6 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
-        // print_r($data);exit;
         $this->load->view('class/classList',$data);
     }
     public function getSubjectListByGrade($grade)
