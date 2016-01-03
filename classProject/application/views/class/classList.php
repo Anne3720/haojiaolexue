@@ -14,7 +14,7 @@
                     <?php foreach($grade as $u=>$v){ ?>
                     <?php foreach($v as $uu=>$vv){ ?>
                     <li class="course-nav-item on" id="course-nav-item-<?php echo($uu)?>">
-                    <a href="#" ><?php echo($vv);?></a>
+                    <a href="/classList?grade=<?php echo($uu)?>" ><?php echo($vv);?></a>
                     </li>
                     <?php } ?>
                     <?php } ?>
@@ -26,13 +26,13 @@
             <div class="bd">
                 <ul class="">
                     <li class="course-nav-item on">
-                        <a href="classList">全部</a>
+                        <a href="classList" >全部</a>
                     </li>
                     
                     <?php foreach ($subject as $u => $v) {?>
                     <?php foreach ($v as $uu => $vv) {?>
-                    <li class="course-nav-item on course-nav-item0-<?php echo($vv['Grade'])?>">
-                        <a href="#" grade="<?php echo($vv['Grade']);?>" class="courseClass" id="course-<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
+                    <li class="course-nav-item on course-nav-item0-<?php echo($vv['Grade'])?>" style="display: none;">
+                        <a href="/classList?grade=<?php echo($vv['Grade']);?>&classid=<?php echo($vv['SubjectID']);?>"  class="courseClass" id="course-<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
                     </li>
                     <?php }?>
                     <?php }?>    
