@@ -14,7 +14,7 @@
                     <?php foreach($grade as $u=>$v){ ?>
                     <?php foreach($v as $uu=>$vv){ ?>
                     <li class="course-nav-item <?php if(isset($_GET['grade'])&&$_GET['grade']==$uu) echo("on");?>" >
-                    <a href="/Classes/classList?grade=<?php echo($uu)?>&subject=" ><?php echo($vv);?></a>
+                    <a href="/Classes/classList?grade=<?php echo($uu)?>&subject=0" ><?php echo($vv);?></a>
                     </li>
                     <?php }} ?>
                    
@@ -27,7 +27,7 @@
                 <ul class="">
                     <li class="course-nav-item">
                     <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){?>
-                        <a href="/Classes/classList?grade=<?php echo ($_GET['grade']);?>&subject=" >全部</a>
+                        <a href="/Classes/classList?grade=<?php echo ($_GET['grade']);?>&subject=0" >全部</a>
                     <?php } ?>
                     </li>
                     <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
@@ -53,16 +53,15 @@
         </div>
   	    <div class="classShowNav">
         <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
-                foreach ($classList as $u => $v) {                 
-                foreach ($v as $uu => $vv) {
-                    if($_GET['grade']== $vv['Grade']){ ?>                
+                foreach ($classList as $u => $v) {                  
+                    if($_GET['grade']== $v['Grade']){ ?>                
             <a href="">
                 <span>
                     <img src="" alt="" />
-                    <p><?php echo($vv['ClassID']); ?></p>
+                    <p><?php echo($v['ClassNO']); ?></p>
                 </span>
             </a>     
-        <?php }}}} ?>         
+        <?php }}} ?>         
         </div>
     </div>
 
