@@ -78,7 +78,7 @@ a {
 /*页码样式*/
 .classListPage {
 	width:500px;
-	margin: 20px auto;
+	margin: 20px 0 20px 500px;
 	font-size: 18px;
 }
 .classListPage li a,strong {
