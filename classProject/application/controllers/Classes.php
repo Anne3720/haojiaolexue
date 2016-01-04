@@ -50,24 +50,17 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
+        print_r($data['classList']);exit;
         $this->load->view('class/classList',$data);
     }
-    public function getSubjectListByGrade($grade)
-    {
-    	$data = $this->ClassModel->getSubjectListByGrade($grade);    	
-        $this->load->view('Class/SubjectList.php',$data);
-    }
-    public function getClassListByGradeAndSubject($grade,$subject)
-    {
-    	$data = $this->ClassModel->getClassListByGradeAndSubject($grade,$subject);   	
-        $this->load->view('Class/ClassList.php',$data);
-    }
-    public function getVideoByClassID($classid){
-        $userInfo = json_decode($this->session->userdata('userInfo'));
+    //根据课程id获取对应视频地址
+    public function video($classid){
+        $urerInfo = $this->session->userdata('userInfo');
         //未登录跳转
         if(!$userInfo){
         	redirect('/User/Login');
         }
+        $userInfo = json_decode($userInfo);
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
         $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
@@ -78,7 +71,7 @@ class Classes extends CI_Controller {
         }
     }
     //获取用户已购买课程列表
-    public function getMyClass(){
+    public function myClass(){
         $userInfo = json_decode($this->session->userdata('userInfo'));
         //未登录跳转
         if(!$userInfo){

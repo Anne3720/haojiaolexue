@@ -20,32 +20,6 @@ class ClassModel extends CI_Model{
 		return $data;
     }
     /*
-    * 获取某个年级科目列表
-	* @param $grade     int  年级
-	* @return array
-    */
-    public function getSubjectListByGrade($grade){
-    	$this->db->select('*');
-		$this->db->where('Grade',$grade);
-		$query = $this->db->get('Tbl_Subject');
-        $data = $query->result_array();
-		return $data;
-    }
-    /*
-    * 获取年级课程信息列表
-	* @param $grade     int  年级
-	* @param $subject   int  科目ID
-	* @return array
-    */
-    public function getClassListByGradeAndSubject($grade,$subject){
-    	$this->db->select('ClassID,ClassNo,Grade,Image,SubjectID,Price');
-		$this->db->where('Grade',$grade);
-		$this->db->where('SubjectID',$subject);
-		$query = $this->db->get('Tbl_Class');
-        $data = $query->result_array();
-		return $data;
-    }
-    /*
     * 获取课程视频地址
 	* @param $classid     int  课程ID
 	* @return array
@@ -86,7 +60,9 @@ class ClassModel extends CI_Model{
     }
     /*
     * 获取课程列表
-    * @param $MemberID     int  课程ID
+    * @param $offset     int  查询偏移量
+    * @param $limit      int  查询条数
+    * @param $where      array查询条件
     * @return array
     */
     public function getClassList($offset,$limit,$where){
@@ -101,7 +77,7 @@ class ClassModel extends CI_Model{
     }
     /*
     * 获取课程总数
-    * @param $MemberID     int  课程ID
+    * @param $where    array   查询条件
     * @return array
     */
     public function getClassTotal($where){
