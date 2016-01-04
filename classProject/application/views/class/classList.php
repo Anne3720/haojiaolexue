@@ -63,6 +63,17 @@
             </a>     
         <?php }}} ?>         
         </div>
+        <div class="classShowNav">
+        <?php if(!isset($_GET['grade'])){
+                foreach ($classList as $u => $v) {?>                
+            <a href="">
+                <span>
+                    <img src="" alt="" />
+                    <p><?php echo($v['SubjectID']); ?></p>
+                </span>
+            </a>     
+        <?php }} ?>         
+        </div>
     </div>
 
     <div class="classListPage">
