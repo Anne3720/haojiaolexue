@@ -69,6 +69,7 @@ a {
     float: left;
     border-bottom: 2px solid black;
     padding: 10px 10px 5px 0px;
+    overflow: hidden;
 }
 
 .on{
@@ -95,4 +96,18 @@ a {
 .classListPage li a:hover {
 	color: red;
 	text-decoration:underline;
+}
+
+/*切换按钮样式*/
+.classChose {
+	
+	width: 300px;
+}
+.classChose li {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin:20px auto 0;
+	width: 50px;
+	text-align: center;
 }
