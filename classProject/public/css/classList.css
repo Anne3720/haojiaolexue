@@ -6,20 +6,20 @@
 	margin: 30px auto 10px;
 	overflow: hidden;
 }
-.classShow span {
-	display: inline-block;
+.classShowNav span {
+	display: block;
 	width: 200px; 
 	height: 200px;
 	border: 2px solid red;
 	margin:10px 35px; 
 	padding: 10px;
+	float: left;
 }
-.classShow span img {
+.classShowNav span img {
 	width: 200px;
 	height: 150px;
 }
-.classShowNew,.classShowHot {
-	border:2px solid red; 
+.classShowNav { 
 	margin: 50px 0;
 }
 .classShow-title {
@@ -69,8 +69,45 @@ a {
     float: left;
     border-bottom: 2px solid black;
     padding: 10px 10px 5px 0px;
+    overflow: hidden;
 }
 
 .on{
 	background-color: red;
+}
+/*页码样式*/
+.classListPage {
+	width:500px;
+	margin: 20px 0 20px 500px;
+	font-size: 18px;
+}
+.classListPage li a,strong {
+	padding: 10px 5px;
+	display: inline-block;
+	color: black;
+	width: 40px;
+    height: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.classListPage li strong {
+    color: red;
+}
+.classListPage li a:hover {
+	color: red;
+	text-decoration:underline;
+}
+
+/*切换按钮样式*/
+.classChose {
+	
+	width: 300px;
+}
+.classChose li {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin:20px auto 0;
+	width: 50px;
+	text-align: center;
 }

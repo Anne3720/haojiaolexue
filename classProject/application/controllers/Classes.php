@@ -18,7 +18,7 @@ class Classes extends CI_Controller {
         foreach ($return_data as $value) {
             $subject[$value['Grade']][] = $value;
         }
-        $num = 20;
+        $num =8;
         $page = $this->uri->segment(3);
         $page = $page?$page:1;
         $offset = $num*($page-1);
@@ -52,6 +52,9 @@ class Classes extends CI_Controller {
         $data['page_links'] = $this->pagination->create_links();
         print_r($data['classList']);exit;
         $this->load->view('class/classList',$data);
+        //var_dump($classList);exit;
+        //print_r($data);exit;
+
     }
     //根据课程id获取对应视频地址
     public function video($classid){
