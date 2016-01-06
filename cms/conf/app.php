@@ -18,7 +18,13 @@ $development = array(
             'host' => 'localhost',
             'dbname' => 'cms_admin',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
+        ),
+        'db' => array(
+            'host' => 'localhost',
+            'dbname' => 'db',
+            'username' => 'root',
+            'password' => 'root',
         ),
         'test' => array(
             'host' => 'localhost',
