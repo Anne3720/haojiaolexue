@@ -52,12 +52,12 @@ html,body .box{
 	display: block;
 	margin:25px auto;
 	font-size: 24px;
-	background: #ed7c14;
+	background: #0000ff;
 	border: 0;
 	margin-left: 50px;
 }
 #btnLogin:hover {
-	background: #0000ff;
+	background:#ed7c14 ;
 }
 .login-title {
 	height: 60px;

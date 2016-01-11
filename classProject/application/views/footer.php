@@ -7,7 +7,7 @@
     		<li><a href="">意见反馈</a></li>
     		<li><a href="">友情链接</a></li>
     	</ul>
-    	<span style="font-family:arial;">Copyright © 2015 hjlx.com</span>
+    	<span style="font-family:arial;font-size: 12px;">Copyright © 2015 hjlx.com</span>
     </div>
 </body>
 </html>

@@ -10,9 +10,9 @@
 <body>
     <div class="navtop">
         <span class="navtop-logo">好教乐学</span>
-        <span><a href="/Classes/classList">课程</a></span>
+        <ul>
+             <li class="navtop-class"><a href="/Classes/classList">课程</a></li>
         <?php if(!isset($_SESSION['userInfo'])&&empty($_SESSION['userInfo'])){ ?>
-	    <ul>
 		    <li><a href="/User/login" >登录</a></li>
 		    <li><a href="/User/reg" >注册</a></li>
 	    </ul>

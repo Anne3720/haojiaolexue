@@ -31,6 +31,7 @@
 	border-bottom:2px solid red;
 	margin:5px 0;  
 }
+
 /*顶部导航栏*/
 a {
 	text-decoration: none;
@@ -38,10 +39,12 @@ a {
 .course-nav {
 	width: 90%;
 	margin: 20px auto;
+
 }
 .course-nav-item{
 	float: left;
 	margin: 5px 5px 0px;
+
 }
 .course-nav-hd span {
 	font-size: 26px;
@@ -50,6 +53,7 @@ a {
 	line-height: 30px;
 	padding: 5px 10px;
 	height: 40px;
+
 }
 .course-nav-item a {
 	display: inline-block;
@@ -58,22 +62,27 @@ a {
 	width: 50px;
 	text-align: center;
 }
+.course-nav-item:hover a {
+	color: #0000ff;
+}
 .hd {
 	display:inline-block;
 	width: 50px;
 	margin: 10px;
 	float: left;
+	color: red;
+	font-weight: bold;
 }
 .course-nav-row {
 	width: 100%;
     float: left;
     border-bottom: 2px solid black;
-    padding: 10px 10px 5px 0px;
+    padding: 20px 10px 5px 0px;
     overflow: hidden;
 }
 
 .on{
-	background-color: red;
+	background-color: #ff0000;
 }
 /*页码样式*/
 .classListPage {
