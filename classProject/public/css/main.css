@@ -63,20 +63,23 @@ li.navtop-class {
 /*左侧导航栏的css文件*/
 .navleft{
 	position: relative;
-	top: 20px;
+	top: 70px;
 	left: 20px;
-	background: #5affc8;
     width: 240px;
+    border: 2px solid #000;
+    border-bottom-style: none;
 }
 .navleft ul .navleft-tittle {
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	border-bottom: 1px solid #dcdcf3;
+	border-bottom: 2px solid #000;
 }
 .navleft ul .navleft-tittle a {
 	text-decoration: none;
 	font-size: 26px;
+    font-weight: bolder;
+	color: #000;	
 }
 .navleft ul{
 	width: 240px;
@@ -101,7 +104,7 @@ li.navtop-class {
 	color: #f00;
 }
 .grade {
-	border-bottom: 1px solid #dcdcf3;
+	border-bottom: 2px solid #000;
 }
 .navleft-high1 {
 	
@@ -110,7 +113,9 @@ li.navtop-class {
 .navleft-hide {
     display: none;
     width: 500px;
-    background: #5affc8;
+   /* background: #000;*/
+    border: 2px solid #000;
+    border-bottom-style: none;
     position: absolute;
     top: -100px;
     left: 240px;
@@ -129,7 +134,7 @@ li.navtop-class {
     text-align: center;
 	width: 500px;
 	padding: 5px 0px;
-	border-bottom: 1px solid #dcdcf3;
+	border-bottom: 1px solid #000;
 }
 .navleft-hide dl dt a {
     display: inline-block;
@@ -140,7 +145,7 @@ li.navtop-class {
 .navleft-hide dl dd {
 	margin: 0;
 	text-align: center;
-	border-bottom: 1px solid #dcdcf3;
+	border-bottom: 2px solid #000;
 }
 .navleft-hide dl dd a {
 	display: inline-block;
