@@ -31,8 +31,10 @@ class Admin_Subject_ListController extends Admin_AbstractController
             $option['bind'] = array($grade);
         }
 
-        $data['list'] = Admin_SubjectModel::instance()->fetchAll($option);
+        $data['subjectList'] = Admin_SubjectModel::instance()->fetchAll($option);
         $data['count'] = Admin_SubjectModel::instance()->count($option);
+        $data['grade'] = RThink_Config::get('app.grade');
+        // var_dump($data);exit;
         $pagination = new Pagination();
         $data['pagination'] = $pagination->maxnum($data['count'], $perpage)->show('page_metronic');
         $this->setInvokeArg('layout', 'admin1_layout');
