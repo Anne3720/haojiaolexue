@@ -1,9 +1,8 @@
-<table width="100%" cellspacing="0">
+<table width="100%" cellspacing="0" class="table table-bordered">
     <thead>
     <tr>
         <th width="30">年级</th>
         <th width="30">科目</th>
-        <th width="200">管理操作</th>
     </tr>
     </thead>
     <tbody>
@@ -11,13 +10,6 @@
         <tr>
             <td align='center'><?php echo($val['Title']);?></td>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
-            <td align='center'>
-                <a href="/admin/menu/edit?parent_id=<?php echo $val['id']; ?>/?height=350" class="thickbox"
-                   title="添加子菜单">添加子菜单</a> |
-                <a href="/admin/menu/edit?id=<?php echo $val['id']; ?>&height=350" class="thickbox"
-                   title="菜单编辑">修改</a> |
-                <a href="/admin/menu/delete?id=<?php echo $val['id']; ?>" class="zajax">删除</a>
-            </td>
         </tr>
     <?php } ?>
     </tbody>

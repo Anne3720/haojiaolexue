@@ -37,6 +37,7 @@ class Admin_Subject_ListController extends Admin_AbstractController
         // var_dump($data);exit;
         $pagination = new Pagination();
         $data['pagination'] = $pagination->maxnum($data['count'], $perpage)->show('page_metronic');
+        $data['menu'] = Widget_Admin_MenuModel::headerMenu();
         $this->setInvokeArg('layout', 'admin1_layout');
         $this->render($data);
     }
