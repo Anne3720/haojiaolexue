@@ -18,7 +18,7 @@ class Classes extends CI_Controller {
         foreach ($return_data as $value) {
             $subject[$value['Grade']][] = $value;
         }
-        $num =8;
+        $num =2;
         $page = $this->uri->segment(3);
         $page = $page?$page:1;
         $offset = $num*($page-1);
@@ -50,7 +50,7 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
-        print_r($data['classList']);exit;
+        // print_r($data['classList']);exit;
         $this->load->view('class/classList',$data);
         //var_dump($classList);exit;
         //print_r($data);exit;

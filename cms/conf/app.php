@@ -33,13 +33,13 @@ $development = array(
             'host' => 'localhost',
             'dbname' => 'cms_admin',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
         ),
         'db' => array(
             'host' => 'localhost',
             'dbname' => 'db',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
         ),
         'test' => array(
             'host' => 'localhost',
