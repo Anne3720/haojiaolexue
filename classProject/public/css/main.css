@@ -1,7 +1,7 @@
 /*全局页面的设置*/
 *{margin: 0 ;padding: 0;}
 
-html,body {
+body {
 	margin:0 auto;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699FF', endColorstr='#6699FF'); /*  IE */
 	background-image:linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
@@ -9,29 +9,30 @@ html,body {
 	background-image:-moz-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
 	background-image:-webkit-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
 	background-image:-ms-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	
-}
-.box {
-	position: relative;
 	width: 100%;
 	height: 100%;
-
+	position: relative;
 }
+
 ul,li {list-style: none;}
-
-
+.navcenter {
+	height: 230px;
+}
+a {
+	text-decoration: none;
+}
 /*顶部固定导航栏的css样式*/
 .navtop {
     height: 50px;
     font-size: 30px;
-    background: #963232;
+    background: #000000;
     overflow: hidden;
+    color: #fff;
 }
 span.navtop-logo {
 	display: inline-block;
 	height: 50px;
 	line-height: 50px;
-	border-right: 1px solid red;
 	padding: 0 20px;
 }
 .navtop ul {
@@ -41,71 +42,83 @@ span.navtop-logo {
 .navtop ul li {
 	float: left;
 	height: 50px;
-	line-height: 50px;
+	line-height: 45px;
 	padding: 0px 40px;
-	border-left: 1px solid red;
 }
 .navtop a {
     text-decoration: none;
+    color: #fff;
+    font-size: 20px;
 }
 .navtop ul li:hover {
-	color: red;
+	color: #f00;
 	background: #6699FF;
 }
+li.navtop-class {
+    margin-right: 800px !important;
+}
 /*logo框的css样式*/
-
-/*主页登录框的css样式*/
-
 
 
 /*左侧导航栏的css文件*/
 .navleft{
 	position: relative;
-	top: 50px;
+	top: 70px;
 	left: 20px;
-	border: 1px solid red;
-    width: 200px;
+    width: 240px;
+    border: 2px solid #000;
+    border-bottom-style: none;
 }
 .navleft ul .navleft-tittle {
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	border-bottom: 1px solid red;
+	border-bottom: 2px solid #000;
 }
 .navleft ul .navleft-tittle a {
 	text-decoration: none;
 	font-size: 26px;
+    font-weight: bolder;
+	color: #000;	
 }
 .navleft ul{
-	width: 200px;
+	width: 240px;
 }
 .navleft ul li {
-	padding: 5px 10px;
+	padding: 10px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 22px;
 }
 .navleft ul li a {
-	width: 50px;
+	width: 60px;
 	height: 30px;
 	display:inline-block;
 	line-height: 30px;
 	text-decoration: none;
+	color: #000;
+	font-weight: normal;
+	font-size: 18px;
 }
 .navleft ul li a:hover {
-	color: red;
+	color: #f00;
 }
 .grade {
-	border-bottom: 1px solid red;
+	border-bottom: 2px solid #000;
 }
 .navleft-high1 {
 	
 }
-/*左侧导航栏的css文件1.高中具体科目*/
+/*左侧导航栏具体科目的css文件*/
 .navleft-hide {
     display: none;
-    width: 400px;
-    border: 2px solid black;
+    width: 500px;
+   /* background: #000;*/
+    border: 2px solid #000;
+    border-bottom-style: none;
     position: absolute;
-    top: -50px;
-    left: 200px;
+    top: -100px;
+    left: 240px;
     z-index: 9999;
 }
 .navleft-content {
@@ -119,26 +132,58 @@ span.navtop-logo {
 }
 .navleft-hide dl dt { 
     text-align: center;
-	width: 400px;
-	border-top: 1px solid black;
+	width: 500px;
+	padding: 5px 0px;
+	border-bottom: 1px solid #000;
 }
 .navleft-hide dl dt a {
-
-	color: red;
-	font-size: 24px;
+    display: inline-block;
+	color: #00f;
+	font-size: 22px;
+	font-weight: bold;
 }
 .navleft-hide dl dd {
 	margin: 0;
 	text-align: center;
-	border-top: 1px solid black;
+	border-bottom: 2px solid #000;
 }
 .navleft-hide dl dd a {
 	display: inline-block;
-	padding: 2px 15px;
-	color: red;
+	padding: 5px 25px;
+	color: #000;
+	height: 30px;
+	line-height: 30px;
 }
 .navleft-hide dl dd a:hover {
-	color: green;
+	color: #fff;
 	background: gray;
 }
-
+/*底部文件样式*/
+.footer {
+	background: #0a96ff;
+	position: relative;
+	height: 100px;
+	bottom:0px; 
+}
+.footer ul {
+	display: block;
+	margin: 10px auto;
+	width: 400px;
+    padding-top:20px;
+}
+.footer li {
+	display: inline-block;
+	margin: 10px;	 
+}
+.footer span {
+	display: block;
+	text-align: center;
+	padding-bottom:10px; 
+}
+.footer li a {
+	color: #000000;
+	font-size: 16px;
+}
+.footer li:hover a {
+	color: #fff;
+}

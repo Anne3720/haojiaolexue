@@ -1,0 +1,16 @@
+<table width="100%" cellspacing="0" class="table table-bordered">
+    <thead>
+    <tr>
+        <th width="30">年级</th>
+        <th width="30">科目</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($subjectList as $key => $val) { ?>
+        <tr>
+            <td align='center'><?php echo($val['Title']);?></td>
+            <td align='center'><?php echo($grade[$val['Grade']]);?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>

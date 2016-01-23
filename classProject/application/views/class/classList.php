@@ -4,11 +4,11 @@
         <div class="course-nav-hd">
             <span>全部课程</span>
         </div>
-        <div class="course-nav-row clearfix">
+        <div class="course-nav-row ">
             <span class="hd 1">年级:</span>
             <div class="bd">
                 <ul class="">
-                    <li class="course-nav-item">
+                    <li class="course-nav-item <?php if(!isset($_GET['grade'])) echo("on");?>">
                         <a href="/Classes/classList">全部</a>  
                     </li>
                     <?php foreach($grade as $u=>$v){ ?>
@@ -21,11 +21,11 @@
                 </ul>
             </div>
         </div>
-        <div class="course-nav-row clearfix">
+        <div class="course-nav-row ">
             <span class="hd 1">科目:</span>
             <div class="bd">
                 <ul class="">
-                    <li class="course-nav-item">
+                    <li class="course-nav-item <?php if(isset($_GET['subject'])&&$_GET['subject']==0) echo("on");?>">
                     <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){?>
                         <a href="/Classes/classList?grade=<?php echo ($_GET['grade']);?>&subject=0" >全部</a>
                     <?php } ?>

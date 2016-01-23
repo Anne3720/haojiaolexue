@@ -1,13 +1,5 @@
 <?php include('header.php');?>    
-    <div class="navcenter">
-	    <ul>
-		    <li></li>
-		    <li></li>
-		    <li></li>
-		    <li></li>
-		    <li></li>
-	    </ul>
-	</div>
+    
 	<div class="navleft">
 	   <ul>
 		<div class="navleft-tittle"><a href="/Classes/classList">全部课程分类</a></div>
@@ -74,5 +66,16 @@
 		
 	  </ul>
     </div>
+    <div class="navcenter">
+	    <ul>
+		    <li></li>
+		    <li></li>
+		    <li></li>
+		    <li></li>
+		    <li></li>
+	    </ul>
+	    
+	</div>
+
 <script type="text/javascript" src="/public/js/navLeft.js"></script>
 <?php include('footer.php');?>

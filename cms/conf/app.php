@@ -10,6 +10,21 @@ $development = array(
         'name' => 'RThink CMS',
         #是否在error页面展示异常;只有在debug=true时,对当前选项的配置才会生效
         'display_exceptions' => true,
+        'grade' =>array(
+            '1'=>'一年级',
+            '2'=>'二年级',
+            '3'=>'三年级',
+            '4'=>'四年级',
+            '5'=>'五年级',
+            '6'=>'六年级',
+            '7'=>'初一',
+            '8'=>'初二',
+            '9'=>'初三',
+            '10'=>'高一',
+            '11'=>'高二',
+            '12'=>'高三',
+        ),
+
     ),
 
     //数据库参数
@@ -18,7 +33,13 @@ $development = array(
             'host' => 'localhost',
             'dbname' => 'cms_admin',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
+        ),
+        'db' => array(
+            'host' => 'localhost',
+            'dbname' => 'db',
+            'username' => 'root',
+            'password' => 'root',
         ),
         'test' => array(
             'host' => 'localhost',
