@@ -18,7 +18,7 @@ class Classes extends CI_Controller {
         foreach ($return_data as $value) {
             $subject[$value['Grade']][] = $value;
         }
-        $num =2;
+        $num =8;
         $page = $this->uri->segment(3);
         $page = $page?$page:1;
         $offset = $num*($page-1);
