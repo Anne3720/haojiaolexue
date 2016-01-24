@@ -15,13 +15,6 @@ class Admin_IndexController extends Admin_AbstractController
         /** 验证是否登录 **/
         $data['admin'] = $this->verify(__METHOD__);
 
-//        $data['admin'] = array(
-//            'username' => 'zhangsan',
-//            'nick' => '张三',
-//            'logintime' => date('Y-m-d H:i:s')
-//        );
-
-
         $data['webname'] = 'test';
         $data['weburl'] = 'rthink.local';
 

@@ -3,6 +3,7 @@
     <tr>
         <th width="30">年级</th>
         <th width="30">科目</th>
+        <th width="30">操作</th>
     </tr>
     </thead>
     <tbody>
@@ -10,7 +11,14 @@
         <tr>
             <td align='center'><?php echo($val['Title']);?></td>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
+            <td align='center'><a href="/admin/subject/delete?SubjectID=<?php echo $val['SubjectID']; ?>" class="zajax" title="确定删除？">删除</a></td>
         </tr>
     <?php } ?>
     </tbody>
 </table>
+
+<script type="text/javascript">
+    $(function(){
+        $(".zajax").zajax();
+    })
+</script>

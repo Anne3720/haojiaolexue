@@ -41,20 +41,6 @@ abstract class Admin_AbstractController extends RThink_Controller_Action
 
         list($select_menu,) = explode("::", $modle);
         $select_menu = strtolower(str_replace('_', '/', substr($select_menu, 0, -10)));
-//        var_dump($select_menu);exit;
-//        if (substr($modle,0,4) == 'json')
-//        {
-//            $select_menu = 'api_'.$select_menu[0];
-//        }
-//        else
-//        {
-//            $select_menu[0] = explode('_',$select_menu[0],2);
-//
-//            $select_menu[0] = $select_menu[0][0];
-//
-//            $select_menu = $select_menu[0].'_'.$select_menu[2];
-//        }
-        //var_dump($admin['menu_list']);die();
 
         if (empty($admin['id'])) {
             return $this->_redirect('/admin/login?url='. $this->getRequest()->getServer('REQUEST_URI'));

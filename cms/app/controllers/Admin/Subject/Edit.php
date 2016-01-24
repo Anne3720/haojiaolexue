@@ -34,7 +34,7 @@ class Admin_Subject_EditController extends Admin_AbstractController
         // }
 
         // $data['info'] += array('hidden' => 0, 'target' => 0, 'top' => 0, 'ajax' => 0);
-
+        $this->setInvokeArg('layout', 'admin1_layout');
         $this->render($data);
     }
 
