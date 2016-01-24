@@ -22,7 +22,7 @@ class Admin_Subject_ListController extends Admin_AbstractController
         $data = $count_opt = array();
         $option = array(
             'condition' => '',
-            'order' => 'SubjectID asc',
+            'order' => 'Grade asc',
             'limit' => array('offset' => ($page - 1) * $perpage, 'count' => $perpage)
         );
 
