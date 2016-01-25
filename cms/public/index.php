@@ -3,6 +3,7 @@
  * app 入口文件
  */
 header("Content-Type:text/html;Charset=utf-8");
+error_reporting(E_ALL^E_WARNING^E_NOTICE);
 //app路径
 define('APP_PATH', realpath(dirname(__FILE__) . '/../'));
 //库文件路径
