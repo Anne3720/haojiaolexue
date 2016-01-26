@@ -27,12 +27,12 @@
             <td align='center'><?php echo($val['ClassNo']);?></td>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
             <td align='center'><?php echo($val['SubjectID']);?></td>
-            <td align='center'><?php echo($val['ClassNo']);?></td>
-            <td align='center'><?php echo($val['Image']);?></td>
-            <td align='center'><?php echo($val['Video']);?></td>
+            <td align='center'><a href='<?php echo('\resource\Image'.'\\'.$val['Image']);?>' target="_Blank">图片</a></td>
+            <td align='center'><a href='<?php echo('\resource\Video'.'\\'.$val['Video']);?>' target="_Blank">视频</a></td>
+            <td align='center'><?php echo($val['Price']);?></td>
             <td align='center'>
-                <a href="/admin/classes/edit?SubjectID=<?php echo $val['SubjectID']; ?>">编辑</a>
-                <a href="/admin/classes/delete?SubjectID=<?php echo $val['SubjectID']; ?>" class="zajax" title="确定删除？">删除</a>
+                <a href="/admin/classes/edit?ClassID=<?php echo $val['ClassID']; ?>">编辑</a>
+                <a href="/admin/classes/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
             </td>
         </tr>
     <?php } ?>

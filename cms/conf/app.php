@@ -24,8 +24,8 @@ $development = array(
             '11'=>'高二',
             '12'=>'高三',
         ),
-        'imagePath'=>dirname(dirname(dirname(__FILE__))).'\resource\image',
-        'videoPath'=>dirname(dirname(dirname(__FILE__))).'\resource\video',
+        'imagePath'=>dirname(dirname(__FILE__)).'\public\resource\image',
+        'videoPath'=>dirname(dirname(__FILE__)).'\public\resource\video',
     ),
 
     //数据库参数

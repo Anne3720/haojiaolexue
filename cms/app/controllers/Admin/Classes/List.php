@@ -43,7 +43,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
         }
         $option['condition'] = $count_opt['condition'] = implode(' and ', $conditionArr);
         $option['bind'] = $count_opt['bind'] = $bindArr;
-        $data['ClassesList'] = Admin_ClassesModel::instance()->fetchAll($option);
+        $data['classList'] = Admin_ClassesModel::instance()->fetchAll($option);
         $data['count'] = Admin_ClassesModel::instance()->count($count_opt);
         $data['grade'] = RThink_Config::get('app.grade');
         $pagination = new Pagination();
