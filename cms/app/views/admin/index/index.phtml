@@ -258,9 +258,9 @@ function menu_list(obj) {
             $("#leftMain").html('');
 
             if (is_guest) {
-                $("#rightMain").attr('src', '/zpadmin/admin/blank');
+                $("#rightMain").attr('src', '/admin/blank');
             } else {
-                $("#rightMain").attr('src', '/zpadmin/procedure/meet_list');
+                $("#rightMain").attr('src', '/procedure/meet_list');
             }
 
             $.each(res.data, function (k, v) {
