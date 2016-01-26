@@ -10,8 +10,7 @@ class Admin_Classes_EditController extends Admin_AbstractController
     {
 
         /** 验证是否登录 **/
-       $this->verify(__METHOD__);
-
+        $this->verify(__METHOD__);
         $classid = $this->getRequest()->getParam('ClassID');
         $data = array();
 
@@ -22,6 +21,16 @@ class Admin_Classes_EditController extends Admin_AbstractController
             $data['pagename'] = '课程编辑';
             $data['info'] = Admin_ClassesModel::instance()->fetchRow(array('condition' => 'classid = ?', 'bind' => array($classid)));
         }
+        $data['grade'] = RThink_Config::get('app.grade');
+        $subject = Admin_SubjectModel::instance()->fetchAll(array());
+        $subjectList = array();
+        foreach ($subject as $key => $value) {
+            if(!isset($subjectList[$value['Grade']])){
+                $subjectList[$value['Grade']] = array();
+            }
+            array_push($subjectList[$value['Grade']], $value);
+        }
+        $data['subjectList'] = $subjectList;
         $this->setInvokeArg('layout', 'admin1_layout');
         $this->render($data);
     }

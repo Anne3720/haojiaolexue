@@ -17,6 +17,7 @@
             <th width="30">年级</th>
             <td width="80">
                 <select name='Grade'>
+                    <option></option>
                     <?php foreach ($grade as $key => $value) {?>
                         <option value="<?php echo($key);?>" <?php if($key==$info['Grade']) echo "selected"?>><?php echo($value);?></option>
                     <?php } ?>
@@ -25,12 +26,15 @@
         </tr>
         <tr>
             <th width="30">科目</th>
-            <td width="80"><input type="text" name="Title" <?php echo($Subjects[$info['SubjectID']])?>/></td>
+            <td width="80">
+                <select name="SubjectID">
+                </select>
+            </td>
         </tr>
         <tr>
             <th width="30">图片</th>
             <td width="80">
-                <input type="file" name="file_0_ture" size="20" onchange="document.getElementById('file_0').value=this.value" class="text opacity">
+                <input type="file" name="Image" size="20" onchange="document.getElementById('file_0').value=this.value" class="text opacity">
                 <input name="file_0" id="file_0" value="<?php echo $info['Image']; ?>" class="text"> 
                 <input type="button" value="浏览..." class="file_btn">
             </td>
@@ -38,9 +42,14 @@
         <tr>
             <th width="30">视频</th>
             <td width="80">
-                <input type="file" name="file_1_ture" size="20" onchange="document.getElementById('file_1').value=this.value" class="text opacity">
+                <input type="file" name="Video" size="20" onchange="document.getElementById('file_1').value=this.value" class="text opacity">
                 <input name="file_1" id="file_1" value="<?php echo $info['Video']; ?>" class="text"> 
                 <input type="button" value="浏览..." class="file_btn">
+            </td>
+        </tr>
+        <tr>
+            <th width="30">价格</th>
+            <td width="80"><input type="text" name="Price"  value="<?php echo($info['Price'])?>"/></td>
             </td>
         </tr>
     </tbody>
@@ -51,7 +60,14 @@
 </form>
 <script type="text/javascript">
 $(function(){
-    $("#classesfileForm").ajaxForm({
+    var subjectList = new Array();
+    <?php foreach ($subjectList as $key => $value) {?>
+    subjectList["<?php echo $key;?>"] = new Array();
+    <?php foreach ($value as $kk => $vv) {?>
+    subjectList["<?php echo $key;?>"].push("<option value=<?php echo $vv['SubjectID']; ?>><?php echo $vv['Title'];?></option>"); 
+    <?php }?>
+    <?php }?>
+    $("#classesForm").ajaxForm({
         //定义返回JSON数据，还包括xml和script格式
         dataType:'json',
         beforeSend: function() {
@@ -59,7 +75,28 @@ $(function(){
         },
         success: function(data) {
             //提交成功后调用
-            console.log(data);
+        if (data.status == 1)
+        {
+            tb_tips_url(data.msg,'/admin/classes/list',1000);
+        }
+        else if (2 == data.status)
+        {
+            opts.call_fun && opts.call_fun();
+            $(obj).find('input').attr('disabled',false);
+        }
+        else
+        {
+            tips(opts,data.msg,false);
+            $(obj).find('input').attr('disabled',false);
+        }
+        }
+    });
+    $("select[name=Grade]").change(function(){
+        $("select[name=SubjectID]").empty();
+        var value = $(this).children('option:selected').val();
+        var len = subjectList[value].length;
+        for(var i = 0;i < len; i++){
+            $("select[name=SubjectID]").append(subjectList[value][i]);
         }
     });
 });

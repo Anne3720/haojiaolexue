@@ -54,7 +54,7 @@ abstract class Admin_AbstractController extends RThink_Controller_Action
     public function sendMsg($code = 0, $msg = '', $data = array())
     {
         $this->getResponse()->sendHeaders('Content-type: application/json');
-        echo json_encode(array('code' => $code, 'msg' => $msg, 'data' => $data));
+        echo json_encode(array('status' => $code, 'msg' => $msg, 'data' => $data));
         exit(0);
     }
 
