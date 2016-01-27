@@ -1,11 +1,18 @@
 <div class="row" style="padding-left: 40px;">
     <form action="" method="get" class="bs-docs-example form-search">
-        <select class="form-control" name="grade">
-        <option value=""></option>
+        <select class="form-control" name="Grade">
+        <option value="">--年级--</option>
         <?php foreach ($grade as $key => $value) {?>
-        <option value="<?php echo($key);?>"><?php echo($value);?></option>
+        <option value="<?php echo($key);?>" <?php if($query['Grade']==$key) echo "selected";?>><?php echo($value);?></option>
         <?php }?>
         </select>
+        <select class="form-control" name="SubjectID">
+            <option value="">--科目--</option>
+            <?php foreach ($subjectList[$query['Grade']] as $key => $value) {?>
+                <option value="<?php echo $value['SubjectID'];?>" <?php if($value['SubjectID']==$query['SubjectID']) echo "selected";?>><?php echo $value['Title'];?></option>
+            <?php }?>        
+        </select>
+        <input class="form-control" name="ClassNo" value="<?php echo $query['ClassNo'];?>" placeholder="课程编号"/>
         <button type="submit"  class="btn btn-info">查询</button>
     </form>
 </div>
@@ -26,7 +33,10 @@
         <tr>
             <td align='center'><?php echo($val['ClassNo']);?></td>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
-            <td align='center'><?php echo($val['SubjectID']);?></td>
+            <td align='center'>
+                <?php foreach ($subjectList[$val['Grade']] as $kk => $vv) {
+                if($vv['SubjectID']==$val['SubjectID']) echo $vv['Title'];} ?>
+            </td>
             <td align='center'><a href='<?php echo('\resource\Image'.'\\'.$val['Image']);?>' target="_Blank">图片</a></td>
             <td align='center'><a href='<?php echo('\resource\Video'.'\\'.$val['Video']);?>' target="_Blank">视频</a></td>
             <td align='center'><?php echo($val['Price']);?></td>
@@ -41,6 +51,22 @@
 <?php echo($pagination);?>
 <script type="text/javascript">
     $(function(){
+        var subjectList = new Array();
+        <?php foreach ($subjectList as $key => $value) {?>
+        subjectList["<?php echo $key;?>"] = new Array();
+        <?php foreach ($value as $kk => $vv) {?>
+        subjectList["<?php echo $key;?>"].push("<option value=<?php echo $vv['SubjectID']; ?>><?php echo $vv['Title'];?></option>"); 
+        <?php }?>
+        <?php }?>
         $(".zajax").zajax();
+        $("select[name=Grade]").change(function(){
+            $("select[name=SubjectID]").empty();
+            $("select[name=SubjectID]").append("<option>--科目--</option>");
+            var value = $(this).children('option:selected').val();
+            var len = subjectList[value].length;
+            for(var i = 0;i < len; i++){
+                $("select[name=SubjectID]").append(subjectList[value][i]);
+            }
+        });
     })
 </script>

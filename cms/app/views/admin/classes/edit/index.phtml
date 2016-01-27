@@ -28,6 +28,9 @@
             <th width="30">科目</th>
             <td width="80">
                 <select name="SubjectID">
+                    <?php foreach ($subjectList[$info['Grade']] as $key => $value) {?>
+                        <option value="<?php echo $value['SubjectID'];?>" <?php if($value['SubjectID']==$info['SubjectID']) echo "selected";?>><?php echo $value['Title'];?></option>
+                    <?php }?>
                 </select>
             </td>
         </tr>

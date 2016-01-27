@@ -60,7 +60,7 @@ function get_pinyin(obj,input,title)
 				}
 			}
 			$.get($(this).attr('href'),function(data){
-				if (data.code == 1)
+				if (data.status == 1)
 				{
 					tb_tips_url(data.msg,opts.url,opts.ret_settimeout);
 				}
