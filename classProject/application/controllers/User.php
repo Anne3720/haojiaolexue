@@ -21,12 +21,13 @@ class User extends CI_Controller {
         $School = $this->input->post('School');
         $Password = $this->input->post('PassWord');
         $UserExists = $this->UserModel->checkUserExists($Mobile,$Email);
+        $CreateTime = date('Y-m-d H:i:s');
         if($UserExists){
             $status = $this->config->item('STATUS_REG_USEREXISTS');
             $msg = $this->config->item('MSG_REG_USEREXISTS');
             $this->CommonModel->sendMsg($status,array(),$msg);
         }
-        $data = $this->UserModel->addUser($Mobile,$Email,$Name,$Gender,$Grade,$School,md5($Password.md5($Password)));
+        $data = $this->UserModel->addUser($Mobile,$Email,$Name,$Gender,$Grade,$School,md5($Password.md5($Password)),$CreateTime);
         $emailConfig = $this->config->item('email');
         $validate = md5($Mobile.'haojiaolexue');
         $content = "<p>欢迎加入好教乐学，祝您开启一段愉快的学习旅程！请在半小时之内点击以下链接激活<a>http://".$_SERVER['HTTP_HOST']."/User/doActivate/{$Mobile}/{$validate}</a></p>";
