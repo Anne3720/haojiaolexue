@@ -19,11 +19,13 @@ class Admin_Classes_InfoController extends Admin_AbstractController
             'Image'=>basename($post['file_0']),
             'Video'=>basename($post['file_1']),
             'Price'=>$post['Price'],
+            'UpdateTime'=>date('Y-m-d H:i:s'),
         );
         // print_r($_FILES);exit;
         if (null != $this->getRequest()->getPost('ClassID')) {
             Admin_ClassesModel::instance()->update($params, array('ClassID' => $ClassID));
         } else {
+            $params['CreateTime'] = date('Y-m-d H:i:s');
             Admin_ClassesModel::instance()->add($params);
         }
         if($_FILES['Image']['error']==0){

@@ -78,20 +78,20 @@ $(function(){
         },
         success: function(data) {
             //提交成功后调用
-        if (data.status == 1)
-        {
-            tb_tips_url(data.msg,'/admin/classes/list',1000);
-        }
-        else if (2 == data.status)
-        {
-            opts.call_fun && opts.call_fun();
-            $(obj).find('input').attr('disabled',false);
-        }
-        else
-        {
-            tips(opts,data.msg,false);
-            $(obj).find('input').attr('disabled',false);
-        }
+            if (data.status == 1)
+            {
+                tb_tips_url(data.msg,'/admin/classes/list',1000);
+            }
+            else if (2 == data.status)
+            {
+                opts.call_fun && opts.call_fun();
+                $(obj).find('input').attr('disabled',false);
+            }
+            else
+            {
+                tips(opts,data.msg,false);
+                $(obj).find('input').attr('disabled',false);
+            }
         }
     });
     $("select[name=Grade]").change(function(){

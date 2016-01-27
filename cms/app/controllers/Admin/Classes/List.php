@@ -16,6 +16,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
         $grade = $this->getRequest()->getQuery('Grade');
         $subject = $this->getRequest()->getQuery('SubjectID');
         $classno = $this->getRequest()->getQuery('ClassNo');
+        $memberID = $this->getRequest()->getQuery('MemberID');
         $perpage = 20;
 
         $page = intval($this->getRequest()->getQuery('page'));
@@ -54,6 +55,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
             'ClassNo' => $classno,
             'Grade' => $grade,
             'SubjectID' => $subject,
+            'MemberID' => $memberID,
         );
         $subject = Admin_SubjectModel::instance()->fetchAll(array());
         $subjectList = array();

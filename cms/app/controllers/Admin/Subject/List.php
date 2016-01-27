@@ -26,7 +26,6 @@ class Admin_Subject_ListController extends Admin_AbstractController
             'limit' => array('offset' => ($page - 1) * $perpage, 'count' => $perpage)
         );
 
-        $data['count'] = Admin_AdminModel::instance()->count($count_opt);
         if (!empty($grade)) {
             $option['condition'] .= "grade = ?";
             $option['bind'] = array($grade);
