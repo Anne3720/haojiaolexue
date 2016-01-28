@@ -75,7 +75,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
             'order' => 'ClassID desc',
             'limit' => '',
             );
-            $recommendClasses = Admin_RecommendClassModel::instance()->fetchAll($recommend_option);
+            $recommendClasses = Admin_RecommendModel::instance()->fetchAll($recommend_option);
             foreach ($recommendClasses as $key => $value) {
                 $recommendClassIds[] = $value['ClassID'];
             }
