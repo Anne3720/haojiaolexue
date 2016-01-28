@@ -37,7 +37,8 @@
             <td align='center'>
                 <a href="/admin/classes/list?MemberID=<?php echo $val['MemberID']; ?>&Grade=<?php echo $val['Grade'];?>">推荐</a>
                 <a href="/admin/recommend/list?MemberID=<?php echo $val['MemberID']; ?>">已推荐</a>
-                <a href="/admin/classes/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
+                <a href="/admin/chosen/list?MemberID=<?php echo $val['MemberID']; ?>">已选</a>
+                <a href="/admin/classes/delete?MemberID=<?php echo $val['MemberID']; ?>" class="zajax" title="确定删除？">删除</a>
             </td>
         </tr>
     <?php } ?>
