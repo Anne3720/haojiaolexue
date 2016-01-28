@@ -1,0 +1,46 @@
+<div class="row" style="padding-left: 40px;">
+    <form action="" method="get" class="bs-docs-example form-search">
+        <input type="hidden" name="MemberID" value="<?php echo $query['MemberID'];?>">
+        <select class="form-control" name="SubjectID">
+            <option value="">--科目--</option>
+            <?php foreach ($SubjectList as $key => $value) {?>
+                <option value="<?php echo $value['SubjectID'];?>" <?php if($value['SubjectID']==$query['SubjectID']) echo "selected";?>><?php echo $value['Title'];?></option>
+            <?php }?>        
+        </select>
+        <button type="submit"  class="btn btn-info">查询</button>
+    </form>
+</div>
+<table width="100%" cellspacing="0" class="table table-bordered">
+    <thead>
+    <tr>
+        <th width="30">编号</th>
+        <th width="30">姓名</th>
+        <th width="30">科目</th>
+        <th width="30">课程编号</th>
+        <th width="30">推荐老师</th>
+        <th width="30">推荐时间</th>
+        <th width="30">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($RecommendList as $key => $val) { ?>
+        <tr>
+            <td align='center'><?php echo($val['RecommendID']);?></td>
+            <td align='center'><?php echo($MemberInfo['Name']);?></td>
+            <td align='center'><?php echo($val['Title']);?></td>
+            <td align='center'><?php echo($val['ClassNo']);?></td>
+            <td align='center'><?php echo($TeacherList[$val['TeacherID']]['username']);?></td>
+            <td align='center'><?php echo($val['CreateTime']);?></td>
+            <td align='center'>
+                <a href="/admin/classes/delete?RecommendID=<?php echo $val['RecommendID']; ?>" class="zajax" title="确定删除？">删除</a>
+            </td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+<?php echo($pagination);?>
+<script type="text/javascript">
+    $(function(){
+        $(".zajax").zajax();
+    })
+</script>

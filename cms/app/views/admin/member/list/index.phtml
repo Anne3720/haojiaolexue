@@ -35,7 +35,8 @@
             <td align='center'><?php echo($val['School']);?></td>
             <td align='center'><?php if($val['Activated']==1) echo "已激活";else echo "未激活";?></td>
             <td align='center'>
-                <a href="/admin/classes/list?MemberID=<?php echo $val['MemberID']; ?>&Grade=<?php echo $val['Grade'];?>">推荐课程</a>
+                <a href="/admin/classes/list?MemberID=<?php echo $val['MemberID']; ?>&Grade=<?php echo $val['Grade'];?>">推荐</a>
+                <a href="/admin/recommend/list?MemberID=<?php echo $val['MemberID']; ?>">查看</a>
                 <a href="/admin/classes/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
             </td>
         </tr>

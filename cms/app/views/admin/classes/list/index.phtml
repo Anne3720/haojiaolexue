@@ -47,7 +47,7 @@
             <td align='center'>
                 <a href="/admin/classes/edit?ClassID=<?php echo $val['ClassID']; ?>">编辑</a>
                 <a href="/admin/classes/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
-                <?php if(!empty($query['MemberID'])) echo('<a href="/admin/classes/recommend?ClassID='.$val['ClassID'].'&MemberID='.$query['MemberID'].'" class="zajax">推荐</a>');?>
+                <?php if(!empty($query['MemberID'])&&!in_array($val['ClassID'], $recommendClassIds)) echo('<a href="/admin/recommend/info?ClassID='.$val['ClassID'].'&MemberID='.$query['MemberID'].'" class="zajax">推荐</a>'); elseif(!empty($query['MemberID'])&&in_array($val['ClassID'], $recommendClassIds)) echo('已推荐');?>
             </td>
         </tr>
     <?php } ?>

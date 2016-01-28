@@ -66,7 +66,21 @@ class Admin_Classes_ListController extends Admin_AbstractController
             array_push($subjectList[$value['Grade']], $value);
         }
         $data['subjectList'] = $subjectList;
-        // print_r($data);exit;
+        $recommendClassIds = array();
+        if(!empty($memberID)){
+            $recommend_option = array(
+            'fields' => 'ClassID',
+            'condition' => 'MemberID = ?',
+            'bind' => array($memberID),
+            'order' => 'ClassID desc',
+            'limit' => '',
+            );
+            $recommendClasses = Admin_RecommendClassModel::instance()->fetchAll($recommend_option);
+            foreach ($recommendClasses as $key => $value) {
+                $recommendClassIds[] = $value['ClassID'];
+            }
+        }
+        $data['recommendClassIds'] = $recommendClassIds;
         $this->setInvokeArg('layout', 'admin1_layout');
         $this->render($data);
     }
