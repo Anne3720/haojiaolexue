@@ -29,8 +29,10 @@ class Admin_Recommend_ListController extends Admin_AbstractController
             $option['condition'].=' and B.SubjectID = ?';
             $option['bind'][] = $SubjectID;
         }
+        $count_opt['condition'] = $option['condition'];
+        $count_opt['bind'] = $option['bind'];
         $data['RecommendList'] = Admin_RecommendModel::instance()->getRecommendClassList($option);
-        $data['count'] = Admin_RecommendModel::instance()->count($count_opt);
+        $data['count'] = Admin_RecommendModel::instance()->getCommendCount($count_opt);
         $data['grade'] = RThink_Config::get('app.grade');
 
         $member_option = array(

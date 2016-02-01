@@ -35,4 +35,12 @@ class Admin_RecommendModel extends BaseModel
         $res = self::$_instance->_db->fetchAll($sql, $option['bind'], self::$_instance->_fetch_mode);
         return $res;
     }
+
+    public static function getRecommendCount($option){
+        $option = self::$_instance->handleOpt($option);
+        $sql = "SELECT count(*) as count 
+                FROM tbl_Recommendclass A LEFT JOIN tbl_class B ON A.ClassID=B.ClassID LEFT JOIN tbl_subject C ON B.SubjectID=C.SubjectID ".$option['condition'];
+        $res = self::$_instance->_db->fetchAll($sql, $option['bind'], self::$_instance->_fetch_mode);
+        return $res;
+    }
 }
