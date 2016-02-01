@@ -32,7 +32,7 @@
             <td align='center'><?php echo($TeacherList[$val['TeacherID']]['username']);?></td>
             <td align='center'><?php echo($val['CreateTime']);?></td>
             <td align='center'>
-                <a href="/admin/classes/delete?RecommendID=<?php echo $val['RecommendID']; ?>" class="zajax" title="确定删除？">删除</a>
+                <a href="/admin/recommend/delete?RecommendID=<?php echo $val['RecommendID']; ?>" class="zajax" title="确定取消？">取消推荐</a>
             </td>
         </tr>
     <?php } ?>

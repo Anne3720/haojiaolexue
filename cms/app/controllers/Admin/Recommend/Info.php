@@ -11,8 +11,8 @@ class Admin_Recommend_InfoController extends Admin_AbstractController
 
         /** 验证是否登录 **/
         $admin = $this->verify(__METHOD__);
-        $classID = $this->getRequest()->getQuery('ClassID');
-        $memberID = $this->getRequest()->getQuery('MemberID');
+        $classID = $this->getRequest()->getParam('ClassID');
+        $memberID = $this->getRequest()->getParam('MemberID');
         $teacherID = $admin['id'];
         $params = array(
             'ClassID'=>$classID,
@@ -20,7 +20,7 @@ class Admin_Recommend_InfoController extends Admin_AbstractController
             'CreateTime'=>date('Y-m-d H:i:s'),
             'TeacherID'=>$teacherID,
         );
-        Admin_RecommendClassModel::instance()->add($params);
+        Admin_RecommendModel::instance()->add($params);
         $this->sendMsg(1, "操作成功");
     }
 

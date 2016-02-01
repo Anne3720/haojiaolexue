@@ -45,7 +45,7 @@ abstract class Admin_AbstractController extends RThink_Controller_Action
         if (empty($admin['id'])) {
             return $this->_redirect('/admin/login?url='. $this->getRequest()->getServer('REQUEST_URI'));
         } else if (!isset($admin['menu_list'][$select_menu])) {
-            throw new Exception("您没有此页面管理权限", -1);
+            $this->sendMsg(-1,"您没有此页面管理权限");
         }
 
         return $admin;
@@ -58,4 +58,10 @@ abstract class Admin_AbstractController extends RThink_Controller_Action
         exit(0);
     }
 
+    public function getFileExtend($file_name)
+    {
+        $extend = pathinfo($file_name);
+        $extend = strtolower($extend["extension"]);
+        return $extend;
+    }
 }

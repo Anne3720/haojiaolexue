@@ -24,7 +24,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
         $data = $count_opt = array();
         $option = array(
             'condition' => '',
-            'order' => 'ClassNo asc',
+            'order' => 'ClassNo asc,Grade asc',
             'limit' => array('offset' => ($page - 1) * $perpage, 'count' => $perpage)
         );
 

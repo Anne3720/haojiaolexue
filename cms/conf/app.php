@@ -26,6 +26,8 @@ $development = array(
         ),
         'imagePath'=>dirname(dirname(__FILE__)).'\public\resource\image',
         'videoPath'=>dirname(dirname(__FILE__)).'\public\resource\video',
+        'imageKey'=>'hjlxImage',
+        'videoKey'=>'hjlxVideo',
     ),
 
     //数据库参数
