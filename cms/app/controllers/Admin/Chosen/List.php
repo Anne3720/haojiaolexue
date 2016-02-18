@@ -13,8 +13,8 @@ class Admin_Chosen_ListController extends Admin_AbstractController
         $show['pagename'] = '选择课程列表';
 
         $MemberID = $this->getRequest()->getParam('MemberID',0);
-        $Grade = $this->getRequest()->getParam('Grade');
-        $SubjectID = $this->getRequest()->getParam('SubjectID');
+        $Grade = $this->getRequest()->getParam('Grade',0);
+        $SubjectID = $this->getRequest()->getParam('SubjectID',0);
         $perpage = 20;
 
         $page = intval($this->getRequest()->getParam('page'));
@@ -30,15 +30,24 @@ class Admin_Chosen_ListController extends Admin_AbstractController
         $Grade = empty($Grade)?$MemberInfo[0]['Grade']:$Grade;
         //所选课程列表
         $option = array(
-            'condition' => 'A.MemberID = ? and B.Grade = ?',
-            'bind' => array($MemberID,$Grade),
+            // 'condition' => 'A.MemberID = ? and B.Grade = ?',
+            // 'bind' => array($MemberID,$Grade),
             'order' => 'ChosenID desc,B.ClassNo asc',
             'limit' => array('offset' => ($page - 1) * $perpage, 'count' => $perpage)
         );
         if(!empty($SubjectID)){
-            $option['condition'].=' and B.SubjectID = ?';
+            $option['condition'][]='B.SubjectID = ?';
             $option['bind'][] = $SubjectID;
+        }        
+        if(!empty($Grade)){
+            $option['condition'][]='B.Grade = ?';
+            $option['bind'][] = $Grade;
         }
+        if(!empty($MemberID)){
+            $option['condition'][]='B.MemberID = ?';
+            $option['bind'][] = $MemberID;
+        }
+        $option['condition'] = implode(' and ', $option['condition']);
         $count_opt['condition'] = $option['condition'];
         $count_opt['bind'] = $option['bind'];
         $data['ChosenList'] = Admin_ChosenModel::instance()->getChosenClassList($option);
