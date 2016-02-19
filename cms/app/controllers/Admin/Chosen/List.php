@@ -44,7 +44,7 @@ class Admin_Chosen_ListController extends Admin_AbstractController
             $option['bind'][] = $Grade;
         }
         if(!empty($MemberID)){
-            $option['condition'][]='B.MemberID = ?';
+            $option['condition'][]='A.MemberID = ?';
             $option['bind'][] = $MemberID;
         }
         $option['condition'] = implode(' and ', $option['condition']);
