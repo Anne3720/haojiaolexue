@@ -1,5 +1,9 @@
 .vedio {
+	width: 60%;
 	float: left;
+	height: 500px;
+	margin: 10px 50px;
+	border: 2px solid red;
 }
 .vedioPlay {
 	width: 50%;
