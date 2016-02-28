@@ -18,6 +18,8 @@
 	    </ul>
 	    <?php }else{ ?>
 	    <ul>
+	        <li><a href="/Classes/myClass" >学习中心</a></li>
+	        <li><a href="#" >个人信息</a></li>
 		    <li><a href="/User/doLogout" >退出</a></li>
 	    </ul>
 	    <?php } ?>

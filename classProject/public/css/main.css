@@ -43,7 +43,7 @@ span.navtop-logo {
 	float: left;
 	height: 50px;
 	line-height: 45px;
-	padding: 0px 40px;
+	padding: 0px 20px;
 }
 .navtop a {
     text-decoration: none;
@@ -55,7 +55,8 @@ span.navtop-logo {
 	background: #6699FF;
 }
 li.navtop-class {
-    margin-right: 800px !important;
+	width: 60px;
+    margin-right: 600px !important;
 }
 /*logo框的css样式*/
 
@@ -149,7 +150,7 @@ li.navtop-class {
 }
 .navleft-hide dl dd a {
 	display: inline-block;
-	padding: 5px 25px;
+	padding: 5px 15px;
 	color: #000;
 	height: 30px;
 	line-height: 30px;

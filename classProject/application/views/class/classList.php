@@ -57,7 +57,7 @@
                     if($_GET['grade']== $v['Grade']){ ?>                
             <a href="">
                 <span>
-                    <img src="" alt="" />
+                    <img src="http://www.cms.com/resource/Image/<?php echo ($v['Image']);?>" alt="" />
                     <p><?php echo($v['ClassNO']); ?></p>
                 </span>
             </a>     
@@ -68,7 +68,7 @@
                 foreach ($classList as $u => $v) {?>                
             <a href="">
                 <span>
-                    <img src="" alt="" />
+                    <img src="http://www.cms.com/resource/Image/<?php echo ($v['Image']);?>" alt="" />
                     <p><?php echo($v['SubjectID']); ?></p>
                 </span>
             </a>     
