@@ -58,19 +58,20 @@ class Classes extends CI_Controller {
     }
     //根据课程id获取对应视频地址
     public function video($classid){
-        $urerInfo = $this->session->userdata('userInfo');
+        $userInfo = $this->session->userdata('userInfo');
         //未登录跳转
         if(!$userInfo){
         	redirect('/User/Login');
         }
-        $userInfo = json_decode($userInfo);
+        $userInfo = json_decode($userInfo,true);
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
         $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
         if($classBought){
     		$data = $this->ClassModel->getVideoByClassID($classid);
+            $this->load->view('/class/vedioPlay',$data);
         }else{
-
+            $this->load->view('/class/unPay');
         }
     }
     //获取用户已购买课程列表
