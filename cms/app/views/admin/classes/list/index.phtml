@@ -39,14 +39,14 @@
                 <?php foreach ($subjectList[$val['Grade']] as $kk => $vv) {
                 if($vv['SubjectID']==$val['SubjectID']) echo $vv['Title'];} ?>
             </td>
-            <td align='center'><a href='<?php echo('\resource\Image'.'\\'.$val['Image']);?>' target="_Blank">图片</a></td>
+            <td align='center'> <img src="'<?php echo('\resource\Image'.'\\'.$val['Image']);?>'"> </td>
             <td align='center'><a href='<?php echo('\resource\Video'.'\\'.$val['Video']);?>' target="_Blank">视频</a></td>
             <td align='center'><?php echo($val['Price']);?></td>
             <td align='center'><?php echo($val['CreateTime']);?></td>
             <td align='center'><?php echo($val['UpdateTime']);?></td>
             <td align='center'>
                 <a href="/admin/classes/edit?ClassID=<?php echo $val['ClassID']; ?>">编辑</a>
-                <a href="/admin/classes/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
+                <a href="/admin/member/delete?ClassID=<?php echo $val['ClassID']; ?>" class="zajax" title="确定删除？">删除</a>
                 <?php if(!empty($query['MemberID'])&&!in_array($val['ClassID'], $recommendClassIds)) echo('<a href="/admin/recommend/info?ClassID='.$val['ClassID'].'&MemberID='.$query['MemberID'].'" class="zajax">推荐</a>'); elseif(!empty($query['MemberID'])&&in_array($val['ClassID'], $recommendClassIds)) echo('已推荐');?>
             </td>
         </tr>
