@@ -9,18 +9,24 @@
 </head>
 <body>
     <div class="navtop">
-        <span class="navtop-logo">好教乐学</span>
-        <ul>
-             <li class="navtop-class"><a href="/classes/classlist">课程</a></li>
-        <?php if(!isset($_SESSION['userInfo'])&&empty($_SESSION['userInfo'])){ ?>
-		    <li><a href="/User/login" >登录</a></li>
-		    <li><a href="/User/reg" >注册</a></li>
-	    </ul>
-	    <?php }else{ ?>
-	    <ul>
-	        <li><a href="/classes/myClass" >学习中心</a></li>
-	        <li><a href="#" >个人信息</a></li>
-		    <li><a href="/User/doLogout" >退出</a></li>
-	    </ul>
-	    <?php } ?>
+       <div class="navtop-logo">好教乐学</div>
+       <div class="navtop-content">
+       	    <ul class="navtop-class">
+        	    <li><a href="/classes/classList">课程</a></li>
+            </ul>
+            <ul class="navtop-login">
+            <?php if(!isset($_SESSION['userInfo'])&&empty($_SESSION['userInfo'])){ ?>
+		        <li><a href="/user/login" >登录</a></li>
+		        <li><a href="/user/reg" >注册</a></li>
+	        </ul>
+	        <?php }else{ ?>
+	        <ul class="navtop-login">
+	            <li><a href="/classes/myClass" >学习中心</a></li>
+	            <li><a href="#" >个人信息</a></li>
+		        <li><a href="/user/doLogout" >退出</a></li>
+		    <?php } ?>
+	        </ul>
+       </div>
+        
+	    
 	</div>

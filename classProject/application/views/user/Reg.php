@@ -82,7 +82,7 @@
          });  
          $(document).ready(function(){
               var options = { 
-                  url:"/User/doReg",
+                  url:"/user/doReg",
                   type:"POST",
                   target: '#hehe',
                   beforeSubmit: showRequest,  //提交前的回调函数  

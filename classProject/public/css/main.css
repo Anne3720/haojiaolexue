@@ -23,27 +23,29 @@ a {
 }
 /*顶部固定导航栏的css样式*/
 .navtop {
+	position: relative;
     height: 50px;
     font-size: 30px;
     background: #000000;
     overflow: hidden;
     color: #fff;
 }
-span.navtop-logo {
+div.navtop-logo {
 	display: inline-block;
 	height: 50px;
 	line-height: 50px;
 	padding: 0 20px;
-}
-.navtop ul {
-	float: right;
-
-}
-.navtop ul li {
+	top: 0;
 	float: left;
+}
+
+.navtop ul li {
+	width: 80px;
 	height: 50px;
-	line-height: 45px;
+	line-height: 50px;
 	padding: 0px 20px;
+	display: inline-block;
+	text-align: center;
 }
 .navtop a {
     text-decoration: none;
@@ -54,9 +56,11 @@ span.navtop-logo {
 	color: #f00;
 	background: #6699FF;
 }
-li.navtop-class {
-	width: 60px;
-    margin-right: 600px !important;
+ul.navtop-class {
+    float: left;
+}
+ul.navtop-login {
+	float: right;   
 }
 /*logo框的css样式*/
 

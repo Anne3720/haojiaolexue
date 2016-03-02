@@ -71,7 +71,7 @@
               formSubmit("#Login","#btnLogin");
               function formSubmit(form,btn){
                 var options = { 
-                  url:"/User/doLogin",
+                  url:"/user/doLogin",
                   type:"POST",
                   target: '#hehe',
                   beforeSubmit: showRequest,  //提交前的回调函数  
