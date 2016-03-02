@@ -70,9 +70,11 @@ class Classes extends CI_Controller {
         if($classBought){
     		$data = $this->ClassModel->getVideoByClassID($classid);
             $this->load->view('/class/vedioPlay',$data);
+
         }else{
             $this->load->view('/class/unPay');
         }
+        // print_r($data);
     }
     //获取用户已购买课程列表
     public function myClass(){

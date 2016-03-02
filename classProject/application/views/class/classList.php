@@ -66,7 +66,7 @@
         <div class="classShowNav">
         <?php if(!isset($_GET['grade'])){
                 foreach ($classList as $u => $v) {?>                
-            <a href="http://www.haojiaolexue.com/Classes/video/<?php echo ($v['ClassID']);?>">
+            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>">
                 <span>
                     <img src="http://www.cms.com/resource/Image/<?php echo ($v['Image']);?>" alt="" />
                     <p><?php echo($v['SubjectID']); ?></p>
