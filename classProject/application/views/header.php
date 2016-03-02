@@ -11,14 +11,14 @@
     <div class="navtop">
         <span class="navtop-logo">好教乐学</span>
         <ul>
-             <li class="navtop-class"><a href="/Classes/classList">课程</a></li>
+             <li class="navtop-class"><a href="/classes/classlist">课程</a></li>
         <?php if(!isset($_SESSION['userInfo'])&&empty($_SESSION['userInfo'])){ ?>
 		    <li><a href="/User/login" >登录</a></li>
 		    <li><a href="/User/reg" >注册</a></li>
 	    </ul>
 	    <?php }else{ ?>
 	    <ul>
-	        <li><a href="/Classes/myClass" >学习中心</a></li>
+	        <li><a href="/classes/myClass" >学习中心</a></li>
 	        <li><a href="#" >个人信息</a></li>
 		    <li><a href="/User/doLogout" >退出</a></li>
 	    </ul>
