@@ -1,9 +1,11 @@
 <?php include('/../header.php');?> 
 <link rel="stylesheet" href="/../../../public/css/vedioPlay.css" type="text/css" />
-
 <div class="vedio">
+    <div class="reback">
+    	<a href="#" onClick="javascript :history.back(-1);">返回</a>
+    </div>
 	<div class="vedioPlay"> 
-	    <video src="http://www.cms.com/resource/Video/<?php echo ($Video);?>" width="271" height="500" controls autobuffer></video>   
+	    <video class="vedioPlayBox" src="http://www.cms.com/resource/Video/<?php echo ($Video);?>" controls autobuffer></video>   
 	    <!--
 	    <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> 
 	    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="624" height="351" style="margin-top: -10px;margin-left: -8px;" id="FLVPlayer1"> 
