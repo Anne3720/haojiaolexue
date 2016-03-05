@@ -45,18 +45,26 @@ class ClassModel extends CI_Model{
 		return isset($data[0])?true:false;
     }
     /*
-    * 获取用户已购买课程
-	* @param $MemberID     int  课程ID
-	* @return array
+    * 获取用户课程的IDs
+    * @param $MemberID     int  课程ID
+    * @return array
     */
-    public function getMyClass($MemberID){
-    	$sql = "select A.MemberID,A.ClassID,B.ClassNo,B.Image,B.Video,B.Price
-    	        from Tbl_ChosenClass A left join Tbl_Class B 
-    	        on A.ClassID=B.ClassID
-    	        ";
-		$query = $this->db->query($sql);
-        $data = $query->result_array();
-		return isset($data[0])?true:false;
+    public function getClassIds($where,$type){
+        $this->db->select('ClassID');
+        foreach ($where as $key => $value) {
+            $this->db->where($key,$value);
+        }
+        if($type=="recommend"){
+            $table = "Tbl_RecommendClass";
+        }elseif($type=="chosen"){
+            $table = "Tbl_ChosenClass";
+        }
+        $query = $this->db->get($table);
+        $IdsArray = $query->result_array();
+        foreach ($IdsArray as $key => $value) {
+            $data[] = $value['ClassID'];
+        }
+        return $data;
     }
     /*
     * 获取课程列表
@@ -66,7 +74,7 @@ class ClassModel extends CI_Model{
     * @return array
     */
     public function getClassList($offset,$limit,$where){
-        $this->db->select('ClassID,ClassNo,Grade,Image,SubjectID,Price');
+        $this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price');
         foreach ($where as $key => $value) {
             $this->db->where($key,$value);
         }

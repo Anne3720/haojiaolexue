@@ -32,6 +32,21 @@ class Classes extends CI_Controller {
             $where['SubjectID'] = $inputSubject;
         }
         $classList = $this->ClassModel->getClassList($offset,$num,$where);
+        $userInfo = $this->session->userdata('userInfo');
+        //当前登录用户是否购买课程
+        if(!$userInfo){
+            foreach ($classList as $key => $value) {
+                $classList[$key]['available'] = 0;
+            }
+        }else{
+            $userInfo = json_decode($userInfo,true);
+            $MemberID = $userInfo['MemberID'];
+            $chosenIds = $this->ClassModel->getClassIds(array('MemberID'=>$userInfo['MemberID']),'chosen');
+            foreach ($classList as $key => $value) {
+                $classList[$key]['available'] = in_array($value['ClassID'], $chosenIds)?1:0;
+            }
+        }
+
         $data['subject'] = $subject;
         $data['grade'] = $grade;
         $data['classList'] = $classList;
@@ -50,11 +65,8 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
-        // print_r($data['classList']);exit;
         $this->load->view('class/classList',$data);
-        //var_dump($classList);exit;
-        //print_r($data);exit;
-        //var_dump($data);
+
     }
     //根据课程id获取对应视频地址
     public function video($classid){
