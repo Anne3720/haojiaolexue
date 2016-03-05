@@ -54,7 +54,7 @@ class Classes extends CI_Controller {
         $this->load->view('class/classList',$data);
         //var_dump($classList);exit;
         //print_r($data);exit;
-
+        //var_dump($data);
     }
     //根据课程id获取对应视频地址
     public function video($classid){
@@ -85,6 +85,7 @@ class Classes extends CI_Controller {
         }
         $MemberID = $userInfo['MemberID'];
         $data = $this->ClassModel->getMyClass($MemberID);
+        //var_dump($data);
     }
 }
  
