@@ -1,4 +1,7 @@
 /*课程展示的css样式*/
+a {
+	color: #000;
+}
 .classShow {
 	position: relative;
 	width: 90%;
@@ -8,16 +11,18 @@
 }
 .classShowNav span {
 	display: block;
-	width: 200px; 
-	height: 200px;
+	width: 240px; 
+	height: 240px;
 	border: 2px solid #ff0000;
-	margin:10px 35px; 
+	margin:10px 15px; 
 	padding: 10px;
 	float: left;
+	position: relative;
+	overflow: hidden;
 }
 .classShowNav span img {
-	width: 200px;
-	height: 150px;
+	width: 240px;
+	height: 180px;
 }
 .classShowNav { 
 	margin: 50px 0;
@@ -30,6 +35,21 @@
 	text-align: center;
 	border-bottom:2px solid #ff0000;
 	margin:5px 0;  
+}
+span.className p {
+	display: block;
+	text-align: right;
+	height: 16px;
+	margin-top: 5px;
+	font-size: 12px;
+}
+span.className b {
+	display: inline-block;
+	float: left;
+    font-size: 12px;
+	font-weight: unset;
+	color: #ff0000;
+	font-family: 'Microsoft YaHei';
 }
 
 /*顶部导航栏*/
@@ -89,8 +109,8 @@ a {
 }
 /*页码样式*/
 .classListPage {
-	width:500px;
-	margin: 20px 0 20px 500px;
+	width: 400px;
+	margin: 20px auto;
 	font-size: 18px;
 }
 .classListPage li a,strong {

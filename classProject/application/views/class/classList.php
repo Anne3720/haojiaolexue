@@ -56,9 +56,24 @@
                 foreach ($classList as $u => $v) {                  
                     if($_GET['grade']== $v['Grade']){ ?>                
             <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>">
-                <span>
+                <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
-                    <p><?php echo($v['ClassNO']); ?></p>
+                    <p>
+                    <b><?php if(!is_null($v['Price'])){
+                        echo "&yen; ";echo ($v['Price']); 
+                       } ?> 
+                    </b> 
+                    <?php if($v['available']==1){
+                           echo"已购买";
+                        }elseif($v['available']==0){
+                           echo"未购买";
+                    } ?>
+                    </p>
+                    
+                    <ul>
+                        <li><?php echo ($v['Name']); ?></li>
+                        <li><?php echo ($v['Desc']); ?></li>
+                    </ul>
                 </span>
             </a>     
         <?php }}} ?>         
@@ -67,9 +82,24 @@
         <?php if(!isset($_GET['grade'])){
                 foreach ($classList as $u => $v) {?>                
             <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>">
-                <span>
+                <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
-                    <p><?php echo($v['SubjectID']); ?></p>
+                    <p>
+                    <b><?php if(!is_null($v['Price'])){
+                        echo "&yen; ";echo ($v['Price']); 
+                       } ?> 
+                    </b>   
+                    <?php if($v['available']==1){
+                           echo"已购买";
+                        }elseif($v['available']==0){
+                           echo"未购买";
+                    } ?>
+                    </p>
+                    
+                    <ul>
+                        <li><?php echo ($v['Name']); ?></li>
+                        <li><?php echo ($v['Desc']); ?></li>
+                    </ul>
                 </span>
             </a>     
         <?php }} ?>         

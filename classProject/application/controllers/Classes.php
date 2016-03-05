@@ -66,6 +66,7 @@ class Classes extends CI_Controller {
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
         $this->load->view('class/classList',$data);
+        //var_dump($data);
 
     }
     //根据课程id获取对应视频地址
@@ -86,7 +87,7 @@ class Classes extends CI_Controller {
         }else{
             $this->load->view('/class/unPay');
         }
-        // print_r($data);
+       // print_r($data);
     }
     //获取用户已购买课程列表
     public function myClass(){
