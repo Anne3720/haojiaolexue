@@ -9,12 +9,15 @@
 	    
 	</div>
     <div class="vedioContent">
-    	<span><strong>课程名称: </strong><?php echo ($Name);?></span>
-        <span class="desc"><strong>课程内容: </br></strong></span>
-    	<span> <?php echo ($Desc);?></span>
-    	<span class="desc"><strong>主讲老师: </strong><?php echo ($Teacher);?></span>
-    	<span style="font-family: 'Microsoft YaHei';">课程优惠价：<?php echo "&yen; "; echo ($Price);?></span>
+    	<span class="desc"><strong>课程名称: </strong><?php echo ($Name);?></span>
+        <span><strong>课程内容: </br></strong></span>
+    	<span class="desc"> <?php echo ($Desc);?></span>
+    	<span><strong>主讲老师: </strong><?php echo ($Teacher);?></span>
+    	<span class="desc" style="font-family: 'Microsoft YaHei';">课程优惠价：<?php echo "&yen; "; echo ($Price);?></span>
         <span class="time">更新时间:<?php echo ($UpdateTime);?></span>
+    </div>
+    <div class="bottom">
+        
     </div>
 </div>
 <?php include('/../footer.php');?>
