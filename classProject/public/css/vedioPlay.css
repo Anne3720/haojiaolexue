@@ -1,25 +1,23 @@
 .vedio {
-	width: 1000px;
+	width: 1002px;
     position: relative;
-	height: 645px;
+	height: 610px;
 	margin: 50px auto 50px;
-    background:#dcf0ff; 
+    background:#D7E7F4; 
     overflow: hidden;
+ 
 }
 .reback {
 	overflow: hidden;
-	padding: 10px 40px;
+	padding: 10px 30px;
 	background: #000;
-	margin:0 0 30px 0;
 }
 .reback a {
-	font-size: 24px;
+	font-size: 16px;
 	color: #317EF3;
 }
-.vedio:hover .reback,.vedio:hover .bottom {
-	background: #317EF3;
-}
-.vedio:hover a {
+
+.reback:hover a {
 	color:red; 
 }
 .vedioPlay {
@@ -28,8 +26,9 @@
 	padding: 20px;
 	position: relative;
 	overflow: hidden;
-	background: #000000;
-	margin:0 30px; 
+	background: #000;
+	margin:20px; 
+	
 }
 .vedioPlayBox {
     width: 600px;
@@ -40,9 +39,8 @@
 	height: 550px;
 	float: left;
     overflow: hidden;
-    background: #dcdcf3;
-    margin-top: -30px;
     position: relative;
+    border-left: 2px solid #000;
 }
 .vedioContent span {
 	width: 265px;
@@ -54,9 +52,7 @@
 .vedioContent span strong {
 	font-size: 18px;
 }
-span.desc {
-	background: #fff;
-} 
+
 span.time {
 	font-size: 14px;
 	text-align: right;
@@ -66,7 +62,7 @@ span.time {
 .bottom {
 	background:#000;
 	width: 100%;
-	height: 50px;
+	height: 40px;
 	position: absolute;
 	bottom: 0px;
 }

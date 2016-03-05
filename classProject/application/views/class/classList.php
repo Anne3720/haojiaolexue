@@ -72,7 +72,7 @@
                     
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
-                        <li><?php echo ($v['Desc']); ?></li>
+                    
                     </ul>
                 </span>
             </a>     
@@ -98,7 +98,7 @@
                     
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
-                        <li><?php echo ($v['Desc']); ?></li>
+                     
                     </ul>
                 </span>
             </a>     
