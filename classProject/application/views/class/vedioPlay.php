@@ -17,3 +17,4 @@
         <span class="time">更新时间:<?php echo ($UpdateTime);?></span>
     </div>
 </div>
+<?php include('/../footer.php');?>

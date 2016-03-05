@@ -2,13 +2,13 @@
 	width: 1022px;
     position: relative;
 	height: 600px;
-	margin: 20px auto;
-    background:#dcdcf3; 
+	margin: 20px auto 50px;
+    background:#dcf0ff; 
 }
 .reback {
 	overflow: hidden;
 	padding: 10px 50px;
-	background:#000;
+	background:#317EF3;
 	margin:30px 0;
 }
 .reback a {
@@ -16,10 +16,10 @@
 	color: red;
 }
 .reback:hover {
-	background: #317EF3;
+	background: #000;
 }
 .reback:hover a {
-	color: black;
+	color: #317EF3;
 }
 .vedioPlay {
 	width: 600px;
@@ -39,8 +39,8 @@
 	height: 490px;
 	float: left;
     overflow: hidden;
-    background: #dcf0ff;
-    border-bottom: 33px solid #dcdcf3;
+    background: #dcdcf3;
+    border-bottom: 33px solid #dcf0ff;
 }
 .vedioContent span {
 	width: 265px;
