@@ -1,30 +1,57 @@
 .vedio {
-	width: 70%;
+	width: 950px;
     position: relative;
-	height: 550px;
-	margin: 50px 150px;
-	border: 2px solid red;
+	height: 540px;
+	margin: 50px auto;
+    background:#dcdcf3; 
 }
 .reback {
-    border-bottom: 2px solid red;
 	overflow: hidden;
 	padding: 10px;
 }
 .reback a {
 	font-size: 24px;
+	color: #317EF3;
+}
+.reback:hover {
+	background: #317EF3;
+}
+.reback:hover a {
+	color: red;
+}
+.reback span {
+	display: inline-block;
+	padding-left: 50px;
 }
 .vedioPlay {
-	width: 65%;
-	border-right: 2px solid red;
-	height: 500px;
+	width: 600px;
 	float: left;
-	padding: 0 20px;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background: #000000;
 }
 .vedioPlayBox {
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 450px;
 }
 .vedioContent {
-	width: 25%;
+	width: 290px;
+	height: 470px;
 	float: left;
+   
 }
+.vedioContent span {
+	width: 265px;
+    display:inline-block;
+    padding: 20px 20px;
+    margin:0px auto; 
+    word-wrap: break-word;
+    font-size: 20px;
+}
+.vedioContent span strong {
+	font-size: 20px;
+}
+span.desc {
+	background: #ffffff;
+} 

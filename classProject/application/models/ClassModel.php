@@ -25,7 +25,7 @@ class ClassModel extends CI_Model{
 	* @return array
     */
     public function getVideoByClassID($classid){
-    	$this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price,Teacher');
+    	$this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price,Teacher,Video');
 		$this->db->where('ClassID',$classid);
 		$query = $this->db->get('Tbl_Class');
         $data = $query->result_array();

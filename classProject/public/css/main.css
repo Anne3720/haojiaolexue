@@ -3,12 +3,8 @@
 
 body {
 	margin:0 auto;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699FF', endColorstr='#6699FF'); /*  IE */
-	background-image:linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-o-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-moz-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-webkit-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-ms-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
+	
+	
 	width: 100%;
 	height: 100%;
 	position: relative;
