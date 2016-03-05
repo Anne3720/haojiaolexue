@@ -8,19 +8,19 @@
 }
 .reback {
 	overflow: hidden;
-	padding: 10px 50px;
+	padding: 10px 40px;
 	background: #000;
 	margin:0 0 30px 0;
 }
 .reback a {
 	font-size: 24px;
-	color: red;
+	color: #317EF3;
 }
 .vedio:hover .reback,.vedio:hover .bottom {
 	background: #317EF3;
 }
-.reback:hover a {
-	color: #317EF3;
+.vedio:hover a {
+	color:red; 
 }
 .vedioPlay {
 	width: 600px;
@@ -61,8 +61,6 @@ span.time {
 	font-size: 14px;
 	text-align: right;
 	display: block;
-	position: absolute;
-	bottom: 20px;
 	color: red;
 }
 .bottom {
