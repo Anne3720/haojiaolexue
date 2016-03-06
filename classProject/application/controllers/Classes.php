@@ -88,7 +88,7 @@ class Classes extends CI_Controller {
             unset($data['Video']);
             $this->load->view('/class/unPay',$data);
         }
-       //var_dump($data);
+       var_dump($data);
     }
     //获取用户已购买课程列表
     public function myClass(){
