@@ -81,4 +81,15 @@ class User extends CI_Controller {
         $this->session->sess_destroy();//注销所有session变量
         redirect('/User/login','refresh');//这是退出到登陆页面
     }
+
+    public function checkLogin(){
+        $userInfo = $this->session->userdata('userInfo');
+        //未登录跳转
+        if(!$userInfo){
+            return array();
+        }
+        $userInfo = json_decode($userInfo,true);
+        //登陆以后查看用户是否已购买该课程
+        return $userInfo;
+    }
 }

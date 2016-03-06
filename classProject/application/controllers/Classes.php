@@ -7,6 +7,7 @@ class Classes extends CI_Controller {
         parent::__construct();
         $this->load->model('ClassModel');
         $this->load->model('CommonModel');
+        $this->load->model('UserModel');
         $this->load->config('myconfig');
         $this->load->library('pagination');
         $this->load->helper('url');
@@ -71,21 +72,21 @@ class Classes extends CI_Controller {
     }
     //根据课程id获取对应视频地址
     public function video($classid){
-        $userInfo = $this->session->userdata('userInfo');
+        $userInfo = $this->UserModel->checkLogin();
         //未登录跳转
-        if(!$userInfo){
+        if(empty($userInfo)){
         	redirect('/User/Login');
         }
-        $userInfo = json_decode($userInfo,true);
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
         $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
+    	$data = $this->ClassModel->getVideoByClassID($classid);
         if($classBought){
-    		$data = $this->ClassModel->getVideoByClassID($classid);
             $this->load->view('/class/vedioPlay',$data);
 
         }else{
-            $this->load->view('/class/unPay');
+            unset($data['Video']);
+            $this->load->view('/class/unPay',$data);
         }
        //var_dump($data);
     }
