@@ -66,10 +66,9 @@
                     <?php if($v['available']==1){
                            echo"已购买";
                         }elseif($v['available']==0){
-                           echo"未购买";
+                           echo"点击购买";
                     } ?>
-                    </p>
-                    
+                    </p>                    
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
                     
@@ -85,15 +84,17 @@
                 <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
-                    <b><?php if(!is_null($v['Price'])){
+                    <i><?php if(!is_null($v['Price'])){
                         echo "&yen; ";echo ($v['Price']); 
                        } ?> 
-                    </b>   
-                    <?php if($v['available']==1){
+                    </i>
+                    <b>
+                       <?php if($v['available']==1){
                            echo"已购买";
                         }elseif($v['available']==0){
-                           echo"未购买";
-                    } ?>
+                           echo"点击购买";
+                        } ?> 
+                    </b>
                     </p>
                     
                     <ul>
@@ -116,5 +117,8 @@
    
   
 <!--script文件-->
-<!--script type="text/javascript" src="/public/js/classListNav.js"></script-->
+<script type="text/javascript">
+     
+</script>
+
 <?php include('/../footer.php');?>
