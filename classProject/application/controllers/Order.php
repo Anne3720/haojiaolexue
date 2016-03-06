@@ -44,6 +44,6 @@ class Order extends CI_Controller {
             $this->load->view('/order/createOrder',$data);
 
         }
-     var_dump($data);
+     //var_dump($data);
     }
 }
