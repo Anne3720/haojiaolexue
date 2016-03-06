@@ -10,7 +10,7 @@ ul,ol{
 .container,.order, .submit, .order02{
 	width: 1190px;	
     overflow: hidden;
-    margin:40px auto;
+    margin:20px auto;
     position: relative;   
 }
 .container {
