@@ -1,5 +1,5 @@
 <?php
-class User extends CI_Controller {
+class Order extends CI_Controller {
 
     public function __construct()
     {
@@ -7,6 +7,7 @@ class User extends CI_Controller {
         $this->load->model('ClassModel');
         $this->load->model('UserModel');
         $this->load->model('CommonModel');
+        $this->load->model('OrderModel');
         $this->load->config('myconfig');
         $this->load->helper('url');
     }
@@ -18,9 +19,26 @@ class User extends CI_Controller {
         if(empty($userInfo)){
             redirect('/User/Login');
         }
-        //登陆以后查看用户是否已购买该课程
-        $MemberID = $userInfo['MemberID'];
         $classInfo = $this->ClassModel->getVideoByClassID($classID);
-        // $OrderNo
+        $MemberID = $userInfo['MemberID'];
+        $OrderNo = date('Ymd').str_pad($MemberID, 6, '0', STR_PAD_LEFT).str_pad($classID, 6, '0', STR_PAD_LEFT);
+        $OrderArr = array(
+            'OrderNo' => $OrderNo,
+            'MemberID' => $MemberID,
+            'ClassID' => $classID,
+            'Price' => $classInfo['Price'],
+            'CreateTime' => date('Y-m-d H:i:s'),
+            'UpdateTime' => date('Y-m-d H:i:s'),
+            'Status' => 0,
+            'PaymentType' => 1,//1支付宝
+        );
+        $rs = $this->OrderModel->createOrder($OrderArr,0);
+        if(!$rs){
+
+        }else{
+            $where = array('OrderNo'=>$OrderNo);
+            $data['orderInfo'] = $this->OrderModel->getOrderInfo($where);
+            $this->load->view('/order/createOrder',$data);
+        }
     }
 }
