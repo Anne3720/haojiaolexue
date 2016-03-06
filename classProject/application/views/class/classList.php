@@ -55,7 +55,7 @@
         <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
                 foreach ($classList as $u => $v) {                  
                     if($_GET['grade']== $v['Grade']){ ?>                
-            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>">
+            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
                 <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
@@ -80,7 +80,7 @@
         <div class="classShowNav">
         <?php if(!isset($_GET['grade'])){
                 foreach ($classList as $u => $v) {?>                
-            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>">
+            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
                 <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
