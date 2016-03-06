@@ -13,8 +13,11 @@ ul,ol{
 
 </style>
 <div>
-	<span>填写并确认订单信息</span>
-	<span>填写并确认订单信息</span>
+	<span>1、填写并确认订单信息</span>
+	<span>2、成功提交订单</span>
+    <p>填写并核对订单信息</p>
+    <p>课程清单</p>
+    <p>价格</p>
 </div>
 
 
