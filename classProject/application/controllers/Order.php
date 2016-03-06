@@ -32,6 +32,7 @@ class Order extends CI_Controller {
             'Status' => 0,
             'PaymentType' => 1,//1支付宝
         );
+        
         $rs = $this->OrderModel->createOrder($OrderArr,0);
         if(!$rs){
 
@@ -41,6 +42,8 @@ class Order extends CI_Controller {
             $data['classInfo'] = $this->ClassModel->getVideoByClassID($classID);
             unset($data['classInfo']['Video']);
             $this->load->view('/order/createOrder',$data);
+
         }
+     var_dump($data);
     }
 }

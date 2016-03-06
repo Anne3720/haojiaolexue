@@ -59,16 +59,18 @@
                 <span class="className">
                     <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
-                    <b><?php if(!is_null($v['Price'])){
+                    <i><?php if(!is_null($v['Price'])){
                         echo "&yen; ";echo ($v['Price']); 
                        } ?> 
-                    </b> 
-                    <?php if($v['available']==1){
+                    </i>
+                    <b>
+                       <?php if($v['available']==1){
                            echo"已购买";
                         }elseif($v['available']==0){
                            echo"点击购买";
-                    } ?>
-                    </p>                    
+                        } ?> 
+                    </b>
+                    </p>                  
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
                     
@@ -95,8 +97,7 @@
                            echo"点击购买";
                         } ?> 
                     </b>
-                    </p>
-                    
+                    </p>                   
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
                      

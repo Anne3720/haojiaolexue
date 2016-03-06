@@ -114,7 +114,7 @@ ul,ol{
 <div class="submit">
 	<p>应付金额：<i><?php echo "&yen; "; echo ($Price);?></i>
     </p>
-    <span><a href="/order/createOrder.php">提交订单</a></span>
+    <span><a href="/order/createOrder/<?php echo ($ClassID);?>">提交订单</a></span>
 
 </div>   
     
