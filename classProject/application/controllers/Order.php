@@ -38,6 +38,8 @@ class Order extends CI_Controller {
         }else{
             $where = array('OrderNo'=>$OrderNo);
             $data['orderInfo'] = $this->OrderModel->getOrderInfo($where);
+            $data['classInfo'] = $this->ClassModel->getVideoByClassID($classID);
+            unset($data['classInfo']['Video']);
             $this->load->view('/order/createOrder',$data);
         }
     }
