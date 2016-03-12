@@ -61,11 +61,11 @@
             },    
             messages: { 
                 username: {  
-                    required: '请输入正确的用户名',  
+                    required: '',  
                     minlength: '请至少输入两个字符'  
                 },  
                 password: {
-                    required: "请输入密码",
+                    required: "",
                     minlength: "密码不能小于6个字符"
                 }
             },   
@@ -97,7 +97,7 @@ $(document).ready(function(){
             return true;
         }
             return false;
-
+        
 
     };
 console.log(!demo.valid());
