@@ -35,6 +35,7 @@ class User extends CI_Controller {
         $status = $this->config->item('STATUS_REG_SUCCESS');
         $msg = $this->config->item('MSG_REG_SUCCESS');
         $this->CommonModel->sendMsg($status,array(),$msg);
+        var_dump($status);
     }
     public function login(){
         $this->load->view('User/Login');
@@ -65,6 +66,7 @@ class User extends CI_Controller {
             $this->session->set_userdata('userInfo',json_encode($info));
         }
         $this->CommonModel->sendMsg($status,array(),$msg);
+        
     }
     public function doActivate($mobile,$validate){
         if(md5($mobile.'haojiaolexue')!=$validate){

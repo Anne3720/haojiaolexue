@@ -3,13 +3,6 @@ html,body .box{
 	height: 100%;
 	margin:0 auto;
 	width: 100%;
-
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699FF', endColorstr='#6699FF'); /*  IE */
-	background-image:linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-o-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-moz-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-webkit-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
-	background-image:-ms-linear-gradient(bottom, #dcdcf3 0%, #dcdcf3 100%);
 }
 .login {
 	width: 450px;
@@ -27,27 +20,28 @@ html,body .box{
 	display: inline-block;
 	padding: 0px 50px;
 	text-align: left;
-	line-height: 25px;
+	line-height: 27px;
+	height: 27px;
 }
 .login p span{
-	display: inline-block;
+	display: block;
 	width: 90px;
 	height: 27px;
 	line-height: 27px;
 	color: #000000;
 	background: #f0f0fa;
 	padding-left: 10px;
-	border-bottom: 2px solid #f0f0fa;
+	float: left;
 }
 .login p input {
 	margin: 0px -10px;
 	width: 220px;
-	height: 27px;
+	height: 25px;
 	line-height: 25px;
-	border: 0;
+	border: none;
 	padding-left:-5px; 
 }
-.login #btnLogin {
+.login #btn-login {
 	width: 320px;
 	display: block;
 	margin:25px auto;
@@ -56,7 +50,7 @@ html,body .box{
 	border: 0;
 	margin-left: 50px;
 }
-#btnLogin:hover {
+#btn-login:hover {
 	background:#ed7c14 ;
 }
 .login-title {
@@ -83,6 +77,7 @@ label.error{
 	text-align: center;
 	color: red;
 	display: block;
+	margin:0 auto;
 }
 
 
