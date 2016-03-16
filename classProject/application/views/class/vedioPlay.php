@@ -8,8 +8,9 @@ $(document).ready(function() {
     $('video').mediaelementplayer({ 
         alwaysShowControls: true, 
         videoVolume: 'horizontal', 
-        features: ['playpause','progress','volume','fullscreen'] 
-    }); 
+        features: ['playpause','progress','volume','fullscreen'],
+    });
+     
 }); 
 // ]]>
 </script>
