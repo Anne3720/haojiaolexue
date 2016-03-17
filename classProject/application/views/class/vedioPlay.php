@@ -15,10 +15,7 @@ $(document).ready(function() {
 // ]]>
 </script>
 <div class="video">
-<div class="container">
-    <div class="reback">
-        <span class="desc"><strong>课程名称: </strong><?php echo ($Name);?></span>
-    </div>
+    <div class="container">
     <div class="videoPlay">    
         <video width="600" height="450" poster="" controls="controls" preload="none">
             <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
@@ -43,17 +40,13 @@ $(document).ready(function() {
     </div>
    
     <div class="videoContent">
-        
+        <span class="desc"><strong>课程名称: </strong><?php echo ($Name);?></span>
         <span><strong>课程内容: </br></strong></span>
         <span class="desc"> <?php echo ($Desc);?></span>
         <span><strong>主讲老师: </strong><?php echo ($Teacher);?></span>
         <span class="desc" style="font-family: 'Microsoft YaHei';">课程优惠价：<?php echo "&yen; "; echo ($Price);?></span>
         <span class="time">更新时间:<?php echo ($UpdateTime);?></span>
-    </div>
-    <div class="bottom">
-        
-    </div>
-</div>   
+    </div>   
 </div>
 
 
