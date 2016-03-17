@@ -11,6 +11,9 @@
     background:#A2CEFB; 
     overflow: hidden; 
     float: left; 
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius:15px;   
 }
 .videoPlay {
     width: 600px;   
