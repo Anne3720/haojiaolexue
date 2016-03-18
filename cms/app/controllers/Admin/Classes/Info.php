@@ -29,6 +29,9 @@ class Admin_Classes_InfoController extends Admin_AbstractController
             'ClassNo'=>$post['ClassNo'],
             'Grade'=>$post['Grade'],
             'SubjectID'=>$post['SubjectID'],
+            'Name'=>$post['Name'],
+            'Teacher'=>$post['Teacher'],
+            'Desc'=>$post['Desc']
             'Price'=>$post['Price'],
             'UpdateTime'=>date('Y-m-d H:i:s'),
         );
