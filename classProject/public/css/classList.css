@@ -8,12 +8,13 @@ a {
 	z-index: 0;
 	margin: 30px auto 10px;
 	overflow: hidden;
+
 }
 .classShowNav span {
 	display: block;
 	width: 240px; 
 	height: 240px;
-	
+	border-radius: 10px;
 	margin:10px 15px; 
 	padding: 10px;
 	float: left;
@@ -24,6 +25,7 @@ a {
 .classShowNav span img {
 	width: 240px;
 	height: 180px;
+	border-radius: 5px;
 }
 .classShowNav { 
 	margin: 50px 0;
@@ -72,24 +74,24 @@ a {
 	line-height: 30px;
 	padding: 5px 10px;
 	height: 40px;
-    color:#ff0000; 
+    color:#0000ff; 
 }
 .course-nav-item a {
 	display: inline-block;
-	color: #000;
+	color: #0000ff;
 	padding: 5px 10px;
 	width: 50px;
 	text-align: center;
 }
 .course-nav-item:hover a {
-	color: #0000ff;
+	color: #000;
 }
 .hd {
 	display:inline-block;
 	width: 50px;
 	margin: 10px;
 	float: left;
-	color: #ff0000;
+	color: #0000ff;
 	font-weight: bold;
 }
 .course-nav-row {
@@ -102,6 +104,7 @@ a {
 
 .on{
 	background-color: #ff0000;
+	border-radius: 5px;
 }
 .on a {
 	color: #fff;
