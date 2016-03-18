@@ -15,24 +15,25 @@
 <body>
 <div class="box">
   <div class="login">
-    <div class="login-title">登录</div>
+    <div class="login-title">登 录</div>
   	<div class="login-center">
   		<form id="login" name="login" method="post" >
-  			<p> <span class="input-group-addon">用&nbsp;户&nbsp;名</span>
+  			<p class="input-group-addon"> <span><img src="../public/img/head.svg" alt="" /></span>
 				<input type="text" id="username" name="username" class="form-control" placeholder="请输入邮箱或者手机号码">
 			</p>
-            <p> <span class="input-group-addon">密 &nbsp;&nbsp; 码</span>
+            <p class="input-group-addon"> <span><img src="../public/img/lock.svg" alt="" /></span>
 				<input type="password" id="password" name="password" class="form-control" placeholder="请输入密码">
 			</p>
   		
       <span class="denglu" >
-               <input id="btn-login"  type="submit"  value="登 录"/>               
+               <input id="btn-login"  type="submit"  value="登 录"/> 
+               <p><a href="reg" >注 册</a></p>              
       </span>     
   		</form>
   		<div id="hehe"></div>
             
-  	    <p class="text-center "><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a></p>
-	    <p class="text-center"><small>还没注册?</small> <a href="reg" ><small>注册</small></a></p>
+  	  <p class="text-center"><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a></p> 
+	    
 
 
   	</div>
