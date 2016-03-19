@@ -111,7 +111,7 @@ a {
 }
 
 .on{
-	background-color: #ff8000;
+	background-color: rgba(251,116,2,.8);
 	border-radius: 5px;
 }
 .on a {

@@ -25,7 +25,7 @@ a {
 	position: relative;
     height: 50px;
     font-size: 30px;
-    background: #398bfb;
+    background: #378cff;
     overflow: hidden;
     color: #fff;
 }
@@ -57,7 +57,7 @@ div.navtop-logo {
 }
 .navtop ul li:hover {
 	
-	background: #ff8000;
+	background: #ffd706;
 }
 ul.navtop-class {
     float: left;
@@ -171,10 +171,10 @@ ul.navtop-login {
 }
 /*底部文件样式*/
 .footer {
-	background: #6699FF;
 	position: relative;
 	height: 100px;
 	bottom:0px; 
+	background: #ececec;
 }
 .footer ul {
 	display: block;
