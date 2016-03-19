@@ -101,7 +101,6 @@ $(document).ready(function(){
         
 
     };
-console.log(!demo.valid());
     //提交后的回调函数
     function showResponse(responseText, statusText){  
                   
@@ -126,34 +125,7 @@ console.log(!demo.valid());
   
 });
          
-            
-                 /*
-                  $.ajax({
-                      url:"/User/doLogin",
-                      dataType:'json',     
-                      type:'POST',
-                      data: ,     
-                      error:function(){     
-                           alert('error');     
-                      },     
-                      success:showResponse,
-                  });
-              
-                function showResponse(data,msg,status){     
-                      //清空resText里面的所有内容  
-                        
-
-                       if (status=='2') {
-                          $('#hehe').html(msg);  
-                       }
-                         //showResponse;
-                         //$.getJSON()
-                         //$("#hehe").append(responseText.msg);
-                             
-                } ;         
-                     
-            });
-           */ 
+          
    </script> 
 </body>
 

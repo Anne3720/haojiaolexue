@@ -11,6 +11,5 @@
 	    </ul>
 	    
 	</div>
-
 <script type="text/javascript" src="/public/js/navLeft.js"></script>
 <?php include('footer.php');?>
