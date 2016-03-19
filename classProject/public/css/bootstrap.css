@@ -5093,7 +5093,7 @@ input[type="submit"].btn.btn-mini {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: rgba(0,255,0,.2);
+  background-color: rgba(0,0,0,.5);
 }
 
 .modal-backdrop.fade {
