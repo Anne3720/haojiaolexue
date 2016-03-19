@@ -118,7 +118,7 @@ p.order02p {
         </p>
         
         <p class="ordername">请您在提交订单后24小时内完成支付，否则订单会自动取消。</p>
-        <p>课程名称：<?php echo ($Name);?></p>
+        <p>课程名称：<?php echo ($classInfo['Name']);?></p>
     </div>  
     <div class="order02">
     	<p>
