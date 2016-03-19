@@ -1,6 +1,10 @@
 /*课程展示的css样式*/
 a {
 	color: #000;
+	text-decoration: none;
+}
+.course-nav .course-nav-row {
+	z-index: 10;
 }
 .classShow {
 	position: relative;
@@ -78,21 +82,24 @@ a {
 }
 .course-nav-item a {
 	display: inline-block;
-	color: #0000ff;
-	padding: 5px 10px;
-	width: 50px;
+	color: #000000;
+	padding: 10px 0px;
+	width: 65px;
+	font-size: 18px;
 	text-align: center;
+	text-decoration: none;
 }
 .course-nav-item:hover a {
 	color: #000;
 }
-.hd {
+.course-nav-row .hd {
 	display:inline-block;
 	width: 50px;
-	margin: 10px;
+	margin: 25px 30px 20px 15px;
 	float: left;
 	color: #0000ff;
 	font-weight: bold;
+	font-size: 20px;
 }
 .course-nav-row {
 	width: 100%;
@@ -100,6 +107,7 @@ a {
     border-bottom: 2px solid #000;
     padding: 20px 10px 5px 0px;
     overflow: hidden;
+    position: relative;
 }
 
 .on{

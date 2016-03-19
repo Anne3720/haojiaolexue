@@ -2,43 +2,32 @@
 ul ,li {list-style: none;}
 html {
 	background: #fff;
-    background: rgba(0,161,255,.1);
 }
-.box {
-	width: 490px;
-	margin: 50px auto 0px;
-	font-size: 16px;
-	background: rgba(0,161,255,.1);
-	border:2px solid #cccccc;
-	position: relative;
-	border-radius: 10px;
-	overflow: hidden;
-}
-.register {
+.register,.login {
 	width: 490px;
 	margin: 0 auto;	
 	font-size: 16px;
 	position: relative;
 }
-.register-center {
+.register-center,.login-center {
 	padding: 10px 0px 10px 10px;
 	margin: 5px auto 0;
 	position: relative;
 }
-.reg-group-addon {
+.reg-group-addon,.input-group-addon {
 	width: 370px;
 	display: inline-block;
 	padding: 2px 0px;
 	text-align: center;
 	line-height: 27px;
 	height: 27px;
-	background: rgba(0,161,255,.5);
-	border-radius: 5px 0 0 5px;
-	margin:10px 50px; 
+  
+	border-radius: 5px;
+	margin:10px 30px; 
 }
-.register p span{
+.register p span,.login p span {
 	display: inline-block;
-	width: 80px;
+	width: 40px;
 	height: 27px;
 	line-height: 25px;
 	text-align: center;
@@ -46,25 +35,17 @@ html {
 	margin:0 5px; 
 	color: #fff;
 }
-.register p input {
-	width: 250px;
-	height: 25px;
-	line-height: 25px;
+.register p input,.login p input {
+	width: 290px;
+	height: 27px;
+	line-height: 27px;
 	border: none;
-	padding-left:10px;
+	padding:0  0 0 10px;
 	float: left;
+	border: 1px solid #000;
 }
-.choose-btn {
-	margin-left: 150px;
-	border: 0;
-	background: transparent;
-}
-.choose-btn input {
-	width: 20px !important;
-	margin: 0px 5px !important;
-	height: 15px !important;
-}
-.register #btn-reg,.zhuce p {
+
+.register #btn-reg,.zhuce p,.login #btn-login,.denglu p {
 	width: 100px;
 	display: inline-block;
 	font-size: 24px;
@@ -75,42 +56,41 @@ html {
     cursor: pointer;
     color: #fff;
 }
-.register #btn-reg {
-    margin:25px 50px;
+.register #btn-reg,.login #btn-login {
+    margin:25px 0px 25px 80px;
 }
-#btn-reg:hover,.zhuce p:hover {
+#btn-reg:hover,.zhuce p:hover,#btn-login:hover,.denglu p:hover {
 	background:#0000ff ;
 }
-.zhuce p {
+.zhuce p,.denglu p {
 	float: right;
-	margin:25px 50px 25px 0px;
+	margin:25px 100px 25px 0px;
 }
-.zhuce p a {
+.zhuce p a,.denglu p a {
 	display: block;
 	line-height: 35px;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
 }
-.register-title {
+.register-title,.login-title {
 	height: 60px;
 	line-height: 60px;
-	background:#efc8c8;
 	text-align: center;
 	font-size: 24px;
-	color: #0000ff;
-	background: rgba(0,161,255,.7);
+	color: #000000;
+	background: rgba(0,161,255,1);
 }
-label.error{
+label.error {
 	text-align: center;
-	color: red;
+	color: rgba(0,0,255,1);
 	display:block; 
 	font-size: 12px;
 	line-height: 27px;
 	position: absolute;
-	left: 290px;
+	left: 250px;
 }
-#hehe {
+#login-reback {
 	text-align: center;
 	color: red;
 	display: inline-block;
@@ -129,5 +109,26 @@ p.text-center{
 	display: block;
 	width: 380px;
 }
-/*在CSS中添加样式与之关联 */ 
+.login-reg-off {
+	display: none;
+}
+/*登录页面 */
+
+#hehe {
+	text-align: center;
+	color: #00f;
+	display: block;
+	margin-left: 60px;
+	margin-top: -10px;
+	width: 300px;
+	height: 50px;
+}
+
+
+.text-center {
+	display: inline-block; 
+    position: absolute;
+    bottom: -5px;
+    right: 50px;
+} 
  
