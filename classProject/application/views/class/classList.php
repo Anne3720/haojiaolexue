@@ -1,4 +1,5 @@
 <?php include('/../header.php');?>
+<title>好教乐学</title>
 <link rel="stylesheet" href="/../../../public/css/classList.css" type="text/css" />
     <div class="course-nav">
         <div class="course-nav-hd">
