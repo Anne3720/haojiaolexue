@@ -6,6 +6,7 @@
 	<title>好教乐学</title>
 	<link rel="stylesheet" href="/public/css/main.css" type="text/css" />
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="navtop">
@@ -30,3 +31,4 @@
         
 	    
 	</div>
+<div>	</div>
