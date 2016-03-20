@@ -75,7 +75,7 @@ a {
 	font-size: 26px;
 	border-bottom: 2px solid #000;
 	display: block;
-	line-height: 30px;
+	line-height: 40px;
 	padding: 5px 10px;
 	height: 40px;
     color:#0000ff; 
@@ -83,7 +83,7 @@ a {
 .course-nav-item a {
 	display: inline-block;
 	color: #000000;
-	padding: 10px 0px;
+	padding: 5px 0px;
 	width: 65px;
 	font-size: 18px;
 	text-align: center;
@@ -95,7 +95,7 @@ a {
 .course-nav-row .hd {
 	display:inline-block;
 	width: 50px;
-	margin: 25px 30px 20px 15px;
+	margin: 20px 30px 10px 15px;
 	float: left;
 	color: #0000ff;
 	font-weight: bold;
