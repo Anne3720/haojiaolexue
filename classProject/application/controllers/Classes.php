@@ -67,7 +67,7 @@ class Classes extends CI_Controller {
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
         $this->load->view('class/classList',$data);
-        //var_dump($data);
+       //var_dump($data);
 
     }
     //根据课程id获取对应视频地址

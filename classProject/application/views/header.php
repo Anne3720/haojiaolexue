@@ -29,7 +29,7 @@
 	        </ul>
 	        <?php }else{ ?>
 	        <ul class="navtop-login">
-	            <li><a href="/classes/myClass" >学习中心</a></li>
+	            <li><a href="" >学习中心</a></li>
 	            <li><a href="#" >个人信息</a></li>
 		        <li><a href="/user/doLogout" >退出</a></li>
 		    <?php } ?>
