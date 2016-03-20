@@ -35,7 +35,7 @@ class User extends CI_Controller {
         $status = $this->config->item('STATUS_REG_SUCCESS');
         $msg = $this->config->item('MSG_REG_SUCCESS');
         $this->CommonModel->sendMsg($status,array(),$msg);
-        var_dump($status);
+        //var_dump($status);
     }
     public function login(){
         $this->load->view('User/Login');
@@ -81,6 +81,6 @@ class User extends CI_Controller {
     }
     public function doLogout(){
         $this->session->sess_destroy();//注销所有session变量
-        redirect('/User/login','refresh');//这是退出到登陆页面
+        redirect('/user/login','refresh');//这是退出到登陆页面
     }
 }

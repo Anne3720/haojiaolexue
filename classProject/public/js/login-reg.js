@@ -112,7 +112,6 @@ $(document).ready(function(){
                   return false;  
                    }  
                 } 
-              console.log(formData);
                    var form=$('#Register') ;
                    if(!form.validate().successList.length){
                     $("#reg-reback").html("");
