@@ -74,10 +74,7 @@
                          <p><a class="btnlogin-reg-login">登 录</a></p>              
                   </span>       
   	          	</form>
-                <ul>
-                  <li id="reg-reback"></li>
-                  <li><a id="btnLogin" href="login" >点此返回登录</a></li>
-                </ul>
+                <div id="reg-reback"></div>
   	          </div>
             </div>
                     

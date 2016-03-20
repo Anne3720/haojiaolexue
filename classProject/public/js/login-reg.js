@@ -71,7 +71,7 @@ $(document).ready(function(){
               var options = { 
                   url:"/user/doReg",
                   type:"POST",
-                  target: '#hehe',
+                  target: '#reg-reback',
                   beforeSubmit: showRequest,  //提交前的回调函数  
                   success: showResponse,      //提交后的回调函数  
                   dataType:  'json',
@@ -88,18 +88,18 @@ $(document).ready(function(){
                   //var address = $('address', responseXML).text();  
                   //$("#xmlout").html(name + "  " + address);  
                   //dataType=json ;
-                  $("#hehe").html("");
+                  $("#reg-reback").html("");
                   if (statusText=='success') {
                          //showResponse;
                          //$.getJSON()
                          //$("#hehe").append(responseText.msg);
                         
                         if (responseText.status==0) {
-                          $("#hehe").append(responseText.msg);
-                          $("#btnLogin").show();
+                          $("#reg-reback").append(responseText.msg);
+                          
                         }
                         else{
-                          $("#hehe").append(responseText.msg);
+                          $("#reg-reback").append(responseText.msg);
                         }
                         
                     } 
@@ -115,23 +115,27 @@ $(document).ready(function(){
               console.log(formData);
                    var form=$('#Register') ;
                    if(!form.validate().successList.length){
-                    $("#hehe").html("");
+                    $("#reg-reback").html("");
                     return false;
                    }              
-                  $("#hehe").html("提交中。。。");
+                  $("#reg-reback").html("提交中。。。");
                   return true; 
-           }            
+           } 
+
          });    
 //点击切换
 $(document).ready(function(){
         $('.btnlogin-reg-login').click(function(){
             $('.register').addClass("login-reg-off");
             $('.login').removeClass("login-reg-off");
+            
         });
         $('.btnlogin-reg-reg').click(function(){
             $('.login').addClass("login-reg-off");
             $('.register').removeClass("login-reg-off");
+           
         });
+       
    });
 
 //登录页面js
@@ -204,9 +208,11 @@ $(document).ready(function(){
                       if (responseText.status!=0) {
                             $("#login-reback").empty();
                             $("#login-reback").append(responseText.msg);
+
+
                       }else if (responseText.status==0) {
                             $("#login-reback").empty();
-                            window.location= '..' ;   
+                            window.location.reload();   
                           } 
                       }
                   else if(statusText='null'){
@@ -216,4 +222,5 @@ $(document).ready(function(){
     };   
   
 });
-         
+         //setTimeout(time, 1000);
+         //var time=function(){ window.location.reload();}
