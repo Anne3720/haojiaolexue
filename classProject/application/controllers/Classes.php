@@ -75,7 +75,7 @@ class Classes extends CI_Controller {
         $userInfo = $this->UserModel->checkLogin();
         //未登录跳转
         if(empty($userInfo)){
-        	redirect('/User/Login');
+        	redirect('/user/login?ref=classes/video');
         }
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
