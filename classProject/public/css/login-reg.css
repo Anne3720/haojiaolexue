@@ -3,6 +3,15 @@ ul ,li {list-style: none;}
 html {
 	background: #fff;
 }
+.reg-box,.login-box {
+	width: 450px;
+	margin:50px auto; 
+	position: relative;
+	background:#fff;
+	border:2px solid #cccccc;
+	border-radius: 10px;
+	overflow: hidden;
+}
 .register,.login {
 	width: 490px;
 	margin: 0 auto;	
