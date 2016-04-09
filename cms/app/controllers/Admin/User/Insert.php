@@ -14,6 +14,8 @@ class Admin_User_InsertController extends Admin_AbstractController
         $id = $this->getRequest()->getPost('id');
         $username = $this->getRequest()->getPost('username', '');
         $username = trim($username);
+        $password = $this->getRequest()->getPost('password', '');
+        $password = trim($password);
         $gid = $this->getRequest()->getPost('gid', array());
 
         $admin = $this->session->get('admin_user');
@@ -35,10 +37,7 @@ class Admin_User_InsertController extends Admin_AbstractController
             $data = array(
                 'username' => $username,
                 'gid' => join(',', $gid),
-//                 'nick' => $params['nick'],
-//                 'phone' => $params['phone'],
-//                 'email' => $params['email'],
-//                'project_id' => join(',', $params['project_id']),
+                'password' => md5('123456'. md5('123456')),
                 'createtime' => date('Y-m-d H:i:s'),
             );
 
@@ -51,7 +50,9 @@ class Admin_User_InsertController extends Admin_AbstractController
                 'username' => $username,
                 'gid' => join(',', $gid),
             );
-
+            if($password){
+                $data['password'] = md5($password. md5($password));
+            }
             Admin_AdminModel::instance()->update($data, array('id' => $id));
         }
 

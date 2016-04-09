@@ -11,32 +11,28 @@ class Admin_LoginController extends Admin_AbstractController
     public function indexAction()
     {
         if ($this->getRequest()->getMethod() != 'POST') {
-            $params = array('title' => '腾跃CMS');
+            $params = array('title' => '好教乐学');
             $this->render($params);
         } else {
 
             $params = $this->getRequest()->getPost();
-
             $params['password'] = md5($params['password']. md5($params['password']));
-
-            /* 先查询帐号是否再库里,不在的话再查询RTX */
-//            $admin_user = db_admin::get_admin_by_username_password($_POST['username'], $_POST['password']);
             $admin_user = Admin_AdminModel::instance()->fetchRow(
                 array('condition' => 'username = ? and password = ? and status = 1',
                     'bind' => array($params['username'], $params['password']))
             );
 
-            /* 查询帐号
-            $admin_user = db_admin::get_admin_by_username_password($_POST['username'],$_POST['password']);
-             */
-
             if ($admin_user === false) {
-                throw new Exception("帐号或密码错误!", -1);
+                $return = array(
+                    'status'=>-1,
+                    'msg'=>'用户名或密码错误',
+                    'data'=>array()
+                );
+                echo(json_encode($return));exit;
             }
 
             if (!empty($admin_user['gid'])) {
                 /* 查询账号组 */
-//                $admin_group = db_admin_group::get_admin_group_gid($admin_user['gid']);
                 $admin_group = Admin_GroupModel::instance()->getAdminGroupByIds($admin_user['gid']);
 
                 foreach ($admin_group as $val) {
@@ -98,8 +94,13 @@ class Admin_LoginController extends Admin_AbstractController
             if (empty($callback_url)) {
                 $callback_url = '/admin/index';
             }
-
-            $this->_redirect($callback_url);
+            $return = array(
+                'status'=>0,
+                'msg'=>'登陆成功',
+                'data'=>array('callback'=>$callback_url)
+            );
+            echo(json_encode($return));exit;
+            // $this->_redirect($callback_url);
         }
 
 

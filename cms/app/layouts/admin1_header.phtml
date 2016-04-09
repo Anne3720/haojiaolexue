@@ -31,7 +31,7 @@
     <?php if (isset($menu)): ?>
         <div class="content-menu ib-a blue line-x">
             <?php foreach ($menu as $val):?>
-                <a href="<?php echo $val['url'];?>" class="<?php if (strtolower($this->getRequest()->getModuleName().$this->getRequest()->getControllerName()) == $val['modle'].$val['action'].$val['par']){echo 'on';}?> <?php if (!empty($val['ajax'])){echo ' thickbox';}?>" <?php if ($val['target']=='1'){echo 'target=_blank""';}?> title="<?php echo $val['title'];?>"><em class="right_menu"><?php echo $val['title'];?></em></a><span>|</span>
+                <a href="<?php echo $val['url'];?>" class="<?php if (strtolower($this->getRequest()->getModuleName().$this->getRequest()->getControllerName()) == $val['modle'].$val['action'].$val['par']){echo 'on';}?> <?php if (!empty($val['ajax'])){echo ' thickbox';}?>" <?php if ($val['target']=='1'){echo 'target=_blank""';}?> title="<?php echo $val['title'];?>"><span class="right_menu" style="color:black;font-weight:bold;"><?php echo $val['title'];?></span></a><span>|</span>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>

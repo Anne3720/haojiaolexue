@@ -94,10 +94,8 @@
         <div class="log white cut_line">
             您好！<b><?php echo $admin['username']; ?> (<?php echo $admin['nick']; ?>)</b>
             <span>|</span>
-            <a href="/zpadmin/ldap/modify" target="right">[帐号]</a>
+            <a href="/admin/modify" target="right">[重置密码]</a>
             <a href="/admin/logout">[退出]</a>
-            <span>|</span>
-            <a href="<?php echo $weburl; ?>" target="_blank" id="site_homepage">站点首页</a><span>|</span>
             登录时间: <?php echo $admin['logintime']; ?>
         </div>
         <ul class="nav white">
@@ -127,11 +125,6 @@
     <div class="col-auto mr8">
 
         <div class="crumbs">
-            <?php if (empty($show['is_guest'])) { ?>
-                <div class="shortcut cu-span">
-                    <a href="javascript:recache();" target="right"><span>更新缓存</span></a>
-                </div>
-            <?php } ?>
             当前位置：<span id="current_pos1"><a id="zcms"/></a> > <span id="current_pos"></span>
         </div>
 

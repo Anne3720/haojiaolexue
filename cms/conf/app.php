@@ -7,7 +7,7 @@ $development = array(
     'app' => array(
         #debug参数, false - 关闭、 true - 打开;可以控制RThink_Debug::rtDebug(), fbDebug(), dbDebug
         'debug' => true,
-        'name' => 'RThink CMS',
+        'name' => '好教乐学',
         #是否在error页面展示异常;只有在debug=true时,对当前选项的配置才会生效
         'display_exceptions' => true,
         'grade' =>array(

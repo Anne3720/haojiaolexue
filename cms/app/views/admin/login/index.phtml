@@ -16,14 +16,30 @@
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" name="username" class="input-block-level" placeholder="账号">
         <input type="password" name="password" class="input-block-level" placeholder="密码">
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <button class="btn btn-large btn-primary" type="button" id="signIn">Sign in</button>
     </form>
 
 </div> <!-- /container -->
 <script src="/js/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+  $("#signIn").click(function(){
+        $.ajax({
+            type:'POST',
+            url:"/admin/login" ,
+            data: {"username":$("input[name=username]").val(),"password":$("input[name=password]").val()} ,
+            success: function(data){
+                if(data.status==-1){
+                    alert(data.msg);
+                }else if(data.status==0){
+                    window.location.href = data.data.callback;
+                }
+            } ,
+            dataType:'json'
+        });
+  }) 
+})
+</script>
 </body>
 </html>
