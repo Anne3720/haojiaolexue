@@ -121,7 +121,10 @@ class UserModel extends CI_Model {
     	$this->db->where('Mobile',$mobile);
     	$this->db->update('Tbl_Member',array('Activated'=>1));
     }
-
+    /*
+    *验证用户是否登录
+    * @return array
+    */
     public function checkLogin(){
         $userInfo = $this->session->userdata('userInfo');
         //未登录跳转
@@ -131,6 +134,26 @@ class UserModel extends CI_Model {
         $userInfo = json_decode($userInfo,true);
         //登陆以后查看用户是否已购买该课程
         return $userInfo;
+    }
+    /*
+    *
+    * @param $memberID  int 用户ID
+    * @param $Password  string 密码
+    * @return 
+    */
+    public function resetPassword($Mobile,$Password){
+        $this->db->where('Mobile',$Mobile);
+        $this->db->update('Tbl_Member',array('Password'=>$Password));
+    }
+    /*
+    *更新用户信息
+    * @param $where   array 条件
+    * @param $data   array 用户信息
+    * @return 
+    */
+    public function updateActivated($data,$where){
+        $this->db->where('MemberID',$where['MemberID']);
+        $this->db->update('Tbl_Member',$data);
     }
 }
 ?>
