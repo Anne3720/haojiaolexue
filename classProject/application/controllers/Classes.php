@@ -97,11 +97,14 @@ class Classes extends CI_Controller {
         $userInfo = json_decode($this->session->userdata('userInfo'));
         //未登录跳转
         if(!$userInfo){
-        	redirect('/User/Login');
+        	redirect('/user/login');
         }
+        $type = $this->input->get("type");
         $MemberID = $userInfo['MemberID'];
-        $data = $this->ClassModel->getMyClass($MemberID);
-        //var_dump($data);
+        $myIds = $this->ClassModel->getClassIds(array('MemberID'=>$userInfo['MemberID']),$type);
+        $where_in = array("ClassID",$myIds);
+        $classList = $this->ClassModel->getMyClassList($where_in);
+        $this->load->view('/class/myClass',$data);
     }
 }
  
