@@ -96,18 +96,8 @@ class UserModel extends CI_Model {
     * @param $Password string 密码
     * @return array
     */
-    function addUser($Mobile,$Email,$Name,$Gender,$Grade,$School,$Password,$CreateTime){
-        $array = array(
-            'Mobile'=>$Mobile, 
-            'Email'=>$Email, 
-            'Name'=>$Name,
-            'Gender'=>$Gender,
-            'Grade'=>$Grade,
-            'School'=>$School,
-            'Password'=>$Password,
-            'CreateTime'=>$CreateTime,
-        ); 
-        $this->db->set($array); 
+    function addUser($data){
+        $this->db->set($data); 
         $data = $this->db->insert('Tbl_Member');
         return $data;   
     }

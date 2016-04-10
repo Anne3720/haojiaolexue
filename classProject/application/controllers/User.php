@@ -13,21 +13,25 @@ class User extends CI_Controller {
         $this->load->view('User/Reg');
     }
     public function doReg(){
-        $Mobile = $this->input->post('Mobile');
-        $Email = $this->input->post('Email');
-        $Name = $this->input->post('Name');
-        $Gender = $this->input->post('Gender');
-        $Grade = $this->input->post('Grade');
-        $School = $this->input->post('School');
+        $data['Mobile'] = $this->input->post('Mobile');
+        $data['Email'] = $this->input->post('Email');
+        $data['Name'] = $this->input->post('Name');
+        $data['Gender'] = $this->input->post('Gender');
+        $data['Grade'] = $this->input->post('Grade');
+        $data['School'] = $this->input->post('School');
         $Password = $this->input->post('PassWord');
-        $UserExists = $this->UserModel->checkUserExists($Mobile,$Email);
-        $CreateTime = date('Y-m-d H:i:s');
+        $data['Password'] = md5($Password.md5($Password));
+        $data['Province'] = $this->input->post('Province');
+        $data['City'] = $this->input->post('City');
+        $data['District'] = $this->input->post('District');
+        $UserExists = $this->UserModel->checkUserExists($data['Mobile'],$data['Email']);
+        $data['CreateTime'] = date('Y-m-d H:i:s');
         if($UserExists){
             $status = $this->config->item('STATUS_REG_USEREXISTS');
             $msg = $this->config->item('MSG_REG_USEREXISTS');
             $this->CommonModel->sendMsg($status,array(),$msg);
         }
-        $data = $this->UserModel->addUser($Mobile,$Email,$Name,$Gender,$Grade,$School,md5($Password.md5($Password)),$CreateTime);
+        $data = $this->UserModel->addUser($data);
         $emailConfig = $this->config->item('email');
         $validate = md5($Mobile.'haojiaolexue');
         $content = "<p>欢迎加入好教乐学，祝您开启一段愉快的学习旅程！请在半小时之内点击以下链接激活<a>http://".$_SERVER['HTTP_HOST']."/user/doactivate/{$validate}</a></p>";
