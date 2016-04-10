@@ -46,4 +46,5 @@ $config['grade'] = array(
 		'12'=>'高三',
 	)
 );
+$config['resourceUrl'] = 'www.admin.haojiaolexue.com';
 ?>

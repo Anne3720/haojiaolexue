@@ -56,9 +56,9 @@
         <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
                 foreach ($classList as $u => $v) {                  
                     if($_GET['grade']== $v['Grade']){ ?>                
-            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
+            <a href="/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
                 <span class="className">
-                    <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
+                    <img src=">?php echo($resouceUrl);?>/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
                     <i><?php if(!is_null($v['Price'])){
                         echo "&yen; ";echo ($v['Price']); 
@@ -83,9 +83,9 @@
         <div class="classShowNav">
         <?php if(!isset($_GET['grade'])){
                 foreach ($classList as $u => $v) {?>                
-            <a href="http://www.haojiaolexue.com/classes/video/<?php echo ($v['ClassID']);?>" >
+            <a href="/classes/video/<?php echo ($v['ClassID']);?>" >
                 <span class="className">
-                    <img src="http://www.cms.com/resource/image/<?php echo ($v['Image']);?>" alt="" />
+                    <img src="<?php echo($resourceUrl);?>/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
                     <i><?php if(!is_null($v['Price'])){
                         echo "&yen; ";echo ($v['Price']); 

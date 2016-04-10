@@ -66,6 +66,7 @@ class Classes extends CI_Controller {
         $this->pagination->initialize($config);
             //传参数给VIEW
         $data['page_links'] = $this->pagination->create_links();
+        $data['resourceUrl'] = $this->config->item('resourceUrl');
         $this->load->view('class/classList',$data);
        //var_dump($data);
 
