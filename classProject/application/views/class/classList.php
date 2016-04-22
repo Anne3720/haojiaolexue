@@ -58,7 +58,7 @@
                     if($_GET['grade']== $v['Grade']){ ?>                
             <a href="/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
                 <span class="className">
-                    <img src=">?php echo($resouceUrl);?>/resource/image/<?php echo ($v['Image']);?>" alt="" />
+                    <img src="<?php echo($resouceUrl);?>/resource/image/<?php echo ($v['Image']);?>" alt="" />
                     <p>
                     <i><?php if(!is_null($v['Price'])){
                         echo "&yen; ";echo ($v['Price']); 

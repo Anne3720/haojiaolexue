@@ -1,7 +1,7 @@
 <script type="text/javascript" src="http://www.imooc.com/data/jquery.form.js"></script>
 <!-- Bootstrap -->
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-<link rel="stylesheet" href="../public/css/login-reg.css" type="text/css" />
+
  <!-- svg icons -->
 <svg aria-hidden="true" style="display: none;" >
     <symbol id="icon-stay_primary_portrait" width="20" height="20"  viewBox="0 0 24 24" >
