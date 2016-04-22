@@ -24,8 +24,16 @@ class Admin_Classes_CreateClassNoController extends Admin_AbstractController
             'order' => 'No desc',
             'limit' => ''
         );
-        $rs = Admin_ClassesModel::instance()->getMaxNo($option);
-        $data['No'] = $rs[0]['maxNo']?$rs[0]['maxNo']+1:1;
+        $maxNo = Admin_ClassesModel::instance()->getMaxNo($option);
+        $No = $maxNo?($maxNo+1):1;
+        $option1 = array(
+            'condition' => 'SubjectID = ? ',
+            'bind' => array($SubjectID),
+            'limit' => ''
+        );
+        $SubjectType = Admin_SubjectModel::instance()->getSubjectType($option1);
+        $data['ClassNo'] = sprintf("%d%02d%02d%02d",$SubjectType,$Grade,$Chapter,$No);
+        $data['No'] = $No;
         $this->sendMsg(0, '成功', $data);
     }
 

@@ -26,12 +26,14 @@ class Admin_Classes_InfoController extends Admin_AbstractController
             move_uploaded_file($_FILES['Video']['tmp_name'],RThink_Config::get('app.videoPath').'\\'.$videoName);
         }
         $params = array(
+            'No'=>$post['No'],
             'ClassNo'=>$post['ClassNo'],
             'Grade'=>$post['Grade'],
             'SubjectID'=>$post['SubjectID'],
+            'Chapter'=>$post['Chapter'],
             'Name'=>$post['Name'],
             'Teacher'=>$post['Teacher'],
-            'Desc'=>$post['Desc']
+            'Desc'=>$post['Desc'],
             'Price'=>$post['Price'],
             'UpdateTime'=>date('Y-m-d H:i:s'),
         );

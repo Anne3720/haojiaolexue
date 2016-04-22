@@ -28,11 +28,11 @@ class Admin_ClassesModel extends BaseModel
         return self::$_instance;
     }
 
-    public static function getMaxNo($option){
+    public function getMaxNo($option){
         $option = self::$_instance->handleOpt($option);
         $sql = "SELECT Max(No) AS maxNo
                 FROM tbl_class ".$option['condition'];
         $res = self::$_instance->_db->fetchAll($sql, $option['bind'], self::$_instance->_fetch_mode);
-        return $res;
+        return $res[0]['maxNo'];
     }
 }

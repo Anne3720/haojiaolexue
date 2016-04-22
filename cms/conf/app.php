@@ -24,6 +24,13 @@ $development = array(
             '11'=>'高二',
             '12'=>'高三',
         ),
+        'subject' => array(
+            1=>'语文',
+            2=>'数学',
+            3=>'英语',
+            4=>'物理',
+            5=>'化学',
+        ),
         'imagePath'=>dirname(dirname(__FILE__)).'\public\resource\image',
         'videoPath'=>dirname(dirname(__FILE__)).'\public\resource\video',
         'imageKey'=>'hjlxImage',

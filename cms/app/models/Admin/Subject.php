@@ -27,4 +27,12 @@ class Admin_SubjectModel extends BaseModel
 
         return self::$_instance;
     }
+
+    public function getSubjectType($option){
+        $option = self::$_instance->handleOpt($option);
+        $sql = "SELECT SubjectType
+                FROM tbl_subject ".$option['condition'];
+        $res = self::$_instance->_db->fetchAll($sql, $option['bind'], self::$_instance->_fetch_mode);
+        return $res[0]['SubjectType'];
+    }
 }

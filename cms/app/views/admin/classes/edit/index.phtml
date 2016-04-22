@@ -33,6 +33,7 @@
         <tr>
             <th width="30">章节</th>
             <td width="80"><input type="text" name="Chapter"  value="<?php echo($info['Chapter'])?>"/>&nbsp; <button id="createClassNo">生成课程编号</button> </td>
+            <input type="hidden" value="" name="No">
             </td>
         </tr>
         <tr>
@@ -124,23 +125,22 @@ $(function(){
     });
     $("#createClassNo").click(function(){
         var data = {
-            'Grade':$("select[name=Grade]").find("option:selected").text(),
-            'SubjectID':$("select[name=SubjectID]").find("option:selected").text(),
+            'Grade':$("select[name=Grade]").find("option:selected").val(),
+            'SubjectID':$("select[name=SubjectID]").find("option:selected").val(),
             'Chapter':$("input[name=Chapter]").val()
         }
-        console.log(data);
         $.ajax({
             url: '/admin/classes/createClassNo',
             data: data,
             success: function(res){
-                console.log(res);
+                res = JSON.parse(res);
                 if(res.status==0){
-                    $("input[name=ClassNo]").val(res.data.No);
+                    $("input[name=ClassNo]").val(res.data.ClassNo);
+                    $("input[name=No]").val(res.data.No);
                 }else{
                     alert(res.msg);
                 }
-            },
-            dataType: JSON
+            }
         });
     })
 });
