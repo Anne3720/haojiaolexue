@@ -1,0 +1,65 @@
+<form action="/admin/chapter/info" id="chapterForm" method="post">
+<table width="100%" cellspacing="0" class="table table-bordered">
+    <tbody>
+        <tr>
+            <th width="30">年级</th>
+            <td width="80">
+                <select name='Grade'>
+                    <option value=""></option>
+                    <?php foreach ($grade as $key => $value) {?>
+                        <option value="<?php echo($key);?>"><?php echo($value);?></option>
+                    <?php } ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th width="30">科目</th>
+            <td width="80">
+                <select class="form-control" name="SubjectID">
+                    <option value="">--科目--</option>
+                    <?php foreach ($subjectList[$query['Grade']] as $key => $value) {?>
+                        <option value="<?php echo $value['SubjectID'];?>" <?php if($value['SubjectID']==$query['SubjectID']) echo "selected";?>><?php echo $value['Title'];?></option>
+                    <?php }?>        
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th width="30">章节</th>
+            <td width="80">
+                第<input type="text" name="Chapter" value="">章
+            </td>
+        </tr>
+        <tr>
+            <th width="30">标题</th>
+            <td width="80">
+                <input type="text" name="Title" value="">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary">提交</button>
+</div>
+</form>
+<script>
+    $(function(){
+        var subjectList = new Array();
+        <?php foreach ($subjectList as $key => $value) {?>
+        subjectList["<?php echo $key;?>"] = new Array();
+        <?php foreach ($value as $kk => $vv) {?>
+        subjectList["<?php echo $key;?>"].push("<option value=<?php echo $vv['SubjectID']; ?>><?php echo $vv['Title'];?></option>"); 
+        <?php }?>
+        <?php }?>
+        $(".zajax").zajax();
+        $("select[name=Grade]").change(function(){
+            $("select[name=SubjectID]").empty();
+            $("select[name=SubjectID]").append("<option>--科目--</option>");
+            var value = $(this).children('option:selected').val();
+            var len = subjectList[value].length;
+            for(var i = 0;i < len; i++){
+                $("select[name=SubjectID]").append(subjectList[value][i]);
+            }
+        });
+        $("#chapterForm").z_form_submit({url:"/admin/chapter/list"});
+    })
+</script>
