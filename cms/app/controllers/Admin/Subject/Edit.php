@@ -16,6 +16,7 @@ class Admin_Subject_EditController extends Admin_AbstractController
         // $id = $this->getRequest()->getParam('id');
         $data = array();
         $data['grade'] = RThink_Config::get('app.grade');
+        $data['subject'] = RThink_Config::get('app.subject');
         // if (empty($id)) {
             $data['pagename'] = '菜单添加';
             // $parent = Admin_MenuModel::instance()->getAdminMenuListByIds($parent_id);

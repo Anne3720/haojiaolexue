@@ -1,7 +1,7 @@
 /*全局页面的设置*/
 *{margin: 0 ;padding: 0;}
 ul li {list-style: none;}
-a {
+a ,a:hover {
 	text-decoration: none;
 }
 body {
@@ -20,7 +20,8 @@ ul,li {list-style: none;}
 a {
 	text-decoration: none;
 }
-/*顶部固定导航栏的css样式*/
+
+	/*顶部固定导航栏的css样式*/
 .navtop {
 	position: relative;
     height: 50px;
@@ -67,108 +68,6 @@ ul.navtop-login {
 }
 
 /*logo框的css样式*/
-
-
-/*左侧导航栏的css文件*/
-.navleft{
-	position: relative;
-	top: 70px;
-	left: 20px;
-    width: 240px;
-    padding: 0;
-    border: 2px solid #000;
-    border-bottom-style: none;
-}
-.navleft ul .navleft-tittle {
-	height: 60px;
-	line-height: 60px;
-	text-align: center;
-	border-bottom: 2px solid #000;
-}
-.navleft ul .navleft-tittle a {
-	text-decoration: none;
-	font-size: 26px;
-    font-weight: bolder;
-	color: #000;	
-}
-.navleft ul{
-	width: 240px;
-	margin:0px; 
-}
-.navleft ul li {
-	padding: 10px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 22px;
-}
-.navleft ul li a {
-	width: 60px;
-	height: 30px;
-	display:inline-block;
-	line-height: 30px;
-	text-decoration: none;
-	color: #000;
-	font-weight: normal;
-	font-size: 18px;
-}
-.navleft ul li a:hover {
-	color: #f00;
-}
-.grade {
-	border-bottom: 2px solid #000;
-}
-.navleft-high1 {
-	
-}
-/*左侧导航栏具体科目的css文件*/
-.navleft-hide {
-    display: none;
-    width: 500px;
-   /* background: #000;*/
-    border: 2px solid #000;
-    border-bottom-style: none;
-    position: absolute;
-    top: -100px;
-    left: 240px;
-    z-index: 9999;
-}
-.navleft-content {
-	position: relative;
-}
-.navleft ul .navleft-content:hover {
-   background: gray;
-}
-.navleft-hide a {
-	text-decoration: none;
-}
-.navleft-hide dl dt { 
-    text-align: center;
-	width: 500px;
-	padding: 5px 0px;
-	border-bottom: 1px solid #000;
-}
-.navleft-hide dl dt a {
-    display: inline-block;
-	color: #00f;
-	font-size: 22px;
-	font-weight: bold;
-}
-.navleft-hide dl dd {
-	margin: 0;
-	text-align: center;
-	border-bottom: 2px solid #000;
-}
-.navleft-hide dl dd a {
-	display: inline-block;
-	padding: 5px 15px;
-	color: #000;
-	height: 30px;
-	line-height: 30px;
-}
-.navleft-hide dl dd a:hover {
-	color: #fff;
-	background: #ff8000;
-}
 /*底部文件样式*/
 .footer {
 	position: relative;

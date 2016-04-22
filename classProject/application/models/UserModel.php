@@ -141,9 +141,9 @@ class UserModel extends CI_Model {
     * @param $data   array 用户信息
     * @return 
     */
-    public function updateActivated($data,$where){
-        $this->db->where('MemberID',$where['MemberID']);
-        $this->db->update('Tbl_Member',$data);
-    }
+    // public function updateActivated($data,$where){
+    //     $this->db->where('MemberID',$where['MemberID']);
+    //     $this->db->update('Tbl_Member',$data);
+    // }
 }
 ?>
