@@ -15,6 +15,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
 
         $grade = $this->getRequest()->getQuery('Grade');
         $subject = $this->getRequest()->getQuery('SubjectID');
+        $chapter = $this->getRequest()->getQuery('Chapter');
         $classno = $this->getRequest()->getQuery('ClassNo');
         $memberID = $this->getRequest()->getQuery('MemberID');
         $perpage = 20;
@@ -42,6 +43,10 @@ class Admin_Classes_ListController extends Admin_AbstractController
             $conditionArr[] = "classno = ?";
             $bindArr[] = $classno;
         }
+        if (!empty($chapter)) {
+            $conditionArr[] = "chapter = ?";
+            $bindArr[] = $chapter;
+        }
         $option['condition'] = $count_opt['condition'] = implode(' and ', $conditionArr);
         $option['bind'] = $count_opt['bind'] = $bindArr;
         // print_r($option);exit;
@@ -55,6 +60,7 @@ class Admin_Classes_ListController extends Admin_AbstractController
             'ClassNo' => $classno,
             'Grade' => $grade,
             'SubjectID' => $subject,
+            'Chapter' => $chapter,
             'MemberID' => $memberID,
         );
         $subject = Admin_SubjectModel::instance()->fetchAll(array());

@@ -12,6 +12,7 @@
                 <option value="<?php echo $value['SubjectID'];?>" <?php if($value['SubjectID']==$query['SubjectID']) echo "selected";?>><?php echo $value['Title'];?></option>
             <?php }?>        
         </select>
+        <input class="form-control" name="Chapter" value="<?php echo $query['Chapter'];?>" placeholder="章节"/>
         <input class="form-control" name="ClassNo" value="<?php echo $query['ClassNo'];?>" placeholder="课程编号"/>
         <button type="submit"  class="btn btn-info">查询</button>
     </form>
@@ -22,6 +23,7 @@
         <th width="30">编号</th>
         <th width="30">年级</th>
         <th width="30">科目</th>
+        <th width="30">章节</th>
         <th width="30">图片</th>
         <th width="30">视频</th>
         <th width="30">价格</th>
@@ -35,6 +37,7 @@
         <tr>
             <td align='center'><?php echo($val['ClassNo']);?></td>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
+            <td align='center'><?php echo('第'.$val['Chapter'].'章');?></td>
             <td align='center'>
                 <?php foreach ($subjectList[$val['Grade']] as $kk => $vv) {
                 if($vv['SubjectID']==$val['SubjectID']) echo $vv['Title'];} ?>

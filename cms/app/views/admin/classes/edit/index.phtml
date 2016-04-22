@@ -10,10 +10,6 @@
     <tbody>
         <input type="hidden" name="ClassID" value="<?php echo($info['ClassID'])?>"/>
         <tr>
-            <th width="30">课程编号</th>
-            <td width="80"><input type="text" name="ClassNo"  value="<?php echo($info['ClassNo'])?>"/></td>
-        </tr>
-        <tr>
             <th width="30">年级</th>
             <td width="80">
                 <select name='Grade'>
@@ -33,6 +29,15 @@
                     <?php }?>
                 </select>
             </td>
+        </tr>
+        <tr>
+            <th width="30">章节</th>
+            <td width="80"><input type="text" name="Chapter"  value="<?php echo($info['Chapter'])?>"/>&nbsp; <button id="createClassNo">生成课程编号</button> </td>
+            </td>
+        </tr>
+        <tr>
+            <th width="30">课程编号</th>
+            <td width="80"><input type="text" name="ClassNo"  value="<?php echo($info['ClassNo'])?>"/></td>
         </tr>
         <tr>
             <th width="30">课程名</th>
@@ -117,5 +122,26 @@ $(function(){
             $("select[name=SubjectID]").append(subjectList[value][i]);
         }
     });
+    $("#createClassNo").click(function(){
+        var data = {
+            'Grade':$("select[name=Grade]").find("option:selected").text(),
+            'SubjectID':$("select[name=SubjectID]").find("option:selected").text(),
+            'Chapter':$("input[name=Chapter]").val()
+        }
+        console.log(data);
+        $.ajax({
+            url: '/admin/classes/createClassNo',
+            data: data,
+            success: function(res){
+                console.log(res);
+                if(res.status==0){
+                    $("input[name=ClassNo]").val(res.data.No);
+                }else{
+                    alert(res.msg);
+                }
+            },
+            dataType: JSON
+        });
+    })
 });
 </script>
