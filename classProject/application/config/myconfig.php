@@ -47,4 +47,14 @@ $config['grade'] = array(
 	)
 );
 $config['resourceUrl'] = 'www.admin.haojiaolexue.com';
+$config['subject'] = array(
+	1=>'语文',
+	2=>'数学',
+	3=>'英语',
+	4=>'化学',
+	5=>'物理',
+	6=>'生物',
+	7=>'历史',
+	8=>'地理',
+);
 ?>
