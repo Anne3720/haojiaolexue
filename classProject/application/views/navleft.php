@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/public/css/navleft.css" type="text/css" />
 <div class="navleft">
 	   <ul>
 		<div class="navleft-tittle"><a href="/classes/classlist">全部课程分类</a></div>
@@ -8,6 +9,7 @@
 		        <a href="classes/classlist?grade=<?php echo($key);?>"><?php echo($value);?></a>
 		    	<?php }?>
 		    </li>
+            
 		    <div class="navleft-hide">
 		       <dl>
 		       	<?php foreach ($grade['high'] as $key => $value) {?>
@@ -28,6 +30,7 @@
 		        <a href="classes/classlist?grade=<?php echo($key);?>"><?php echo($value);?></a>
 		    	<?php }?>
 		    </li>
+		    
 		    <div class="navleft-hide">
 		       <dl>
 		       	<?php foreach ($grade['middle'] as $key => $value) {?>
@@ -42,7 +45,7 @@
 	        </div>
         </div>
         <div class="navleft-content">
-        	<li>小学</li>	
+        	<li>小学</li>
 		    <li class="grade">
 		    	<?php foreach ($grade['primary'] as $key => $value) {?>
 		        <a href="classes/classlist?grade=<?php echo($key);?>"><?php echo($value);?></a>
@@ -64,3 +67,6 @@
 		
 	  </ul>
     </div>
+  
+    <script type="text/javascript" src="/public/js/navLeft.js"></script>
+ 
