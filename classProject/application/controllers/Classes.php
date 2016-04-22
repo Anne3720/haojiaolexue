@@ -26,11 +26,15 @@ class Classes extends CI_Controller {
         $where = array();
         $inputGrade = $this->input->get('grade');
         $inputSubject = $this->input->get('subject');
+        $chapter = $this->input->get('chapter');
         if(!empty($inputGrade)){
             $where['Grade'] = $inputGrade;
         }
         if(!empty($inputSubject)){
             $where['SubjectID'] = $inputSubject;
+        }
+        if(!empty($chapter)){
+            $where['Chapter'] = $chapter;
         }
         $classList = $this->ClassModel->getClassList($offset,$num,$where);
         $userInfo = $this->session->userdata('userInfo');
@@ -83,6 +87,7 @@ class Classes extends CI_Controller {
         $MemberID = $userInfo['MemberID'];
         $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
     	$data = $this->ClassModel->getVideoByClassID($classid);
+        $data['resourceUrl'] = $this->config->item('resourceUrl');
         if($classBought){
             $this->load->view('/class/vedioPlay',$data);
 
