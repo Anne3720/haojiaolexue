@@ -37,7 +37,7 @@ class Admin_User_InsertController extends Admin_AbstractController
             $data = array(
                 'username' => $username,
                 'gid' => join(',', $gid),
-                'password' => md5('123456'. md5('123456')),
+                'password' => md5($password. md5($password)),
                 'createtime' => date('Y-m-d H:i:s'),
             );
 
