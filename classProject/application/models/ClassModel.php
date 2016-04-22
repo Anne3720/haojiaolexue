@@ -100,7 +100,7 @@ class ClassModel extends CI_Model{
     * @param $where    array   查询条件
     * @return array
     */
-    public function getMyClassList(where_in=array()){
+    public function getMyClassList($where_in){
         $this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price');
         // foreach ($where as $key => $value) {
         //     $this->db->where($key,$value);
@@ -108,7 +108,7 @@ class ClassModel extends CI_Model{
         foreach ($where_in as $key => $value) {
             $this->db->where_in($key,$value);
         }
-        $this->db->order_by("ClassID","desc")
+        $this->db->order_by("ClassID","desc");
         $query = $this->db->get('Tbl_Class');
         $data = $query->result_array();
         return $data;
