@@ -24,17 +24,18 @@ html {
 	position: relative;
 }
 .reg-group-addon,.input-group-addon {
-	width: 370px;
+	width: 300px;
 	display: inline-block;
 	padding: 2px 0px;
 	text-align: center;
 	line-height: 27px;
 	height: 27px;
-  
+    position: relative;
 	border-radius: 5px;
-	margin:10px 30px; 
+	margin:10px 30px 10px 65px; 
 }
-.register p span,.login p span {
+
+.register p svg,.login p svg {
 	display: inline-block;
 	width: 40px;
 	height: 27px;
@@ -43,13 +44,16 @@ html {
 	float: left;
 	margin:0 5px; 
 	color: #fff;
+	position: absolute;
+	top: 7px;
+	left: 10px;
 }
 .register p input,.login p input {
-	width: 290px;
+	width: 250px;
 	height: 27px;
 	line-height: 27px;
 	border: none;
-	padding:0  0 0 10px;
+	padding:0  0 0 50px;
 	float: left;
 	border: 1px solid #000;
 }
@@ -66,14 +70,14 @@ html {
     color: #fff;
 }
 .register #btn-reg,.login #btn-login {
-    margin:25px 0px 25px 80px;
+    margin:25px 0px 25px 65px;
 }
 #btn-reg:hover,.zhuce p:hover,#btn-login:hover,.denglu p:hover {
 	background:#0000ff ;
 }
 .zhuce p,.denglu p {
 	float: right;
-	margin:25px 100px 25px 0px;
+	margin:25px 115px 25px 0px;
 }
 .zhuce p a,.denglu p a {
 	display: block;
