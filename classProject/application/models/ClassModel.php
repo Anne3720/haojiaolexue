@@ -25,7 +25,7 @@ class ClassModel extends CI_Model{
 	* @return array
     */
     public function getVideoByClassID($classid){
-    	$this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price,Teacher,Video,UpdateTime');
+    	$this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,Chapter,SubjectID,Price,Teacher,Video,UpdateTime');
 		$this->db->where('ClassID',$classid);
 		$query = $this->db->get('Tbl_Class');
         $data = $query->result_array();
@@ -74,7 +74,7 @@ class ClassModel extends CI_Model{
     * @return array
     */
     public function getClassList($offset,$limit,$where){
-        $this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price');
+        $this->db->select('ClassID,ClassNo,Name,Chapter,Grade,Image,Desc,SubjectID,Price');
         foreach ($where as $key => $value) {
             $this->db->where($key,$value);
         }
@@ -101,7 +101,7 @@ class ClassModel extends CI_Model{
     * @return array
     */
     public function getMyClassList($where_in){
-        $this->db->select('ClassID,ClassNo,Name,Grade,Image,Desc,SubjectID,Price');
+        $this->db->select('ClassID,ClassNo,Name,Chapter,Grade,Image,Desc,SubjectID,Price');
         // foreach ($where as $key => $value) {
         //     $this->db->where($key,$value);
         // }
