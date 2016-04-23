@@ -70,10 +70,6 @@ class Classes extends CI_Controller {
         $data['page_links'] = $this->pagination->create_links();
         $data['resourceUrl'] = $this->config->item('resourceUrl');
         $this->load->view('class/classList',$data);
-<<<<<<< HEAD
-       //var_dump($data);
-=======
->>>>>>> origin/master
 
     }
     //根据课程id获取对应视频地址
@@ -94,19 +90,10 @@ class Classes extends CI_Controller {
         $data['chapterTitle'] = isset($ChapterInfo['Title'])?$ChapterInfo['Title']:'';
         // if($classBought){
             $this->load->view('/class/vedioPlay',$data);
-
-<<<<<<< HEAD
-        }else{
-            unset($data['Video']);
-            $this->load->view('/class/unPay',$data);
-        }
-       //var_dump($data);
-=======
         // }else{
         //     unset($data['Video']);
         //     $this->load->view('/class/unPay',$data);
         // }
->>>>>>> origin/master
     }
     //获取用户已购买课程列表
     public function myClass(){
