@@ -44,7 +44,8 @@
 	font-size: 18px;
 }
 .navleft ul li a:hover {
-	color: #f00;
+	color: #ffd706;
+	font-weight: bold;
 }
 .navleft ul .navleft-content:hover {
    background: #EEEEEE;
