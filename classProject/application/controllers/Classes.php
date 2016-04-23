@@ -37,19 +37,17 @@ class Classes extends CI_Controller {
             $where['Chapter'] = $chapter;
         }
         $classList = $this->ClassModel->getClassList($offset,$num,$where);
-        $userInfo = $this->session->userdata('userInfo');
-        //当前登录用户是否购买课程
-        if(!$userInfo){
-            foreach ($classList as $key => $value) {
-                $classList[$key]['available'] = 0;
-            }
-        }else{
-            $userInfo = json_decode($userInfo,true);
+        $userInfo = json_decode($this->session->userdata('userInfo'));
+
+        $myIds = array();
+        $type = $this->input->get("type");
+        if($userInfo && $type=="recommend"){
             $MemberID = $userInfo['MemberID'];
-            $chosenIds = $this->ClassModel->getClassIds(array('MemberID'=>$userInfo['MemberID']),'chosen');
-            foreach ($classList as $key => $value) {
-                $classList[$key]['available'] = in_array($value['ClassID'], $chosenIds)?1:0;
-            }
+            $myIds = $this->ClassModel->getClassIds(array('MemberID'=>$MemberID),$type);
+        }
+        foreach ($classList as $key => $value) {
+            $classList[$key]['available'] = 1;
+            $classList[$key]['recommend'] = in_array($value['ClassID'], $classList)?1:0;
         }
 
         $data['subject'] = $subject;
@@ -72,7 +70,10 @@ class Classes extends CI_Controller {
         $data['page_links'] = $this->pagination->create_links();
         $data['resourceUrl'] = $this->config->item('resourceUrl');
         $this->load->view('class/classList',$data);
+<<<<<<< HEAD
        //var_dump($data);
+=======
+>>>>>>> origin/master
 
     }
     //根据课程id获取对应视频地址
@@ -85,17 +86,24 @@ class Classes extends CI_Controller {
 
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
-        $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
+        // $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
     	$data = $this->ClassModel->getVideoByClassID($classid);
         $data['resourceUrl'] = $this->config->item('resourceUrl');
-        if($classBought){
+        // if($classBought){
             $this->load->view('/class/vedioPlay',$data);
 
+<<<<<<< HEAD
         }else{
             unset($data['Video']);
             $this->load->view('/class/unPay',$data);
         }
        //var_dump($data);
+=======
+        // }else{
+        //     unset($data['Video']);
+        //     $this->load->view('/class/unPay',$data);
+        // }
+>>>>>>> origin/master
     }
     //获取用户已购买课程列表
     public function myClass(){
