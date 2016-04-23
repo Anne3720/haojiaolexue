@@ -32,10 +32,10 @@ a {
 }
 div.navtop-logo {
 	display: inline-block;
-	width: 185px;
-	height: 45px;
-	line-height: 45px;
-	padding: 4px 30px;
+	width: 215px;
+	height: 50px;
+	line-height: 50px;
+	padding: 2px 0px 0px 30px;
 	top: 0;
 	float: left;
 	background: #378cff; 
