@@ -32,11 +32,14 @@ a {
 }
 div.navtop-logo {
 	display: inline-block;
-	height: 50px;
-	line-height: 50px;
-	padding: 0 20px;
+	width: 185px;
+	height: 45px;
+	line-height: 45px;
+	padding: 4px 30px;
 	top: 0;
 	float: left;
+	background: #378cff; 
+	overflow: hidden;
 }
 
 .navtop ul li {

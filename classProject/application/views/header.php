@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="navtop">
-       <div class="navtop-logo">好教乐学</div>
+       <div class="navtop-logo"><img width="180px" src="/public/img/logo.png" alt="" /></div>
        <div class="navtop-content">
        	    <ul class="navtop-class">
         	    <li><a href="/classes/classList">课程</a></li>
