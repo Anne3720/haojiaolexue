@@ -109,5 +109,17 @@ class Classes extends CI_Controller {
         $classList = $this->ClassModel->getMyClassList($where_in);
         $this->load->view('/class/myClass',$data);
     }
+
+    //获取某科目章节
+    public  function getChapterList(){
+        $Grade = $this->input->get('grade');
+        $SubjectID = $this->input->get('subjectID');
+        $where = array(
+            'Grade'=>$Grade,
+            'SubjectID'=>$SubjectID,
+        );
+        $data['ChapterList'] = $this->ClassModel->getChapterList($where);
+        $this->CommonModel->sendMsg(0,$data,'请求成功');
+    }
 }
  
