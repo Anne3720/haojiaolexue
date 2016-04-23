@@ -42,7 +42,7 @@
                 if($vv['SubjectID']==$val['SubjectID']) echo $vv['Title'];} ?>
             </td>
             <td align='center'><?php echo('第'.$val['Chapter'].'章');?></td>
-            <td align='center'> <img src="'<?php echo('\resource\Image'.'\\'.$val['Image']);?>'"> </td>
+            <td align='center'> <img width='10px' height='10px' src='<?php echo('\resource\Image'.'\\'.$val['Image']);?>'> </td>
             <td align='center'><a href='<?php echo('\resource\Video'.'\\'.$val['Video']);?>' target="_Blank">视频</a></td>
             <td align='center'><?php echo($val['Price']);?></td>
             <td align='center'><?php echo($val['CreateTime']);?></td>

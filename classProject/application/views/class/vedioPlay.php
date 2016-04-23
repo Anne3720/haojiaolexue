@@ -19,11 +19,11 @@ $(document).ready(function() {
     <div class="container">   
         <video width="600" height="450" poster=""  preload="none">
             <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-            <source type="video/mp4" src="http://www.admin.haojiaolexue.com/resource/Video/<?php echo ($Video);?>" />
+            <source type="video/mp4" src="http://<?php echo($resourceUrl);?>/resource/Video/<?php echo ($Video);?>" />
             <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
-            <source type="video/webm" src="http://www.admin.haojiaolexue.com/resource/Video/<?php echo ($Video);?>" />
+            <source type="video/webm" src="http://<?php echo($resourceUrl);?>/resource/Video/<?php echo ($Video);?>" />
             <!-- Ogg/Vorbis for older Firefox and Opera versions -->
-            <source type="video/ogg" src="http://www.admin.haojiaolexue.com/resource/Video/<?php echo ($Video);?>" />
+            <source type="video/ogg" src="http://<?php echo($resourceUrl);?>/resource/Video/<?php echo ($Video);?>" />
             <!-- Optional: Add subtitles for each language -->
             <track kind="subtitles" src="subtitles.srt" srclang="en" />
             <!-- Optional: Add chapters -->
@@ -31,7 +31,7 @@ $(document).ready(function() {
             <!-- Flash fallback for non-<span class="wp_keywordlink_affiliate"><a href="http://www.dglives.com/        tag/html5" title="查看HTML5中的全部文章" target="_blank">HTML5</a></span> browsers without         JavaScript -->
             <object width="600" height="450" type="application/x-shockwave-flash" data="flashmediaelement.swf">
                 <param name="movie" value="flashmediaelement.swf" />
-                <param name="flashvars" value="controls=true&file=http://www.admin.haojiaolexue.com/resource/Video/<?php echo ($Video);?>" />
+                <param name="flashvars" value="controls=true&file=http://<?php echo($resourceUrl);?>/resource/Video/<?php echo ($Video);?>" />
             <!-- Image as a last resort -->
                 <img src="myvideo.jpg" width="600" height="450" title="No video playback capabilities" />
             </object>
