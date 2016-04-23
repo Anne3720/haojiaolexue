@@ -3,8 +3,7 @@
     <div class="navleft-tittle"><a href="/classes/classlist">全部课程分类</a></div>
     <div class="nav">
     <div class="navleft">
-	   <ul>
-		
+	   <ul>	
 		<div class="navleft-content">
 		    <li>高中</li>
 		    <li class="grade">
