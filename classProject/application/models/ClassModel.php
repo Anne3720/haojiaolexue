@@ -113,5 +113,20 @@ class ClassModel extends CI_Model{
         $data = $query->result_array();
         return $data;
     }
+    /*
+    * 获取章节信息
+    * @param $where      array查询条件
+    * @return array
+    */
+    public function getChapterInfo($where){
+        $this->db->select('Title');
+        foreach ($where as $key => $value) {
+            $this->db->where($key,$value);
+        }
+        $query = $this->db->get('Tbl_Chapter');
+        $data = $query->result_array();
+        return isset($data[0])?$data[0]:array();
+    }    
+
 }
 ?>

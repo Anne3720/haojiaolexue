@@ -85,6 +85,9 @@ class Classes extends CI_Controller {
         // $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
     	$data = $this->ClassModel->getVideoByClassID($classid);
         $data['resourceUrl'] = $this->config->item('resourceUrl');
+        $where = array('SubjectID'=>$data['SubjectID'],'Chapter'=>$data['Chapter']);
+        $ChapterInfo = $this->ClassModel->getChapterInfo($where);
+        $data['chapterTitle'] = isset($ChapterInfo['Title'])?$ChapterInfo['Title']:'';
         // if($classBought){
             $this->load->view('/class/vedioPlay',$data);
 
