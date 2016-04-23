@@ -1,37 +1,67 @@
 
 
-
 /*左侧导航栏的css文件*/
-.navleft{
+.nav-wrap {
 	position: relative;
-	top: 70px;
-	left: 20px;
-    width: 240px;
-    padding: 0;
-    border: 2px solid #378cff;
+	top: 50px;
+	left: 50px;
 }
-.navleft ul .navleft-tittle {
+.navleft-tittle {
+	width: 238px;
+	margin:0px; 
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	background: #378cff;
+	background: #ffffff;
+	border: 1px solid #00A1E9;
+	border-bottom: 0;
+}
+.navleft-tittle a {
+	text-decoration: none;
+	font-size: 20px;
+    font-weight: bolder;
+	color: #00A1E9; 	
+}
+.nav {
+    position: relative;
+    top: 0px;
+	left: 0px;
+	height: auto;
+	width: 10px;	
+}
+.nav:hover {
+	width: 900px;
+	border: 1px solid #00A1E9;
+	background: #f7fbfc;
 
 }
-.navleft ul .navleft-tittle a {
-	text-decoration: none;
-	font-size: 26px;
-    font-weight: bolder;
-	color: #ffffff; 	
+
+
+.clear {
+	clear: both;
+}
+.navleft {
+	float: left;
+    width: 238px;
+    padding: 0;
+    background: #00A1E9;
+    border: 1px solid #00A1E9;
+    overflow: hidden;
+}
+.nav:hover .navleft {
+	border: 0;
+	width: 239px;
 }
 .navleft ul{
-	width: 240px;
-	margin:0px; 
+	width: 245px;
+	margin: 0px; 
 }
 .navleft ul li {
 	text-align: center;
 	font-weight: bold;
-	font-size: 22px;
-	padding:10px 0; 
+	font-size: 18px;
+	padding:10px 0px; 
+	color: #ffffff;
 }
 .navleft ul li a {
 	width: 60px;
@@ -39,34 +69,36 @@
 	display:inline-block;
 	line-height: 30px;
 	text-decoration: none;
-	color: #378cff;
+	color: #ffffff;
 	font-weight: normal;
 	font-size: 18px;
 }
 .navleft ul li a:hover {
-	color: #ffd706;
+	color: #fff100;
 	font-weight: bold;
 }
 .navleft ul .navleft-content:hover {
-   background: #EEEEEE;
+    background: #f7fbfc;
+}
+.navleft-content:hover li,.navleft-content:hover li a {
+	color: #00A1E9;
 }
 .navleft-content {
-	border-top:1px solid #378cff; 
-	position: relative;
+	border-bottom:2px solid #ffffff; 
+	margin-bottom: -2px;
 }
 
 /*左侧导航栏具体科目的css文件*/
 .navleft-hide {
     display: none;
-    width: 500px;
+    width: 650px;
    /* background: #000;*/
     position: absolute;
+    top: 0px;
     left: 240px;
-    z-index: 9999;
-    top:-100%; 
     overflow: hidden;
-    border: 2px solid #378cff;
-    background: #FEFEFE;
+    background: #f7fbfc;
+    height: 300px;
 }
 .navleft-hide a:hover {
     text-decoration: none;
@@ -76,37 +108,47 @@
 	text-decoration: none;
 }
 .navleft-hide dl {
-	margin: 0; 
+	margin: 0px 25px;
+	border-bottom: 1px solid #00A1E9;
+	height: auto; 
+	padding: 5px;
+	margin-bottom: -2px;
 }
 .navleft-hide dl dt { 
+	display: inline-block;
+	float: left;
     text-align: center;
-	width: 500px;
+	width: 60px;
 	padding: 5px 0px;
-	height: 25px;
-	background: #cccccc;
+	height: 31px;
+	margin: 0 20px 0px 5px;
 }
 .navleft-hide dl dt a {
     display: inline-block;
-	color: #000;
-	font-size: 20px;
+	color: #00A1E9;
+	font-size: 16px;
 	font-weight: bold;
+	line-height: 31px;
 }
 .navleft-hide dl dd {
 	margin: 0;
 	padding: 5px;
-	text-align: center;
-	height: 32px;
-	background: #EEEEEE;
+	text-align: left;
+	height: 31px;
 }
 .navleft-hide dl dd a {
 	display: inline-block;
-	width: 60px;
-	color: #378cff;
+	float: left;
+	width: 60px; 
+	height: 30px;
+	color: #00A1E9;
 	font-size: 16px; 
-	line-height: 32px;
+	line-height: 30px;
 	border-radius: 2px; 
+	text-align: center;
 }
 .navleft-hide dl dd a:hover {
 	color: #fff;
-	background: #ff8000;
+	background: #fff100;
+	font-weight: bold;
 }
