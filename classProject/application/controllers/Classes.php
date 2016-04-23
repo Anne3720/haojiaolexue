@@ -82,18 +82,18 @@ class Classes extends CI_Controller {
 
         //登陆以后查看用户是否已购买该课程
         $MemberID = $userInfo['MemberID'];
-        // $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
+        $classBought = $this->ClassModel->checkClassBought($MemberID,$classid);
     	$data = $this->ClassModel->getVideoByClassID($classid);
         $data['resourceUrl'] = $this->config->item('resourceUrl');
         $where = array('SubjectID'=>$data['SubjectID'],'Chapter'=>$data['Chapter']);
         $ChapterInfo = $this->ClassModel->getChapterInfo($where);
         $data['chapterTitle'] = isset($ChapterInfo['Title'])?$ChapterInfo['Title']:'';
-        // if($classBought){
+        if($classBought||$data['Price']==0){
             $this->load->view('/class/vedioPlay',$data);
-        // }else{
-        //     unset($data['Video']);
-        //     $this->load->view('/class/unPay',$data);
-        // }
+        }else{
+            unset($data['Video']);
+            $this->load->view('/class/unPay',$data);
+        }
     }
     //获取用户已购买课程列表
     public function myClass(){
