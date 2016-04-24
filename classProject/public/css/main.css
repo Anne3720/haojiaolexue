@@ -1,27 +1,25 @@
 /*全局页面的设置*/
-*{margin: 0 ;padding: 0;}
-ul li {list-style: none;}
-a ,a:hover {
-	text-decoration: none;
-}
-body {
-	margin:0 auto;
-	
-	font:14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
 
-ul,li {list-style: none;}
+
+	/*顶部固定导航栏的css样式*/
+.clear {
+	clear: both;
+}
 .navcenter {
 	height: 230px;
 }
 a {
 	text-decoration: none;
 }
-
-	/*顶部固定导航栏的css样式*/
 .navtop {
 	position: relative;
     height: 50px;
@@ -72,6 +70,7 @@ ul.navtop-login {
 /*logo框的css样式*/
 /*底部文件样式*/
 .footer {
+	width: 100%;
 	position: relative;
 	height: 100px;
 	bottom:0px; 

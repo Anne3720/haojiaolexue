@@ -1,6 +1,7 @@
 
 /*左侧导航栏的css文件*/
 .nav-wrap {
+	width: 70%;
 	position: relative;
 	top: 50px;
 	left: 30px;

@@ -70,7 +70,7 @@ class Classes extends CI_Controller {
         $data['page_links'] = $this->pagination->create_links();
         $data['resourceUrl'] = $this->config->item('resourceUrl');
         $this->load->view('class/classList',$data);
-
+        //var_dump($data);
     }
     //根据课程id获取对应视频地址
     public function video($classid){
@@ -94,6 +94,7 @@ class Classes extends CI_Controller {
             unset($data['Video']);
             $this->load->view('/class/unPay',$data);
         }
+        //var_dump($data);
     }
     //获取用户已购买课程列表
     public function myClass(){
@@ -119,7 +120,9 @@ class Classes extends CI_Controller {
             'SubjectID'=>$SubjectID,
         );
         $data['ChapterList'] = $this->ClassModel->getChapterList($where);
-        $this->CommonModel->sendMsg(0,$data,'请求成功');
+        $this->CommonModel->sendMsg(0,$data,'请求成功'); 
+     // var_dump($data['ChapterList']);   
     }
+
 }
  

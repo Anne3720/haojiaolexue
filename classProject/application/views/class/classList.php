@@ -6,8 +6,8 @@
             <span>全部课程</span>
         </div>
         <div class="course-nav-row ">
-            <span class="hd 1">年级:</span>
-            <div class="bd">
+            <span>年级:</span>
+            
                 <ul class="">
                     <li class="course-nav-item <?php if(!isset($_GET['grade'])) echo("on");?>">
                         <a href="/classes/classlist">全部</a>  
@@ -20,42 +20,45 @@
                     <?php }} ?>
                    
                 </ul>
-            </div>
+            
         </div>
         <div class="course-nav-row ">
-            <span class="hd 1">科目:</span>
-            <div class="bd">
+            <span>科目:</span>
+            
                 <ul class="">
-                    <li class="course-nav-item <?php if(isset($_GET['subject'])&&$_GET['subject']==0) echo("on");?>">
-                    <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){?>
-                        <a href="/classes/classlist?grade=<?php echo ($_GET['grade']);?>&subject=0" >全部</a>
-                    <?php } ?>
+                    <li class="course-nav-item <?php if(!isset($_GET['grade']) || $_GET['subject']==0) echo("on");?>">
+                    
+                    <a href="/classes/classlist?grade=<?php echo ($_GET['grade']);?>&subject=0" >全部</a>
+                    
                     </li>
                     <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
                         foreach ($subject as $u => $v) {
                             if($_GET['grade']==$u){
                                 foreach ($v as $uu => $vv) { ?>
-                            <li class="course-nav-item course-nav-item0-<?php echo($vv['Grade'])?> <?php if(isset($_GET['subject'])&&$_GET['subject']==$vv['SubjectID']) echo("on");?>">
+                            <li class="course-nav-item  <?php if(isset($_GET['subject'])&&$_GET['subject']==$vv['SubjectID']) echo("on");?>">
                             <a href="/classes/classlist?grade=<?php echo($vv['Grade']);?>&subject=<?php echo($vv['SubjectID']);?>" > <?php echo($vv['Title']);?></a> 
                             </li>
                     <?php  }}}}?>    
                 </ul>
-            </div>
+            
         </div>
-    </div>  
-
+     
+    <div class="course-nav-row ">
+            <span>章节:</span>
+            
+                <ul class="courseChapter">
+                    <li class="course-nav-item  <?php if(!isset($_GET['chapter']) || $_GET['chapter']==0) echo("on");?>">
+                            <a href="/classes/classlist?grade=<?php echo($_GET['grade']);?>&subject=<?php echo($_GET['subject']);?>" >全部</a> 
+                    </li>   
+                </ul>
+            
+        </div>
     
     <div class="classShow">
-        <div class="classChose">
-            <ul>
-                 <li>最新</li>
-                 <li>最热</li>
-            </ul>
-        </div>
   	    <div class="classShowNav">
         <?php if(isset($_GET['grade'])&&!empty($_GET['grade'])){
                 foreach ($classList as $u => $v) {                  
-                    if($_GET['grade']== $v['Grade']){ ?>                
+                    if($_GET['grade']== $v['Grade']){ ;?>                
             <a href="/classes/video/<?php echo ($v['ClassID']);?>" target="_blank">
                 <span class="className">
                     <img src="http://<?php echo($resourceUrl);?>/resource/image/<?php echo ($v['Image']);?>" alt="" />
@@ -75,7 +78,7 @@
                     </p>                  
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
-                    
+                        <li><?php echo ($v['Chapter']); ?></li>
                     </ul>
                 </span>
             </a>     
@@ -102,7 +105,7 @@
                     </p>                   
                     <ul>
                         <li><?php echo ($v['Name']); ?></li>
-                     
+                        <li><?php echo ($v['Chapter']); ?></li>
                     </ul>
                 </span>
             </a>     
@@ -118,10 +121,9 @@
         </ul>
     </div>
    
-  
+</div> 
+<div class="clear"></div> 
 <!--script文件-->
-<script type="text/javascript">
-     
-</script>
+<script type="text/javascript" src="/public/js/classList.js"></script>
 
 <?php include('/../footer.php');?>

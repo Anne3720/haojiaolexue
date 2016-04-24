@@ -1,5 +1,5 @@
 
-
+<div class="clear"></div>
     <div class="footer">
     	<ul>
     		<li><a href="/">网站首页</a></li>
