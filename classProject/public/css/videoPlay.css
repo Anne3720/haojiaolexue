@@ -157,11 +157,11 @@ span.time {
 } 
  .mejs-controls .mejs-play button {
     
-    background: url(/../public/icon/video.svg) -320px 0 no-repeat;
+    background: url(/../public/icon/video.svg) -200px 0px no-repeat;
  }
  .mejs-controls .mejs-pause button {
    
-    background: url(/../public/icon/video.svg) -360px 0 no-repeat;
+    background: url(/../public/icon/video.svg) -240px 0px no-repeat;
  }
  
 .mejs-controls div.mejs-volume-button { 
@@ -174,11 +174,11 @@ span.time {
 .mejs-controls .mejs-unmute button { 
     width: 25px; 
     height: 25px; 
-    background: url(/../public/icon/video.svg) -80px -40px no-repeat;
+    background: url(/../public/icon/video.svg) -120px -40px no-repeat;
 } 
  
 .mejs-controls .mejs-unmute button {
-    background: url(/../public/icon/video.svg) -120px -40px no-repeat;
+    background: url(/../public/icon/video.svg) -160px -40px no-repeat;
 } 
  
 .mejs-controls div.mejs-fullscreen-button { 
@@ -195,7 +195,7 @@ span.time {
 } 
  
 .mejs-controls .mejs-unfullscreen button {
-    background: url(/../public/icon/video.svg) -200px -40px no-repeat; 
+    background: url(/../public/icon/video.svg) -240px -40px no-repeat; 
  }
 /*音量滑动控制器*/
 span.mejs-offscreen {

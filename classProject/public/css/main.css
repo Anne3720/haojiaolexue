@@ -33,9 +33,9 @@ a {
 div.navtop-logo {
 	display: inline-block;
 	width: 215px;
-	height: 50px;
-	line-height: 50px;
-	padding: 2px 0px 0px 30px;
+	height: 45px;
+	line-height: 45px;
+	padding: 2px 20px 0px 30px;
 	top: 0;
 	float: left;
 	background: #00A1E9; 
@@ -51,11 +51,11 @@ div.navtop-logo {
 	text-align: center;
 	color: #fff;
     cursor: pointer;
+    font-size: 22px;
 }
 .navtop ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 22px;
     cursor: pointer;
 }
 .navtop ul li:hover {

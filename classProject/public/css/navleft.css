@@ -4,16 +4,15 @@
 .nav-wrap {
 	position: relative;
 	top: 50px;
-	left: 50px;
+	left: 30px;
 }
 .navleft-tittle {
-	width: 238px;
+	width: 240px;
 	margin:0px; 
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	background: #ffffff;
-	border: 1px solid #00A1E9;
+	background: #fff100;
 	border-bottom: 0;
 }
 .navleft-tittle a {
@@ -84,8 +83,8 @@
 	color: #00A1E9;
 }
 .navleft-content {
-	border-bottom:2px solid #ffffff; 
-	margin-bottom: -2px;
+	border-bottom:1px solid #fff100; 
+	margin-bottom: -1px;
 }
 
 /*左侧导航栏具体科目的css文件*/

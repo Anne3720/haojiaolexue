@@ -13,7 +13,7 @@ html {
 	overflow: hidden;
 }
 .register,.login {
-	width: 490px;
+	width: 450px;
 	margin: 0 auto;	
 	font-size: 16px;
 	position: relative;
@@ -35,7 +35,7 @@ html {
 	margin:10px 30px 10px 65px; 
 }
 
-.register p svg,.login p svg {
+.register p i,.login p i {
 	display: inline-block;
 	width: 40px;
 	height: 27px;
@@ -45,8 +45,22 @@ html {
 	margin:0 5px; 
 	color: #fff;
 	position: absolute;
-	top: 7px;
+	top: 5px;
 	left: 10px;
+	overflow: hidden;
+	
+}
+#loginUserName {
+    background: url(/../public/icon/video.svg) -440px 0px no-repeat;
+}
+#regPhone {
+	background: url(/../public/icon/video.svg) -360px -40px no-repeat;
+}
+#regEmail {
+	background: url(/../public/icon/video.svg) 0px 0 no-repeat;
+}
+#regPassword,#regConfirmPassWord,#loginPassword {
+	background: url(/../public/icon/video.svg) -40px 0 no-repeat;
 }
 .register p input,.login p input {
 	width: 250px;
@@ -56,6 +70,7 @@ html {
 	padding:0  0 0 50px;
 	float: left;
 	border: 1px solid #000;
+
 }
 
 .register #btn-reg,.zhuce p,.login #btn-login,.denglu p {
@@ -77,7 +92,7 @@ html {
 }
 .zhuce p,.denglu p {
 	float: right;
-	margin:25px 115px 25px 0px;
+	margin:25px 75px 25px 0px;
 }
 .zhuce p a,.denglu p a {
 	display: block;
@@ -93,6 +108,7 @@ html {
 	font-size: 24px;
 	color: #000000;
 	background: rgba(0,161,255,1);
+	margin: 0 auto; 
 }
 label.error {
 	text-align: center;
