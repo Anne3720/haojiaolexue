@@ -219,3 +219,64 @@ $(document).ready(function(){
            } 
 
          });
+
+
+
+//
+function createxmlHttpRequest() { 
+if (window.ActiveXObject) { 
+  var xmlHttp = null;
+xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+} else if (window.XMLHttpRequest) { 
+xmlHttp=new XMLHttpRequest(); 
+} 
+}
+function submitForm(formId) {  
+    var xmlHttp = createxmlHttpRequest();  
+    if(!xmlHttp) {  
+        alert("您的浏览器不支持AJAX！");  
+        return 0;  
+    }  
+      
+    var url = '/user/doReg';  
+    var postData = "";  
+    postData = "Mobile=" + document.getElementById('tel').value;  
+    postData += "Email=" + document.getElementById('email').value;  
+    postData += "Password=" + document.getElementById('password').value; 
+    xmlHttp.open("POST", url, true);  
+    xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");  
+    xmlHttp.onreadystatechange = function() {  
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {  
+            if(xmlHttp.responseText == '1') {  
+                alert('post successed');  
+            }  
+        }  
+    }  
+    xmlHttp.send(postData);  
+}  
+//
+var tel = document.getElementById("tel").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+    $.ajax({
+      
+        method:'post',
+        url:'/user/doReg',
+        data:{'Mobile':tel,'Email':email,'Password':password},
+        success: function(data){
+            var cdata = $.parseJSON(data);
+             console.log(cdata)
+             
+            }
+
+    })
+
+
+
+    FormValid.showData = function() {
+    var cdata = "";
+    var tel = document.getElementById("tel").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    alert(tel+email +password)
+}

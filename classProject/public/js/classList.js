@@ -10,7 +10,7 @@ function getQueryString(name) {
 var grade = getQueryString("grade");
 var subject = getQueryString("subject");
 var chapter = getQueryString("chapter");
-    $.ajax({
+$.ajax({
         method:'get',
         url:'/classes/getChapterList',
         data:{'grade':grade,'subjectID':subject},
@@ -27,4 +27,4 @@ var chapter = getQueryString("chapter");
              
 
         }
-    })
+})

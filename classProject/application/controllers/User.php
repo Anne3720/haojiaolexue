@@ -40,7 +40,7 @@ class User extends CI_Controller {
         $status = $this->config->item('STATUS_REG_SUCCESS');
         $msg = $this->config->item('MSG_REG_SUCCESS');
         $this->CommonModel->sendMsg($status,array(),$msg);
-        //var_dump($status);
+        //var_dump($msg);
     }
     public function login(){
         $this->load->view('User/Login');

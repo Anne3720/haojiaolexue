@@ -4,39 +4,378 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
 <title>登录页面</title>
-    <link rel="stylesheet" href="../public/css/login-reg.css" type="text/css" />
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.imooc.com/data/jquery.form.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-    
+ <style type="text/css">
+body{ color:#666666; font-size:12px}
+h1{ font-size:20px;}
+input{ border:#999999 1px solid; background-color:#FFFFEE}
+.button2{ background-color:#FF9900; border-bottom:#E34A00 2px solid;border-right:#E34A00 2px solid; border-top:#FFB693 2px solid;border-left:#FFB693 2px solid; color:#FFFFFF; font-weight:bold;width: 70px;padding: 0;}
+.button {}
+ul,li {list-style: none;}
+ul {
+    font:normal 12px/15px Arial;
+    position: relative;
+    width: 350px;
+}
+
+li {
+    float: left;
+    width: 400px;
+    margin: 0 0 18px 0;
+    padding-left: 6px;
+    position: relative;
+}
+.hint {
+    display: none;
+    position: absolute;
+    left:160px;
+    width: 200px;
+    margin-top: 4px;
+    border: 1px solid #c93;
+    padding: 5px;
+}
+li input {
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    padding:0  0 0 45px;
+    float: left;
+    border: 1px solid #000;
+    background-color:#FFFFEE;
+}
+label {
+    display: inline-block;
+    width: 40px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    margin:0 5px; 
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+label[for="tel"] {
+    background: url(/../public/icon/video.svg) -440px 0px no-repeat;
+}
+label[for="email"] {
+    background: url(/../public/icon/video.svg) -360px -40px no-repeat;
+}
+label[for="password"] {
+    background: url(/../public/icon/video.svg) 0px 0 no-repeat;
+}
+label[for="password2"] {
+    background: url(/../public/icon/video.svg) -40px 0 no-repeat;
+}
+</style> 
+
+
+
 </head>
 
 <body>
 
-<div class="login-box">
-     <div class="login">
-                <div class="login-title">登 录</div>
-                <div class="login-center">
-                  <form id="login" name="login" method="post" >
-                    <p class="input-group-addon"> 
-                      <i id="loginUserName"></i>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="请输入邮箱或者手机号码">
-                  </p>
-                        <p class="input-group-addon"> 
-                        <i id="loginPassword"></i>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码">
-                  </p>
-      
-                  <span class="denglu" >
-                           <input id="btn-login"  type="submit"  value="登 录"/> 
-                           <p><a href="reg" >注 册</a></p>              
-                  </span>     
-                  </form>
-                  <div id="login-reback"></div>
-              </div>
-      </div>   
+<div>
+    <h1>注册</h1>
+    <form id="reg"  method="post" onsubmit="return validator(this)" >
+    <ul>      
+        <li>
+            <label for="tel"></label>
+            <input name="Mobile" id="tel" type="text" valid="required|isChinaPhone" errmsg="手机不能为空|手机格式不对!" placeholder="请输入手机号码"/>
+            <span class="hint" id="errMsg_Mobile"></span> 
+        </li>      
+        <li>
+            <label for="email"></label>
+            <input name="Email" id="email"type="text" valid="required|isEmail" errmsg="Email不能为空|Email格式不对!" placeholder="请输入邮箱"/>
+            <span class="hint" id="errMsg_Email"></span> 
+        </li>              
+        <li>
+            <label for="password"></label>
+            <input name="Password" id="password" type="password" valid="required|isPassword" errmsg="密码不能为空!|以字母开头，长度在6-18之间，只能包含字符、数字和下划线" placeholder="请输入密码(字母开头，长度在6-18之间)"/>
+            <span class="hint"  id="errMsg_Password"></span>    
+        </li>       
+        <li>
+            <label for="password2"></label>
+            <input name="confirm_PassWord" id="password2"　type="text" type="password" valid="eqaul" eqaulName="password" errmsg="两次密码不同!" placeholder="请重复输入密码"/>
+            <span class="hint" id="errMsg_confirm_PassWord"></span>   
+        </li>
+        <li class="button">
+            <input type="submit" id="regSubmit" name="Submit" value="注 册" class="button2"/>
+            <p><a class="btnlogin-reg-login">登 录</a></p>
+        </li>
+        <li class="reback"></li>
+    </ul>
+    </form>
 </div>
+<script>
+function ajaxSubmit() {
+    var tel = document.getElementById("tel").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var reg =document.getElementById("reg");
+    $.ajax({
+      
+        method:'post',
+        url:'/user/doReg',
+        data:{'Mobile':tel,'Email':email,'Password':password},
+        success: function(data){
+            var cdata = $.parseJSON(data);
+             console.log(cdata)
+             $('.reback').html( cdata.msg )            
+            }
+    })  
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+var FormValid = function(frm) {
+    this.frm = frm;
+    this.errMsg = new Array();
+    this.errName = new Array();
+    this.required = function(inputObj) {
+        if (typeof(inputObj) == "undefined" || inputObj.value.trim() == "") {
+            return false;
+        }
+        return true;
+    }
+    this.eqaul = function(inputObj, formElements) {
+        var fstObj = inputObj;
+        var sndObj = formElements[inputObj.getAttribute('eqaulName')];
+        if (fstObj != null && sndObj != null) {
+            if (fstObj.value != sndObj.value) {
+               return false;
+            }
+        }
+        return true;
+    }
+    this.gt = function(inputObj, formElements) {
+        var fstObj = inputObj;
+        var sndObj = formElements[inputObj.getAttribute('eqaulName')];
+        if (fstObj != null && sndObj != null && fstObj.value.trim()!='' && sndObj.value.trim()!='') {
+            if (fstObj.value <= sndObj.value) {
+                 return false;
+            }
+        }
+        return true;
+    }
+    this.compare = function(inputObj, formElements) {
+        var fstObj = inputObj;
+        var sndObj = formElements[inputObj.getAttribute('objectName')];
+        if (fstObj != null && sndObj != null && fstObj.value.trim()!='' && sndObj.value.trim()!='') {
+            if (!eval('fstObj.value' + inputObj.getAttribute('operate') + 'sndObj.value')) {
+                 return false;
+            }
+        }
+        return true;
+    }
+    this.limit = function (inputObj) {
+        var len = inputObj.value.length;
+        if (len) {
+            var minv = inputObj.getAttribute('min');
+            var maxv = inputObj.getAttribute('max');
+            minv = minv || 0;
+            maxv = maxv || Number.MAX_VALUE;
+            return minv <= len && len <= maxv;
+        }
+        return true;
+    }
+    this.range = function (inputObj) {
+        var val = parseInt(inputObj.value);
+        if (inputObj.value) {
+            var minv = inputObj.getAttribute('min');
+            var maxv = inputObj.getAttribute('max');
+            minv = minv || 0;
+            maxv = maxv || Number.MAX_VALUE;
+            return minv <= val && val <= maxv;
+        }
+        return true;
+    }
+    this.requireChecked = function (inputObj) {
+        var minv = inputObj.getAttribute('min');
+        var maxv = inputObj.getAttribute('max');
+        minv = minv || 1;
+        maxv = maxv || Number.MAX_VALUE;
+        var checked = 0;
+        var groups = document.getElementsByName(inputObj.name);
+        for(var i=0;i<groups.length;i++) {
+            if(groups[i].checked) checked++;
+        }
+        return minv <= checked && checked <= maxv;
+    }
+    this.filter = function (inputObj) {
+        var value = inputObj.value;
+        var allow = inputObj.getAttribute('allow');
+        if (value.trim()) {
+            return new RegExp("^.+\.(?=EXT)(EXT)$".replace(/EXT/g, allow.split(/\s*,\s*/).join("|")), "gi").test(value);
+        }
+        return true;
+    }
+    this.isNo = function (inputObj) {
+        var value = inputObj.value;
+        var noValue = inputObj.getAttribute('noValue');
+        return value!=noValue;
+    }
+    this.checkReg = function(inputObj, reg, msg) {
+        inputObj.value = inputObj.value.trim();
+        if (inputObj.value == '') {
+            return;
+        } else {
+            if (!reg.test(inputObj.value)) {
+                this.addErrorMsg(inputObj.name,msg);
+            }
+        }
+    }
+    this.passed = function() {
+        if (this.errMsg.length > 0) {
+            FormValid.showError(this.errMsg,this.errName);
+            frt = document.getElementsByName(this.errName[0])[0];
+            if (frt.type!='radio' && frt.type!='checkbox') {
+                frt.focus();
+            }
+            return false;
+        } else { 
 
+          ajaxSubmit(); 
+          return  false;       
+        }
+    }
+    this.addErrorMsg = function(name,str) {
+        this.errMsg.push(str);
+        this.errName.push(name);
+    }
+    this.addAllName = function(name) {
+        FormValid.allName.push(name);
+    }
+}
+FormValid.submitData = function() {
+    var cdata = "";
+    var tel = document.getElementById("tel").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    alert(tel+email +password)
+}
+FormValid.allName = new Array();
+FormValid.showError = function(errMsg) {
+    var msg = "";
+    for (i = 0; i < errMsg.length; i++) {
+        msg += "- " + errMsg[i] + "\n";
+    }
+    alert(msg);
+}
+function validator(frm) {
+    var formElements = frm.elements;
+    var fv = new FormValid(frm);
+    for (var i=0; i<formElements.length;i++) {
+        var validType = formElements[i].getAttribute('valid');
+        var errorMsg = formElements[i].getAttribute('errmsg');
+        if (validType==null) continue;
+        fv.addAllName(formElements[i].name);
+        var vts = validType.split('|');
+        var ems = errorMsg.split('|');
+        for (var j=0; j<vts.length; j++) {
+            var curValidType = vts[j];
+            var curErrorMsg = ems[j];
+            switch (curValidType) {
+            case 'isNumber':
+            case 'isEmail':
+            case 'isPassword':
+            case 'isChinaPhone':
+            case 'isPhone':
+            case 'isMobile':
+            case 'isIdCard':
+            case 'isMoney':
+            case 'isZip':
+            case 'isQQ':
+            case 'isInt':
+            case 'isEnglish':
+            case 'isChinese':
+            case 'isUrl':
+            case 'isDate':
+            case 'isTime':
+                fv.checkReg(formElements[i],RegExps[curValidType],curErrorMsg);
+                break;
+            case 'regexp':
+                fv.checkReg(formElements[i],new RegExp(formElements[i].getAttribute('regexp'),"g"),curErrorMsg);
+                break;
+            case 'custom':
+                if (!eval(formElements[i].getAttribute('custom')+'(formElements[i],formElements)')) {
+                    fv.addErrorMsg(formElements[i].name,curErrorMsg);
+                }
+                break;
+            default :
+                if (!eval('fv.'+curValidType+'(formElements[i],formElements)')) {
+                    fv.addErrorMsg(formElements[i].name,curErrorMsg);
+                }
+                break;
+            }
+        }
+    }
+    return fv.passed();
+}
+String.prototype.trim = function() {
+    return this.replace(/^\s*|\s*$/g, "");
+    }
+    var RegExps = function(){};
+    RegExps.isNumber = /^[-\+]?\d+(\.\d+)?$/;
+    RegExps.isPassword =/^[a-zA-Z]\w{5,17}$/;
+    RegExps.isEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
+    RegExps.isPhone = /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/;
+    RegExps.isMobile = /^((\(\d{2,3}\))|(\d{3}\-))?13\d{9}$/;
+    RegExps.isChinaPhone = /^1[3|4|5|7|8]\d{9}$/;
+    RegExps.isIdCard = /(^\d{15}$)|(^\d{17}[0-9Xx]$)/;
+    RegExps.isMoney = /^\d+(\.\d+)?$/;
+    RegExps.isZip = /^[1-9]\d{5}$/;
+    RegExps.isQQ = /^[1-9]\d{4,10}$/;
+    RegExps.isInt = /^[-\+]?\d+$/;
+    RegExps.isEnglish = /^[A-Za-z]+$/;
+    RegExps.isChinese =  /^[\u0391-\uFFE5]+$/;
+    RegExps.isUrl = /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
+    RegExps.isDate = /^\d{4}-\d{1,2}-\d{1,2}$/;
+    RegExps.isTime = /^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}$/;
+</script>
+<script type="text/javascript">
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+function prepareInputsForHints() {
+    var inputs = document.getElementsByTagName("input");
+    for (var i=0; i<inputs.length; i++){
+        if (inputs[i].parentNode.getElementsByTagName("span")[0]) {
+            inputs[i].onfocus = function () {
+                this.parentNode.getElementsByTagName("span")[0].style.display = "inline";
+            }
+            inputs[i].onblur = function () {
+                this.parentNode.getElementsByTagName("span")[0].style.display = "none";
+            }
+        }
+    }
+    
+}
+addLoadEvent(prepareInputsForHints);
+
+</script>
+<script type="text/javascript">
+FormValid.showError = function(errMsg,errName) {
+    for (key in FormValid.allName) {
+        document.getElementById('errMsg_'+FormValid.allName[key]).innerHTML = '';
+    }
+    for (key in errMsg) {
+        document.getElementById('errMsg_'+errName[key]).innerHTML = errMsg[key];
+    }
+}
+
+</script>
 </body>
 
 </html>
