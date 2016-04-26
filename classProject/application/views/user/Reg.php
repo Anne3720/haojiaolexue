@@ -55,7 +55,7 @@ function ajaxSubmitReg() {
       
             method:'post',
             url:'/user/doReg',
-            data:{'Mobile':tel,'Email':email,'Password':password},
+            data:{'Mobile':tel,'Email':email,'PassWord':password},
             success: function(data){
                 var cdata = $.parseJSON(data);
                 $('.reback').html( cdata.msg )
