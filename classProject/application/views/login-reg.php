@@ -1,56 +1,104 @@
-<script type="text/javascript" src="http://www.imooc.com/data/jquery.form.js"></script>
-<!-- Bootstrap -->
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-<link rel="stylesheet" href="../public/css/login-reg.css" type="text/css" />
- 
 
-              <div class="login login-reg-off">
-                <div class="login-title">登 录</div>
-                <div class="login-center">
-                  <form id="login" name="login" method="post" >
-                  <p class="input-group-addon"> 
-                      <i id="loginUserName"></i>
-                      <input type="text" id="username" name="username" class="form-control" placeholder="请输入邮箱或者手机号码">
-                  </p>
-                  <p class="input-group-addon">
-                      <i id="loginPassword"></i>
-                      <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码">
-                  </p>
+<div class="login-reg-wrap">
+    <h1>登录</h1>
+    <form id="login"  method="post" onSubmit="return false;" >
+    <ul>      
+        <li>
+            <label for="username"></label>
+            <input name="username" id="username" type="text" valid="required|isUsername" errmsg="账号不能为空|账号格式不对!" placeholder="请输入邮箱或手机号码"/>
+            <span class="hint" id="errMsg_username"></span> 
+        </li>                   
+        <li>
+            <label for="password"></label>
+            <input name="password" id="password" type="password" valid="required|isPassword" errmsg="密码不能为空!|以字母开头,只能包含6-18位的字符、数字和下划线" placeholder="请输入密码(字母开头，长度在6-18之间)"/>
+            <span class="hint"  id="errMsg_password"></span>    
+        </li>       
+        <li class="button">
+            <input type="button" onclick="ajaxSubmitLogin()" id="regSubmit" name="Submit" value="登 录" class="button2" />
+            <input type="button" onclick="refresh('/user/reg')"  value="注 册" class="button1" />
+            
+        </li>
+        <li class="reback"></li>
+    </ul>
+    </form>
+</div>     
+<div class="login-reg-wrap">
+    <h1>注册</h1>
+    <form id="reg"  method="post" onSubmit="return false;" >
+    <ul>      
+        <li>
+            <label for="tel"></label>
+            <input name="Mobile" id="tel" type="text" valid="required|isChinaPhone" errmsg="手机不能为空|手机格式不对!" placeholder="请输入手机号码"/>
+            <span class="hint" id="errMsg_Mobile"></span> 
+        </li>      
+        <li>
+            <label for="email"></label>
+            <input name="Email" id="email"type="text" valid="required|isEmail" errmsg="Email不能为空|Email格式不对!" placeholder="请输入邮箱"/>
+            <span class="hint" id="errMsg_Email"></span> 
+        </li>              
+        <li>
+            <label for="password"></label>
+            <input name="Password" id="password" type="password" valid="required|isPassword" errmsg="密码不能为空!|以字母开头，长度在6-18之间，只能包含字符、数字和下划线" placeholder="请输入密码(字母开头，长度在6-18之间)"/>
+            <span class="hint"  id="errMsg_Password"></span>    
+        </li>       
+        <li>
+            <label for="password2"></label>
+            <input name="confirm_PassWord" id="password2"　type="text" type="password" valid="eqaul" eqaulName="password" errmsg="两次密码不同!" placeholder="请重复输入密码"/>
+            <span class="hint" id="errMsg_confirm_PassWord"></span>   
+        </li>
+        <li class="button">
+            <input type="submit" onclick="ajaxSubmitReg()" id="regSubmit" name="Submit" value="注 册" class="button2"/>
+            <input type="button" onclick="refresh('/user/login')" name="Submit" value="登 录" class="button1" />
+        </li>
+        <li class="reback"></li>
+    </ul>
+    </form>
+</div>
+<script>
+function ajaxSubmitLogin() {
+    var form = document.getElementById("login");
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    alert(password)
+    if(validator(form)){
+      $.ajax({
       
-                  <span class="denglu" >
-                           <input id="btn-login"  type="submit"  value="登 录"/> 
-                           <p><a class="btnlogin-reg-reg" >注 册</a></p>              
-                  </span>     
-                  </form>
-                  <div id="login-reback"></div>
-              </div>
-            </div>         
-            <div class="register login-reg-off">
-              <div class="register-title">注 册</div>
-              <div class="register-center">
-                <form id="Register" name="register" method="post">
-                  <p class="reg-group-addon">
-                      <i id="regPhone"></i>
-                      <input type="text" id="Mobile" name="Mobile" placeholder="请输入手机号码"/> 
-                  </p>
-                  <p class="reg-group-addon">
-                      <i id="regEmail"></i> 
-                      <input type="text" id="Email" name="Email" placeholder="请输入邮箱" />
-                  </p>
-                  <p class="reg-group-addon">
-                      <i id="regPassword"></i> 
-                      <input type="password" id="PassWord" name="PassWord" placeholder="请输入密码" />
-                  </p>
-                  <p class="reg-group-addon">
-                      <i id="regConfirmPassWord"></i> 
-                      <input type="password" id="confirm_PassWord" name="confirm_PassWord" placeholder="请重复输入密码"/>
-                  </p>
-                  <span class="zhuce" >
-                         <input id="btn-reg"  type="submit"  value="注 册"/> 
-                         <p><a class="btnlogin-reg-login">登 录</a></p>              
-                  </span>       
-                </form>
-                <div id="reg-reback"></div>
-              </div>
-            </div>
-<script type="text/javascript" src="/public/js/login-reg.js"></script>   
+        method:'post',
+        url:'/user/doLogin',
+        data:{'username':username,'password':password},
+        success: function(data){
+            var cdata = $.parseJSON(data);
+             $('.reback').html(cdata.msg);
+             if (cdata.status==0) {
+                setTimeout('refresh("/")',1000);   
+             }
+          }
+      })    
+    } 
+}
+function ajaxSubmitReg() {
+    var tel = document.getElementById("tel").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var form = document.getElementById("reg");
+    if(validator(form)){
+        $.ajax({
+      
+            method:'post',
+            url:'/user/doReg',
+            data:{'Mobile':tel,'Email':email,'PassWord':password},
+            success: function(data){
+                var cdata = $.parseJSON(data);
+                $('.reback').html( cdata.msg )
+                if (cdata.status==0) {
+                    $('.reback').append( "请去邮箱激活" )   
+                }                     
+            }
+        })  
+    }    
+}
+function refresh(url){window.location=url}
+</script>
+
+<script type="text/javascript" src="/public/js/formValidator.js"></script>
+   
