@@ -29,7 +29,9 @@
     <?php foreach ($ChapterList as $key => $val) { ?>
         <tr>
             <td align='center'><?php echo($grade[$val['Grade']]);?></td>
-            <td align='center'><?php echo($val['SubjectID']);?></td>
+            <td align='center'><?php foreach($subjectList[$val['Grade']] as $value){
+                if($value['SubjectID']==$val['SubjectID']) echo $value['Title'];
+            }?></td>
             <td align='center'><?php echo($val['Chapter']);?></td>
             <td align='center'><?php echo($val['Title']);?></td>
             <td align='center'><a href="/admin/chapter/delete?ChapterID=<?php echo $val['ChapterID']; ?>" class="zajax" title="确定删除？">删除</a></td>

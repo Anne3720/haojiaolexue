@@ -71,7 +71,6 @@ class User extends CI_Controller {
             $this->session->set_userdata('userInfo',json_encode($info));
         }
         $this->CommonModel->sendMsg($status,array(),$msg);
-        var_dump($info);
     }
     public function doActivate($validate){
         $mobile = $this->cache->memcached->get("{$validate}");
