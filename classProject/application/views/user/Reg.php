@@ -38,7 +38,7 @@
         </li>
         <li class="button">
             <input type="submit" onclick="ajaxSubmitReg()" id="regSubmit" name="Submit" value="注 册" class="button2"/>
-            <input type="button" name="Submit" value="登 录" class="button1" />
+            <input type="button" onclick="refresh('/user/login')" name="Submit" value="登 录" class="button1" />
         </li>
         <li class="reback"></li>
     </ul>
