@@ -222,7 +222,7 @@ $(document).ready(function(){
 
 
 
-//
+/*
 function createxmlHttpRequest() { 
 if (window.ActiveXObject) { 
   var xmlHttp = null;
@@ -280,3 +280,4 @@ var password = document.getElementById("password").value;
     var password = document.getElementById("password").value;
     alert(tel+email +password)
 }
+*/
