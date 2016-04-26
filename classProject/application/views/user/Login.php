@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
 <title>登录页面</title>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.imooc.com/data/jquery.form.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="/public/css/log_reg.css" />
 </head>
@@ -53,7 +52,14 @@ function ajaxSubmitLogin() {
              $('.reback').html(cdata.msg);
              if (cdata.status==0) {
                 setTimeout('refresh("/")',1000);   
+             }else if(cdata.status==1){
+                $('.reback').append("，请去邮箱激活");
+             }else{
+                $('.reback').append("，请重新输入");
              }
+             setTimeout(function(){
+                 $('.reback').html('');
+             },3000);
           }
       })    
     } 

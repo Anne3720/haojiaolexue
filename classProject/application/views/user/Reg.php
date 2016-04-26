@@ -28,7 +28,7 @@
         </li>              
         <li>
             <label for="password"></label>
-            <input name="Password" id="password" type="password" valid="required|isPassword" errmsg="密码不能为空!|以字母开头，长度在6-18之间，只能包含字符、数字和下划线" placeholder="请输入密码(字母开头，长度在6-18之间)"/>
+            <input name="Password" id="password" type="password" valid="required|isPassword" errmsg="密码不能为空!|以字母开头,只能包含6-18位的字符、数字和下划线" placeholder="请输入密码(字母开头，长度在6-18之间)"/>
             <span class="hint"  id="errMsg_Password"></span>    
         </li>       
         <li>
@@ -61,7 +61,12 @@ function ajaxSubmitReg() {
                 $('.reback').html( cdata.msg )
                 if (cdata.status==0) {
                     $('.reback').append( "请去邮箱激活" )   
-                }                     
+                }else{
+                    $('.reback').append( "请返回登录" );
+                }
+                setTimeout(function(){
+                 $('.reback').html('');
+                },3000);                      
             }
         })  
     }    
