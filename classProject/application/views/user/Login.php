@@ -40,6 +40,7 @@ function ajaxSubmitLogin() {
     var form = document.getElementById("login");
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    alert(password)
     if(validator(form)){
       $.ajax({
       

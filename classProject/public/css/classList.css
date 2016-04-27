@@ -4,7 +4,7 @@ a,a:hover {
 	text-decoration: none;
 }
 .course-nav .course-nav-row {
-	z-index: 0;
+	z-index: 10;
 }
 
 .classShow {
