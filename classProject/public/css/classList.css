@@ -80,13 +80,15 @@ a {
 	display: inline-block;
 	float: left;
 	width: 60px;
+	height: 27px;
 	text-align: center;
-	padding: 5px 5px;
-	margin: 0px 5px; 
+	padding: 0px 0px;
+	margin: 0px 10px; 
 	border:1px solid transparent;
 }
 .course-nav-item a {
-	display: inline-block;
+	line-height: 27px;
+	display: block;
 	color: #000000;	
 	font-size: 14px;
 }

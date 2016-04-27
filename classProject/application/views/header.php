@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
 	  <title>好教乐学</title>
 	  <link rel="stylesheet" href="/public/css/main.css" type="text/css" />
-   <link rel="stylesheet" href="/public/css/bootstrap.css"/> 
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Bootstrap --> 
+    
     <script src="/public/js/bootstrap-transition.js"></script>
     <script src="/public/js/bootstrap-modal.js"></script>
     
