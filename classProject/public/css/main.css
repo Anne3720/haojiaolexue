@@ -99,11 +99,69 @@ ul.navtop-login {
 	color: #fff;
 }
 
-/*Reg页面的css文件*/
+/*登录注册页面的css文件*/
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.5);
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+  z-index: -100;
+}
+
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  z-index: 1040;
+}
+
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  
+  width: 450px;
+  margin-left: -250px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding-box;
+          background-clip: padding-box;
+          overflow: hidden;
+}
+
+.modal.fade {
+  top: -25%;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+          transition: opacity 0.3s linear, top 0.3s ease-out;
+}
+
+.modal.fade.in {
+  top: 10%;
+  z-index: 1050;
+}
+
 .login-reg-wrap {
-    width: 400px;
     margin:50px auto; 
     position: relative;
+    width: 400px;
     background:#fff;
     border:2px solid #cccccc;
     border-radius: 10px;
