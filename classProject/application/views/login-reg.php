@@ -1,5 +1,5 @@
 
-<div class="login-reg-wrap login">
+<div class="login-reg-wrap login login-reg-off">
     <h1>登录</h1>
     <form id="login"  method="post" onSubmit="return false;" >
     <ul>      
@@ -22,7 +22,7 @@
     </ul>
     </form>
 </div>     
-<div class="login-reg-wrap register">
+<div class="login-reg-wrap register login-reg-off">
     <h1>注册</h1>
     <form id="reg"  method="post" onSubmit="return false;" >
     <ul>      
