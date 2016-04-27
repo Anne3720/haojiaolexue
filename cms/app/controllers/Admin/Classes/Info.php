@@ -27,6 +27,7 @@ class Admin_Classes_InfoController extends Admin_AbstractController
         }
         $params = array(
             'No'=>$post['No'],
+            'ClassType'=>$post['ClassType'],
             'ClassNo'=>$post['ClassNo'],
             'Grade'=>$post['Grade'],
             'SubjectID'=>$post['SubjectID'],
