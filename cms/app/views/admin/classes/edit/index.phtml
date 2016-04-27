@@ -32,19 +32,8 @@
         </tr>
         <tr>
             <th width="30">章节</th>
-            <td width="80"><input type="text" name="Chapter"  value="<?php echo($info['Chapter'])?>"/></td>
-            </td>
-        </tr>
-        <tr>
-            <th width="30">知识点or例题讲解</th>
-            <td width="80">
-                <input type="radio" checked="checked" name="ClassType" value="0" />知识点
-                <input type="radio" name="ClassType" value="1" />例题讲解 </td>
-            </td>
-        </tr>
-        <tr>
-            <th width="30">例题编号</th>
-            <td width="80"><input type="text" name="No"  value="<?php echo($info['No'])?>" style="display:none;"/>&nbsp;<button id="createClassNo">生成课程编号</button></td>
+            <td width="80"><input type="text" name="Chapter"  value="<?php echo($info['Chapter'])?>"/>&nbsp; <button id="createClassNo">生成课程编号</button> </td>
+            <input type="hidden" value="" name="No">
             </td>
         </tr>
         <tr>
@@ -135,22 +124,11 @@ $(function(){
             $("select[name=SubjectID]").append(subjectList[value][i]);
         }
     });
-    $("input[name=ClassType]").click(function(){
-        var val = $("input[name=ClassType]:checked").val();
-        if(val=='0'){
-            $("input[name=No]").css("display","none");
-            $("#createClassNo").css("display","inline-block");
-        }else if(val=='1'){
-            $("input[name=No]").css("display","inline-block");
-            $("#createClassNo").css("display","none");
-        }
-    })
     $("#createClassNo").click(function(){
         var data = {
             'Grade':$("select[name=Grade]").find("option:selected").val(),
             'SubjectID':$("select[name=SubjectID]").find("option:selected").val(),
-            'Chapter':$("input[name=Chapter]").val(),
-            'ClassType':$("input[name=ClassType]:checked").val()
+            'Chapter':$("input[name=Chapter]").val()
         }
         $.ajax({
             url: '/admin/classes/createClassNo',

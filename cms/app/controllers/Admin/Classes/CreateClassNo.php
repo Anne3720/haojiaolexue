@@ -15,13 +15,12 @@ class Admin_Classes_CreateClassNoController extends Admin_AbstractController
         $Grade = $this->getRequest()->getParam('Grade');
         $SubjectID = $this->getRequest()->getParam('SubjectID');
         $Chapter = $this->getRequest()->getParam('Chapter');
-        $ClassType = $this->getRequest()->getParam('ClassType');
         if(empty($Grade)||empty($SubjectID)||empty($Chapter)){
             $this->sendMsg(1, '请将课程信息填写完整');
         }
         $option = array(
-            'condition' => 'Grade = ? and SubjectID = ? and Chapter = ? and ClassType = ? ',
-            'bind' => array($Grade,$SubjectID,$Chapter,$ClassType),
+            'condition' => 'Grade = ? and SubjectID = ? and Chapter = ?',
+            'bind' => array($Grade,$SubjectID,$Chapter),
             'order' => 'No desc',
             'limit' => ''
         );
