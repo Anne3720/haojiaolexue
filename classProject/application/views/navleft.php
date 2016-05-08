@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/public/css/navleft.css" type="text/css" />
  <div class="nav-wrap">  
-    <div class="navleft-tittle"><a href="/classes/classlist">全部课程分类</a></div>
+    <div class="navleft-tittle"><a href="/classes/classlist">全部课程</a></div>
     <div class="nav">
     <div class="navleft">
 	   <ul>	
@@ -84,5 +84,5 @@
 </div>
 </div>     
 <div class="clear"></div>
-    <script type="text/javascript" src="/public/js/navLeft.js"></script>
+<script type="text/javascript" src="/public/js/navLeft.js"></script>
  
