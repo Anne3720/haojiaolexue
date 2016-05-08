@@ -1,63 +1,7 @@
 <?php include('header.php');?>    
-
+<link rel="stylesheet" href="/public/css/foucs.css" type="text/css" />
 <div class="clear"></div>
-<style type="text/css">
-.clear {
-	clear: both;
-}
-.focus{
-	border:#efc8ff solid 1px;
-	position:relative;
-    margin-left:300px;
-    height: 600px;
-    top: 10px;
-    width: 983px;
-}
-
-.focus-wrap{
-	width: 100%;
-	height: 600px;
-	overflow: hidden;
-	margin: 0 auto;
-	position: relative;
-}
-.focus img {
-	height: 600px;
-}
-.focus-warp ul{position: absolute;}
-.focus-warp ul li{ position:relative;}
-.pic-tit {
-	color:blue;
-	font-weight:bolder;
-	font-family:"Times New Roman", Times, serif;
-	font-size:18px;
-	display:block;
-	height:180px;
-	text-align:center;
-	vertical-align:auto;
-	margin:2px auto;
-    line-height: 21px;
-	}
-.focus-wrap ol{
-	position: absolute;
-	left: 480px;
-	bottom: 50px;
-}
-.focus-wrap ol li{
-	float: left;
-	height: 12px;
-	width: 12px;
-	border-radius: 6px;
-	background: #ccc;
-	margin-left: 5px;
-	text-align: center;
-	line-height: center;
-	cursor:pointer;
-}
-.focus-wrap ol .on {
-	background:#fff100;
-}
-</style>   
+   
 <div class="focus">
         <div class="focus-wrap" id="focus-wrap">
             <ul id="pic">
@@ -120,4 +64,5 @@
 		}
 	</script>
 <?php include('navleft.php');?>
+<div class="mainfoot"></div>
 <?php include('footer.php');?>

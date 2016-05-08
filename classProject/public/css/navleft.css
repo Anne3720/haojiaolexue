@@ -4,18 +4,17 @@
 	width: 70%;
 	position: absolute;
 	top: 70px;
-	left: 10px;
-	float: left;
+	right: 10px;
 }
 .navleft-tittle {
 	width: 240px;
+	float: right;
 	margin:0px; 
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
 	background: #fff100;
 	border-bottom: 0;
-	border-radius: 10px 10px 0 0;
 }
 .navleft-tittle a {
 	text-decoration: none;
@@ -24,9 +23,9 @@
 	color: #00A1E9; 	
 }
 .nav {
-    position: relative;
-    top: 0px;
-	left: 0px;
+    position: absolute;
+    top: 50px;
+    right: 0;
 	height: auto;
 	width: 10px;	
 }
@@ -34,7 +33,7 @@
 	width: 900px;
 	border: 2px solid #fff100;
 	background: #f7fbfc;
-
+    overflow: hidden;
 }
 
 
@@ -42,20 +41,22 @@
 	clear: both;
 }
 .navleft {
-	float: left;
+	float: right;
     width: 236px;
     padding: 0;
     background: #00A1E9;
     border: 2px solid #fff100;
     overflow: hidden;
+    margin-left: -2px;
 }
 .nav:hover .navleft {
 	border: 0;
-	width: 237px;
+	width: 236px;
 }
 .navleft ul{
 	width: 245px;
-	margin: 0px; 
+	margin: 0px;
+
 }
 .navleft ul li {
 	text-align: center;
@@ -96,7 +97,7 @@
    /* background: #000;*/
     position: absolute;
     top: 0px;
-    left: 240px;
+    right: 236px;
     overflow: hidden;
     background: #f7fbfc;
     height: 300px;
@@ -117,7 +118,7 @@
 }
 .navleft-hide dl dt { 
 	display: inline-block;
-	float: left;
+	float: right;
     text-align: center;
 	width: 60px;
 	padding: 5px 0px;
@@ -139,7 +140,7 @@
 }
 .navleft-hide dl dd a {
 	display: inline-block;
-	float: left;
+	float: right;
 	width: 60px; 
 	height: 30px;
 	color: #00A1E9;

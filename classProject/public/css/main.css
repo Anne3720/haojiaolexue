@@ -17,7 +17,7 @@ p{word-wrap:break-word}
 .navcenter {
 	height: 230px;
 }
-a {
+a,a:hover {
 	text-decoration: none;
 }
 .navtop {
@@ -74,7 +74,7 @@ ul.navtop-login {
 	position: relative;
 	height: 100px;
 	bottom:0px; 
-	background: #ececec;
+	background: #a9a9aa;
 }
 .footer ul {
 	display: block;
