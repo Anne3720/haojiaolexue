@@ -55,7 +55,7 @@
 	cursor:pointer;
 }
 .focus-wrap ol .on {
-	background:#ff0000;
+	background:#fff100;
 }
 </style>   
 <div class="focus">
