@@ -9,6 +9,9 @@ class User extends CI_Controller {
         $this->load->config('myconfig');
         $this->load->helper('url');
     }
+    public function information(){
+        $this->load->view('User/Information');
+    }
     public function reg(){
         $this->load->view('User/Reg');
     }

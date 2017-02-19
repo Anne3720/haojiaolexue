@@ -9,6 +9,10 @@
     
     <script src="/public/js/bootstrap-transition.js"></script>
     <script src="/public/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="/public/easyUI/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/easyUI/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/public/easyUI/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/public/easyUI/demo/demo.css">
     
 </head>
 <body>
@@ -26,7 +30,7 @@
 	        <?php }else{ ?>
 	        <ul class="navtop-login">
 	            <li><a href="" >学习中心</a></li>
-	            <li><a href="#" >个人信息</a></li>
+	            <li><a href="/user/information" >个人信息</a></li>
 		        <li><a href="/user/doLogout" >退出</a></li>
 		    <?php } ?>
 	        </ul>

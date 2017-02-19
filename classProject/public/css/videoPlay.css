@@ -300,4 +300,9 @@ span.mejs-offscreen {
     background: -o-linear-gradient(top, #82d344 0%, #51af34 100%); 
     background: -ms-linear-gradient(top, #82d344 0%, #51af34 100%); 
     background: linear-gradient(top, #82d344 0%, #51af34 100%); 
-} 
+}
+/*错误信息提示*/ 
+.mejs-overlay-error {
+    color: red;
+    font-size: 40px;
+}
