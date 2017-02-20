@@ -1,3 +1,4 @@
+<?php include('/../mainScript.php');?>
 <?php include('/../header.php');?>
 <title>好教乐学</title>
 <link rel="stylesheet" href="/../../../public/css/classList.css" type="text/css" />

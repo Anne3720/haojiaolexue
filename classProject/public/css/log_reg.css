@@ -1,4 +1,9 @@
 body{ color:#666666; font-size:12px}
+.modal.fade.in {
+    position: absolute;
+    top: 10% !important;
+    left: 40% !important;
+}
 .login-reg-wrap {
     width: 400px;
     margin:50px auto; 
@@ -6,7 +11,7 @@ body{ color:#666666; font-size:12px}
     background:#fff;
     border:2px solid #cccccc;
     border-radius: 10px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 h1{ font-size:20px;text-align: center;}
 input{ border:#999999 1px solid; background-color:#FFFFEE}

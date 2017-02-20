@@ -84,5 +84,5 @@
 </div>
 </div>     
 <div class="clear"></div>
-<script type="text/javascript" src="/public/js/navLeft.js"></script>
+<!-- <script type="text/javascript" src="/public/js/navLeft.js"></script> -->
  

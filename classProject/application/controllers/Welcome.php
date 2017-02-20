@@ -9,6 +9,7 @@ class Welcome extends CI_Controller {
         $this->load->model('CommonModel');
         $this->load->config('myconfig');
     }
+    
     public function index()
     {
     	$return_data = $this->ClassModel->getSubjectList();
